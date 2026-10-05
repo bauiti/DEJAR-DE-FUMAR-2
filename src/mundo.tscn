@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c424wtidrrocm"]
+
+[ext_resource type="PackedScene" uid="uid://qolbgrniaerv" path="res://src/player1.tscn" id="1_p5ndu"]
+[ext_resource type="Texture2D" uid="uid://c60gydavgqa1f" path="res://assets/entornos_demo/wallpaperflare.com_wallpaper.jpg" id="2_ohh05"]
+
+[node name="Mundo" type="Node2D" unique_id=1359475061]
+
+[node name="player1" parent="." unique_id=1665034512 instance=ExtResource("1_p5ndu")]
+z_index = 1
+position = Vector2(181, 111)
+
+[node name="Habitacion1" type="Node" parent="." unique_id=1139265358]
+
+[node name="TextureRect" type="TextureRect" parent="Habitacion1" unique_id=1278126410]
+offset_left = -1.0
+offset_top = 5.0
+offset_right = 1153.0
+offset_bottom = 652.0
+texture = ExtResource("2_ohh05")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="Habitacion1" unique_id=2145659013]
