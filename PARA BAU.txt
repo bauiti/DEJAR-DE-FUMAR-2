@@ -1,0 +1,4 @@
+https://docs.escoria-framework.org/en/devel/getting_started/step_by_step/2_create_player_character.html
+
+https://godotengine.org/download/windows/
+DESCARGATE LA ULITMA VERSION DE GODOT E IMPORTA ESTE ARCHIVO. ES LA BASE QUE VAMOS A USAR. ESTOY AVANZANDO CON LOS ASSETS Y EL GUIÓN.
