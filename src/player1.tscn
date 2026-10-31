@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://qolbgrniaerv"]
+[gd_scene format=3 uid="uid://qolbgrniaerv"]
 
 [ext_resource type="Script" uid="uid://beh20dxnfhayy" path="res://src/player_1.gd" id="1_cdvp7"]
 
@@ -8,15 +8,17 @@ radius = 66.1211
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wfkyo"]
 load_path = "res://.godot/imported/mike_stand.png-bd151b93425018a3fed89ba502854c49.ctex"
 
-[node name="player1" type="CharacterBody2D"]
-position = Vector2(-18, -15)
+[node name="player1" type="CharacterBody2D" unique_id=1415628774]
+position = Vector2(545, 256)
 script = ExtResource("1_cdvp7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(122, 123)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=410891410]
+position = Vector2(-8, 2)
 shape = SubResource("CircleShape2D_s1fef")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(123, 116.235)
-scale = Vector2(0.0748988, 0.0639694)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=341827994]
+position = Vector2(-8, -5)
+scale = Vector2(0.07692309, 0.059959833)
 texture = SubResource("CompressedTexture2D_wfkyo")
+
+[node name="Node" type="Node" parent="." unique_id=640105961]

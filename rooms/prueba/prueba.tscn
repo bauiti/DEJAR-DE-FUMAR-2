@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cfidrmoy8r1ne"]
+
+[ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_5boko"]
+[ext_resource type="PackedScene" uid="uid://bmnjah5pcyoba" path="res://personajes/mike/mike.scn" id="2_vgyeo"]
+[ext_resource type="Texture2D" uid="uid://c0jufe8fibmx1" path="res://assets/menufondo_test.png" id="3_5boko"]
+[ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_5hkkq"]
+[ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_emi52"]
+[ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_tsac6"]
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="7_vgyeo"]
+[ext_resource type="Texture2D" uid="uid://rv5k1dgt67bp" path="res://inventario/png-transparent-smoking-cigarette-thumbnail.png" id="8_gwa41"]
+[ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="9_5hkkq"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_s1fef"]
+vertices = PackedVector2Array(92.609375, 968, 34.601563, 972.2031, 37.007813, 928.03125, 1553.2031, 798, 31.492188, 813.8906, 1898.5313, 947.15625, 873.84375, 964, 1831.9922, 790, 1891.4219, 792.59375)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 3), PackedInt32Array(5, 6, 0, 3, 7, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(27, 928, 21, 804, 1553, 788, 1832, 780, 1901, 783, 1909, 957, 874, 974, 93, 978, 24, 983)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wb4oo"]
+size = Vector2(194.45541, 164.85077)
+
+[node name="prueba" type="Node2D" unique_id=1936214658]
+script = ExtResource("1_5boko")
+global_id = "prueba"
+esc_script = "res://rooms/prueba/scripts/prueba.esc"
+player_scene = ExtResource("2_vgyeo")
+editor_debug_mode = 1
+
+[node name="escbackground" type="TextureRect" parent="." unique_id=211131052]
+custom_maximum_size = Vector2(4000, 4000)
+offset_left = -12.0
+offset_top = 8.314429e-05
+offset_right = 1893.0
+offset_bottom = 1066.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 1
+texture = ExtResource("3_5boko")
+expand_mode = 1
+script = ExtResource("4_5hkkq")
+
+[node name="WalkableArea" type="Node2D" parent="." unique_id=2147293467]
+script = ExtResource("5_emi52")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="WalkableArea" unique_id=739325929]
+position = Vector2(-20, -52)
+navigation_polygon = SubResource("NavigationPolygon_s1fef")
+
+[node name="RoomObjects" type="Node2D" parent="." unique_id=358849421]
+
+[node name="StartPos" type="Marker2D" parent="." unique_id=1088761277]
+position = Vector2(120, 964)
+script = ExtResource("6_tsac6")
+global_id = "prueba_start_pos"
+is_start_location = true
+
+[node name="ESCItem" type="Area2D" parent="." unique_id=1292824781]
+process_mode = 1
+script = ExtResource("7_vgyeo")
+global_id = "cigarro1"
+actions_requiring_target_object = PackedStringArray()
+inventory_texture = ExtResource("8_gwa41")
+inventory_texture_hovered = ExtResource("8_gwa41")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="ESCItem" unique_id=1452536942]
+position = Vector2(1585.0001, 759)
+scale = Vector2(0.48749992, 0.47033888)
+texture = ExtResource("8_gwa41")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ESCItem" unique_id=1263398527]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(1584, 758.00006)
+rotation = 0.06981314
+shape = SubResource("RectangleShape2D_wb4oo")
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="ESCItem" unique_id=1531221660]
+gizmo_extents = 0.0
+script = ExtResource("9_5hkkq")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"
