@@ -9,14 +9,19 @@
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="7_vgyeo"]
 [ext_resource type="Texture2D" uid="uid://rv5k1dgt67bp" path="res://inventario/png-transparent-smoking-cigarette-thumbnail.png" id="8_gwa41"]
 [ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="9_5hkkq"]
+[ext_resource type="Texture2D" uid="uid://dv5bltm036cd8" path="res://assets/puchoasset.png" id="9_tsac6"]
+[ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="10_emi52"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_s1fef"]
-vertices = PackedVector2Array(92.609375, 968, 34.601563, 972.2031, 37.007813, 928.03125, 1553.2031, 798, 31.492188, 813.8906, 1898.5313, 947.15625, 873.84375, 964, 1831.9922, 790, 1891.4219, 792.59375)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 3), PackedInt32Array(5, 6, 0, 3, 7, 8)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(27, 928, 21, 804, 1553, 788, 1832, 780, 1901, 783, 1909, 957, 874, 974, 93, 978, 24, 983)])
+vertices = PackedVector2Array(92.609375, 968, 34.601563, 972.2031, 37.007813, 928.03125, 282.96094, 797.64844, 1832.0703, 790.0078, 1891.4219, 792.59375, 1898.5313, 947.15625, 873.84375, 964, 1696.6016, 798.15625, 1627.5078, 758.21875, 1364.8594, 793.90625, 31.460938, 813.3594, 379.0625, 632.3125, 1539.4688, 659, 1593.1094, 659, 1598.2891, 703.03125, 1463.4219, 681.8125, 398.8203, 580.21094, 488.4297, 582.9297, 559.96094, 619.65625, 697.8906, 711.9375, 803.3203, 804.0703, 1408.5234, 739.60156)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 8, 7, 10), PackedInt32Array(2, 11, 3), PackedInt32Array(7, 0, 3), PackedInt32Array(7, 3, 12), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(7, 12, 17, 18, 19, 20, 21), PackedInt32Array(7, 21, 10), PackedInt32Array(9, 10, 22, 16, 15)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(27, 928, 21, 804, 277, 788, 370, 628, 392, 570, 491, 573, 565, 611, 704, 704, 807, 794, 1360, 784, 1401, 733, 1458, 673, 1538, 649, 1602, 649, 1608, 700, 1635, 751, 1699, 788, 1832, 780, 1901, 783, 1909, 957, 874, 974, 93, 978, 24, 983)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wb4oo"]
 size = Vector2(194.45541, 164.85077)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
+size = Vector2(196, 157)
 
 [node name="prueba" type="Node2D" unique_id=1936214658]
 script = ExtResource("1_5boko")
@@ -41,12 +46,11 @@ script = ExtResource("4_5hkkq")
 
 [node name="WalkableArea" type="Node2D" parent="." unique_id=2147293467]
 script = ExtResource("5_emi52")
+lightmap_modulate = Color(0.029506557, 0.029506557, 0.029506557, 1)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="WalkableArea" unique_id=739325929]
 position = Vector2(-20, -52)
 navigation_polygon = SubResource("NavigationPolygon_s1fef")
-
-[node name="RoomObjects" type="Node2D" parent="." unique_id=358849421]
 
 [node name="StartPos" type="Marker2D" parent="." unique_id=1088761277]
 position = Vector2(120, 964)
@@ -58,19 +62,22 @@ is_start_location = true
 process_mode = 1
 script = ExtResource("7_vgyeo")
 global_id = "cigarro1"
+tooltip_name = "Cigarro"
 actions_requiring_target_object = PackedStringArray()
+hover_enabled = true
+hover_modulate = Color(0.997479, 0.82648957, 0.8565727, 1)
 inventory_texture = ExtResource("8_gwa41")
 inventory_texture_hovered = ExtResource("8_gwa41")
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 
 [node name="Sprite2D" type="Sprite2D" parent="ESCItem" unique_id=1452536942]
-position = Vector2(1585.0001, 759)
-scale = Vector2(0.48749992, 0.47033888)
-texture = ExtResource("8_gwa41")
+position = Vector2(1706.125, 782.9492)
+scale = Vector2(0.17145823, 0.16175139)
+texture = ExtResource("9_tsac6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ESCItem" unique_id=1263398527]
 modulate = Color(0, 1, 1, 1)
-position = Vector2(1584, 758.00006)
+position = Vector2(1718, 788.00006)
 rotation = 0.06981314
 shape = SubResource("RectangleShape2D_wb4oo")
 
@@ -78,3 +85,17 @@ shape = SubResource("RectangleShape2D_wb4oo")
 gizmo_extents = 0.0
 script = ExtResource("9_5hkkq")
 metadata/_custom_type_script = "uid://chu4bvqgwxuts"
+
+[node name="RoomItems" type="Node2D" parent="." unique_id=2055167347]
+
+[node name="salida_escuela" type="Area2D" parent="RoomItems" unique_id=1202135969]
+script = ExtResource("10_emi52")
+target_scene = "uid://dse4004ubtc2m"
+exit_direction = "Escuela"
+global_id = "salida_escuela"
+tooltip_name = "Escuela"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomItems/salida_escuela" unique_id=718170100]
+position = Vector2(1485, 650)
+shape = SubResource("RectangleShape2D_s1fef")
