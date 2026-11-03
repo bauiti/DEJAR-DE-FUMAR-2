@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_5boko"]
 [ext_resource type="PackedScene" uid="uid://bmnjah5pcyoba" path="res://personajes/mike/mike.scn" id="2_vgyeo"]
-[ext_resource type="Texture2D" uid="uid://c0jufe8fibmx1" path="res://assets/menufondo_test.png" id="3_5boko"]
+[ext_resource type="Texture2D" uid="uid://balrykitosemh" path="res://assets/backgrounds/menufondollargo_final.png" id="3_vwlt2"]
 [ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_5hkkq"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_emi52"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_tsac6"]
@@ -11,22 +11,23 @@
 [ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="9_5hkkq"]
 [ext_resource type="Texture2D" uid="uid://dv5bltm036cd8" path="res://assets/puchoasset.png" id="9_tsac6"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="10_emi52"]
+[ext_resource type="PackedScene" uid="uid://ctxqyradopbnl" path="res://inventario/cigarro_2.tscn" id="12_vwlt2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_s1fef"]
-vertices = PackedVector2Array(92.609375, 968, 34.601563, 972.2031, 37.007813, 928.03125, 282.96094, 797.64844, 1832.0703, 790.0078, 1891.4219, 792.59375, 1898.5313, 947.15625, 873.84375, 964, 1696.6016, 798.15625, 1627.5078, 758.21875, 1364.8594, 793.90625, 31.460938, 813.3594, 379.0625, 632.3125, 1539.4688, 659, 1593.1094, 659, 1598.2891, 703.03125, 1463.4219, 681.8125, 398.8203, 580.21094, 488.4297, 582.9297, 559.96094, 619.65625, 697.8906, 711.9375, 803.3203, 804.0703, 1408.5234, 739.60156)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8), PackedInt32Array(9, 8, 7, 10), PackedInt32Array(2, 11, 3), PackedInt32Array(7, 0, 3), PackedInt32Array(7, 3, 12), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(7, 12, 17, 18, 19, 20, 21), PackedInt32Array(7, 21, 10), PackedInt32Array(9, 10, 22, 16, 15)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(27, 928, 21, 804, 277, 788, 370, 628, 392, 570, 491, 573, 565, 611, 704, 704, 807, 794, 1360, 784, 1401, 733, 1458, 673, 1538, 649, 1602, 649, 1608, 700, 1635, 751, 1699, 788, 1832, 780, 1901, 783, 1909, 957, 874, 974, 93, 978, 24, 983)])
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wb4oo"]
-size = Vector2(194.45541, 164.85077)
+vertices = PackedVector2Array(3237.7266, 492.34375, 3292.8516, 509.71094, 3244.0703, 590.4375, 3168.4375, 560.7031, 3114.9375, 627.8125, 3201.8906, 690.21875, 3087.6719, 711.6797, 3207.5078, 798.0469, 3004.8906, 784.90625, 3992.2813, 794.03906, 3996.7031, 948.0469, 873.9531, 964, 887.0703, 658.8125, 861.40625, 571.7422, 954.02344, 544.21094, 978.52344, 607.2031, 1006.27344, 689.47656, 880.5078, 785.8125, 1024.5625, 798.10156, 93.97656, 967.9922, 31.382813, 955.46875, 25.023438, 926.0781, 27.773438, 811.4922, 277.4375, 797.9922, 1539.4688, 659, 1593.1094, 659, 1598.2891, 703.03125, 1463.4219, 681.8125, 2599.7266, 794.1172, 2414.0234, 706.2969, 2454.6328, 625.0781, 2524.2734, 636.8281, 2549.8828, 719.34375, 2450.5313, 791.1406, 1832.25, 790, 1696.6016, 798.15625, 1364.8438, 793.9375, 1627.5078, 758.21875, 1408.5234, 739.60156)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5, 6), PackedInt32Array(6, 5, 7, 8), PackedInt32Array(9, 10, 11, 7), PackedInt32Array(12, 13, 14, 15, 16), PackedInt32Array(17, 12, 16, 18, 11), PackedInt32Array(11, 19, 20, 21, 22, 23, 17), PackedInt32Array(24, 25, 26, 27), PackedInt32Array(8, 7, 11, 28), PackedInt32Array(29, 30, 31, 32, 33), PackedInt32Array(33, 32, 28), PackedInt32Array(34, 33, 28, 11, 35), PackedInt32Array(35, 11, 18, 36), PackedInt32Array(37, 35, 36, 38, 27), PackedInt32Array(26, 37, 27)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(15, 927, 18, 802, 277, 788, 871, 776, 877, 660, 849, 565, 960, 532, 988, 604, 1016, 687, 1033, 788, 1360, 784, 1401, 733, 1446, 650, 1474, 616, 1540, 606, 1602, 649, 1608, 700, 1635, 751, 1699, 788, 1832, 780, 2435.3257, 781.1121, 2403, 706, 2449, 614, 2532, 628, 2559, 715, 2605, 784, 3001, 775, 3079, 706, 3106, 623, 3161, 554, 3235, 481, 3308, 504, 3253, 595, 3212, 692, 3217, 788, 4002, 784, 4007, 958, 874, 974, 93, 978, 23, 964)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
 size = Vector2(196, 157)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wb4oo"]
+size = Vector2(194.45541, 164.85077)
+
 [node name="prueba" type="Node2D" unique_id=1936214658]
 script = ExtResource("1_5boko")
 global_id = "prueba"
-esc_script = "res://rooms/prueba/scripts/prueba.esc"
+esc_script = "res://rooms/prueba/scripts/pureba.esc"
 player_scene = ExtResource("2_vgyeo")
 editor_debug_mode = 1
 
@@ -34,13 +35,13 @@ editor_debug_mode = 1
 custom_maximum_size = Vector2(4000, 4000)
 offset_left = -12.0
 offset_top = 8.314429e-05
-offset_right = 1893.0
+offset_right = 3988.0
 offset_bottom = 1066.0
 mouse_filter = 2
 mouse_behavior_recursive = 1
 mouse_force_pass_scroll_events = false
 mouse_default_cursor_shape = 1
-texture = ExtResource("3_5boko")
+texture = ExtResource("3_vwlt2")
 expand_mode = 1
 script = ExtResource("4_5hkkq")
 
@@ -49,46 +50,19 @@ script = ExtResource("5_emi52")
 lightmap_modulate = Color(0.029506557, 0.029506557, 0.029506557, 1)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="WalkableArea" unique_id=739325929]
-position = Vector2(-20, -52)
+position = Vector2(-12, -56)
 navigation_polygon = SubResource("NavigationPolygon_s1fef")
 
 [node name="StartPos" type="Marker2D" parent="." unique_id=1088761277]
-position = Vector2(120, 964)
+position = Vector2(51, 869)
 script = ExtResource("6_tsac6")
 global_id = "prueba_start_pos"
 is_start_location = true
 
-[node name="ESCItem" type="Area2D" parent="." unique_id=1292824781]
-process_mode = 1
-script = ExtResource("7_vgyeo")
-global_id = "cigarro1"
-tooltip_name = "Cigarro"
-actions_requiring_target_object = PackedStringArray()
-hover_enabled = true
-hover_modulate = Color(0.997479, 0.82648957, 0.8565727, 1)
-inventory_texture = ExtResource("8_gwa41")
-inventory_texture_hovered = ExtResource("8_gwa41")
-metadata/_custom_type_script = "uid://dshelmw7y44qg"
-
-[node name="Sprite2D" type="Sprite2D" parent="ESCItem" unique_id=1452536942]
-position = Vector2(1706.125, 782.9492)
-scale = Vector2(0.17145823, 0.16175139)
-texture = ExtResource("9_tsac6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ESCItem" unique_id=1263398527]
-modulate = Color(0, 1, 1, 1)
-position = Vector2(1718, 788.00006)
-rotation = 0.06981314
-shape = SubResource("RectangleShape2D_wb4oo")
-
-[node name="ESCInteractionLocation" type="Marker2D" parent="ESCItem" unique_id=1531221660]
-gizmo_extents = 0.0
-script = ExtResource("9_5hkkq")
-metadata/_custom_type_script = "uid://chu4bvqgwxuts"
-
 [node name="RoomItems" type="Node2D" parent="." unique_id=2055167347]
 
 [node name="salida_escuela" type="Area2D" parent="RoomItems" unique_id=1202135969]
+position = Vector2(210, 42)
 script = ExtResource("10_emi52")
 target_scene = "uid://dse4004ubtc2m"
 exit_direction = "Escuela"
@@ -97,5 +71,36 @@ tooltip_name = "Escuela"
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomItems/salida_escuela" unique_id=718170100]
-position = Vector2(1485, 650)
+position = Vector2(1745, 735)
 shape = SubResource("RectangleShape2D_s1fef")
+
+[node name="cigarro1" type="Area2D" parent="RoomItems" unique_id=1292824781]
+process_mode = 1
+script = ExtResource("7_vgyeo")
+global_id = "cigarro1"
+esc_script = "res://rooms/prueba/cigarro1.esc"
+tooltip_name = "Cigarro"
+actions_requiring_target_object = PackedStringArray()
+hover_modulate = Color(0.997479, 0.82648957, 0.8565727, 1)
+inventory_texture = ExtResource("8_gwa41")
+inventory_texture_hovered = ExtResource("8_gwa41")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="RoomItems/cigarro1" unique_id=1452536942]
+position = Vector2(1706.125, 782.9492)
+scale = Vector2(0.17145823, 0.16175139)
+texture = ExtResource("9_tsac6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomItems/cigarro1" unique_id=1263398527]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(1718, 788.00006)
+rotation = 0.06981314
+shape = SubResource("RectangleShape2D_wb4oo")
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="RoomItems/cigarro1" unique_id=1531221660]
+position = Vector2(1829, 863)
+gizmo_extents = 0.0
+script = ExtResource("9_5hkkq")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"
+
+[node name="cigarro2" parent="." unique_id=1361711351 instance=ExtResource("12_vwlt2")]

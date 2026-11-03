@@ -1,0 +1,5 @@
+:use
+	say("mike", "That's good to hear. I'm thirsty.")
+
+:look 
+	say("mike", "la wea fome hermano")

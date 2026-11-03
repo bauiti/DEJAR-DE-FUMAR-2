@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_sblb2"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_lhdw8"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="6_mr6rl"]
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="7_5e0ao"]
+[ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="8_e52lf"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_s1fef"]
 vertices = PackedVector2Array(871.27344, 583.09375, -1023.9375, 600.89844, -1022.03906, 216.60938, -860.46875, 202.97656, -394.4922, 181.99219, -111.09375, 251.90625, -154.28125, 168.46875, -145.27344, 218.95313, 17.382813, 223.92969, 109.50781, 217.47656, 133.57813, 275.64063, 784.6875, 316.92188, 874.1875, 331.9922, 880.28125, 344.84375, 883.4531, 369.39844, 877.1172, 375.7422, 491.0625, 292.96094, 715.9922, 309.95313, 246.88281, 265.04688)
@@ -15,6 +17,9 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-1032, 207, -1027, 207,
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
 size = Vector2(169, 467)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khhxn"]
+size = Vector2(147, 226.5)
 
 [node name="Escuela" type="Node2D" unique_id=501197607]
 script = ExtResource("1_7hcpg")
@@ -39,8 +44,10 @@ position = Vector2(1033, 476)
 navigation_polygon = SubResource("NavigationPolygon_s1fef")
 
 [node name="RoomObjects" type="Node2D" parent="." unique_id=986914273]
+position = Vector2(-2, -10)
 
 [node name="salida_lobby" type="Area2D" parent="RoomObjects" unique_id=1352995064]
+position = Vector2(3, 5)
 script = ExtResource("6_mr6rl")
 target_scene = "uid://cfidrmoy8r1ne"
 global_id = "salida_lobby"
@@ -50,6 +57,25 @@ metadata/_custom_type_script = "uid://btt4cprco53ec"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/salida_lobby" unique_id=168967000]
 position = Vector2(97, 805)
 shape = SubResource("RectangleShape2D_s1fef")
+
+[node name="buzon" type="Area2D" parent="RoomObjects" unique_id=239891416]
+process_mode = 1
+position = Vector2(730, 839)
+script = ExtResource("7_5e0ao")
+global_id = "buzon"
+esc_script = "res://rooms/Escuela/buzon.esc"
+tooltip_name = "buzon"
+actions_requiring_target_object = PackedStringArray()
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/buzon" unique_id=27286790]
+position = Vector2(41, -97)
+shape = SubResource("RectangleShape2D_khhxn")
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/buzon" unique_id=1199275990]
+position = Vector2(39, 8)
+script = ExtResource("8_e52lf")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"
 
 [node name="StartPos" type="Marker2D" parent="." unique_id=1485101989]
 position = Vector2(37, 1023)

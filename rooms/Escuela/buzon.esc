@@ -1,0 +1,5 @@
+:look
+	say("mike", "tuconcio")
+
+:pickup
+	say("mike", "tuconcio")
