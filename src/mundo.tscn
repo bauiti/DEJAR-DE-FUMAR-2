@@ -1,22 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://c424wtidrrocm"]
+[gd_scene format=3 uid="uid://c424wtidrrocm"]
 
 [ext_resource type="PackedScene" uid="uid://qolbgrniaerv" path="res://src/player1.tscn" id="1_p5ndu"]
-[ext_resource type="Texture2D" uid="uid://dg6boolb4848j" path="res://assets/entornos_demo/fondo_test1.png" id="2_ohh05"]
+[ext_resource type="Texture2D" uid="uid://busddb1dspl06" path="res://assets/entornos_demo/fondo_test.jpg" id="2_ohh05"]
 
-[node name="Mundo" type="Node2D"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_s1fef"]
 
-[node name="player1" parent="." instance=ExtResource("1_p5ndu")]
+[node name="Mundo" type="Node2D" unique_id=313336105]
+
+[node name="player1" parent="." unique_id=1311194221 instance=ExtResource("1_p5ndu")]
+visible = false
 z_index = 1
 position = Vector2(181, 111)
 
-[node name="Habitacion1" type="Node" parent="."]
+[node name="Habitacion1" type="Node" parent="." unique_id=1635045705]
 
-[node name="TextureRect" type="TextureRect" parent="Habitacion1"]
-offset_left = -1.0
-offset_top = 5.0
-offset_right = 1153.0
-offset_bottom = 652.0
+[node name="TextureRect" type="TextureRect" parent="Habitacion1" unique_id=605947199]
+visible = false
+offset_left = 1149.0
+offset_top = -3.0
+offset_right = 1793.5997
+offset_bottom = 1141.018
+rotation = 1.5707964
 texture = ExtResource("2_ohh05")
 expand_mode = 1
 
-[node name="Area2D" type="Area2D" parent="Habitacion1"]
+[node name="Area2D" type="Area2D" parent="Habitacion1" unique_id=994937178]
+visible = false
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Habitacion1" unique_id=907691557]
+navigation_polygon = SubResource("NavigationPolygon_s1fef")
