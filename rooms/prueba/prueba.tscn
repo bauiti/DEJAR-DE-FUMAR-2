@@ -14,15 +14,24 @@
 [ext_resource type="PackedScene" uid="uid://ctxqyradopbnl" path="res://inventario/cigarro_2.tscn" id="12_vwlt2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_s1fef"]
-vertices = PackedVector2Array(3237.7266, 492.34375, 3292.8516, 509.71094, 3244.0703, 590.4375, 3168.4375, 560.7031, 3114.9375, 627.8125, 3201.8906, 690.21875, 3087.6719, 711.6797, 3207.5078, 798.0469, 3004.8906, 784.90625, 3992.2813, 794.03906, 3996.7031, 948.0469, 873.9531, 964, 887.0703, 658.8125, 861.40625, 571.7422, 954.02344, 544.21094, 978.52344, 607.2031, 1006.27344, 689.47656, 880.5078, 785.8125, 1024.5625, 798.10156, 93.97656, 967.9922, 31.382813, 955.46875, 25.023438, 926.0781, 27.773438, 811.4922, 277.4375, 797.9922, 1539.4688, 659, 1593.1094, 659, 1598.2891, 703.03125, 1463.4219, 681.8125, 2599.7266, 794.1172, 2414.0234, 706.2969, 2454.6328, 625.0781, 2524.2734, 636.8281, 2549.8828, 719.34375, 2450.5313, 791.1406, 1832.25, 790, 1696.6016, 798.15625, 1364.8438, 793.9375, 1627.5078, 758.21875, 1408.5234, 739.60156)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5, 6), PackedInt32Array(6, 5, 7, 8), PackedInt32Array(9, 10, 11, 7), PackedInt32Array(12, 13, 14, 15, 16), PackedInt32Array(17, 12, 16, 18, 11), PackedInt32Array(11, 19, 20, 21, 22, 23, 17), PackedInt32Array(24, 25, 26, 27), PackedInt32Array(8, 7, 11, 28), PackedInt32Array(29, 30, 31, 32, 33), PackedInt32Array(33, 32, 28), PackedInt32Array(34, 33, 28, 11, 35), PackedInt32Array(35, 11, 18, 36), PackedInt32Array(37, 35, 36, 38, 27), PackedInt32Array(26, 37, 27)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(15, 927, 18, 802, 277, 788, 871, 776, 877, 660, 849, 565, 960, 532, 988, 604, 1016, 687, 1033, 788, 1360, 784, 1401, 733, 1446, 650, 1474, 616, 1540, 606, 1602, 649, 1608, 700, 1635, 751, 1699, 788, 1832, 780, 2435.3257, 781.1121, 2403, 706, 2449, 614, 2532, 628, 2559, 715, 2605, 784, 3001, 775, 3079, 706, 3106, 623, 3161, 554, 3235, 481, 3308, 504, 3253, 595, 3212, 692, 3217, 788, 4002, 784, 4007, 958, 874, 974, 93, 978, 23, 964)])
+vertices = PackedVector2Array(2499, 561.21094, 2537.0703, 548.52344, 2564.7266, 540.21875, 2566.7734, 576.27344, 2520.7188, 625.40625, 2499, 591.21094, 3239.6406, 490.46094, 3279.039, 485.07813, 3303.2188, 488.2578, 3298.9688, 499.60156, 3244.0703, 590.4375, 3168.4375, 560.7031, 3992.2813, 794.03906, 3996.7031, 948.0469, 873.9531, 964, 3207.5078, 798.0469, 2414.0234, 706.2969, 2456.7969, 620.72656, 2549.8828, 719.34375, 2450.5313, 791.1406, 93.97656, 967.9922, 31.382813, 955.46875, 25.023438, 926.0781, 27.773438, 811.4922, 277.4375, 797.9922, 880.5078, 785.8125, 1024.5625, 798.10156, 3114.9375, 627.8125, 3201.8906, 690.21875, 3087.6719, 711.6797, 3004.8906, 784.90625, 2599.7266, 794.1172, 1454.3438, 655.59375, 1466.2578, 641.10156, 1466.2734, 641.1094, 1832.25, 790, 1696.6016, 798.15625, 1627.5078, 758.21875, 1364.8438, 793.9375, 887.0703, 658.8125, 858.90625, 563.27344, 854.2031, 479.46875, 879.39844, 450.34375, 908.2422, 458.46875, 950.9297, 536.2578, 978.52344, 607.2031, 1006.27344, 689.47656, 1479.2813, 625.3125, 1537.5625, 616.47656, 1592.5938, 654.64844, 1598.2891, 703.03125, 1409.3594, 738.5625)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(16, 17, 5, 4, 18, 19), PackedInt32Array(14, 20, 21, 22, 23, 24, 25, 26), PackedInt32Array(27, 11, 10, 28, 29), PackedInt32Array(29, 28, 15, 30), PackedInt32Array(30, 15, 14, 31), PackedInt32Array(32, 33, 34), PackedInt32Array(19, 18, 31), PackedInt32Array(35, 19, 31, 14, 36), PackedInt32Array(37, 36, 14, 38), PackedInt32Array(39, 40, 41, 42, 43, 44, 45, 46), PackedInt32Array(25, 39, 46, 26), PackedInt32Array(47, 48, 49, 50, 34), PackedInt32Array(51, 32, 34, 50, 37), PackedInt32Array(38, 51, 37), PackedInt32Array(14, 26, 38)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(15, 927, 18, 802, 277, 788, 871, 776, 877, 660, 849, 565, 844, 476, 876, 439, 915, 450, 960, 532, 988, 604, 1016, 687, 1033, 788, 1360, 784, 1401, 733, 1446, 650, 1458.5566, 634.75256, 1474, 616, 1540, 606, 1602, 649, 1608, 700, 1635, 751, 1699, 788, 1832, 780, 2435.3257, 781.1121, 2403, 706, 2449, 614, 2489, 586, 2489, 554, 2534, 539, 2574, 527, 2577, 580, 2532, 628, 2559, 715, 2605, 784, 3001, 775, 3079, 706, 3106, 623, 3161, 554, 3235, 481, 3279, 475, 3317, 480, 3308, 504, 3253, 595, 3212, 692, 3217, 788, 4002, 784, 4007, 958, 874, 974, 93, 978, 23, 964)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
 size = Vector2(196, 157)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khhxn"]
+size = Vector2(111, 78)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wb4oo"]
 size = Vector2(194.45541, 164.85077)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsuaf"]
+size = Vector2(75, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bowr3"]
+size = Vector2(118, 76)
 
 [node name="prueba" type="Node2D" unique_id=1936214658]
 script = ExtResource("1_5boko")
@@ -71,8 +80,19 @@ tooltip_name = "Escuela"
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomItems/salida_escuela" unique_id=718170100]
-position = Vector2(1745, 735)
+position = Vector2(1299, 582)
 shape = SubResource("RectangleShape2D_s1fef")
+
+[node name="salida_plaza" type="Area2D" parent="RoomItems/salida_escuela" unique_id=158820121]
+position = Vector2(-210, -42)
+script = ExtResource("10_emi52")
+exit_direction = "Plaza"
+global_id = "salida_plaza"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomItems/salida_escuela/salida_plaza" unique_id=1440925413]
+position = Vector2(906, 506)
+shape = SubResource("RectangleShape2D_khhxn")
 
 [node name="cigarro1" type="Area2D" parent="RoomItems" unique_id=1292824781]
 process_mode = 1
@@ -102,5 +122,25 @@ position = Vector2(1829, 863)
 gizmo_extents = 0.0
 script = ExtResource("9_5hkkq")
 metadata/_custom_type_script = "uid://chu4bvqgwxuts"
+
+[node name="salida_casa" type="Area2D" parent="RoomItems" unique_id=2101639216]
+script = ExtResource("10_emi52")
+exit_direction = "Casa"
+global_id = "salida_casa"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomItems/salida_casa" unique_id=1713392103]
+position = Vector2(2520.5, 515.5)
+shape = SubResource("RectangleShape2D_qsuaf")
+
+[node name="salida_bar" type="Area2D" parent="RoomItems" unique_id=317044863]
+script = ExtResource("10_emi52")
+exit_direction = "Bar"
+global_id = "salida_bar"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomItems/salida_bar" unique_id=2146716421]
+position = Vector2(3220, 468)
+shape = SubResource("RectangleShape2D_bowr3")
 
 [node name="cigarro2" parent="." unique_id=1361711351 instance=ExtResource("12_vwlt2")]
