@@ -1,0 +1,20 @@
+C:/Program Files/Krita (x64)/bin/ffmpeg.exe -hide_banner -y -y -r 24 -start_number 0 -start_number_range 1 -i C:/Users/ponto/Documents/01.-ESTUDIO_sat/03.- Multimedia IV/02.- TP VIDEOJUEGO - DEJA DE FUMAR 2/DEJAR-DE-FUMAR-2/assets/bocetos/frame%04d.png -vf scale=w=1818:h=1594:flags=bicubic -c:v libopenh264 -b:v 5000k C:/Users/ponto/Documents/01.-ESTUDIO_sat/03.- Multimedia IV/02.- TP VIDEOJUEGO - DEJA DE FUMAR 2/DEJAR-DE-FUMAR-2/assets_making - pepo/NPCS - Proyectso/plaza/PLAZA.mp4
+=====================================================
+Input #0, image2, from 'C:/Users/ponto/Documents/01.-ESTUDIO_sat/03.- Multimedia IV/02.- TP VIDEOJUEGO - DEJA DE FUMAR 2/DEJAR-DE-FUMAR-2/assets/bocetos/frame%04d.png':
+  Duration: 00:00:01.60, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc), 1817x1594 [SAR 2835:2835 DAR 1817:1594], 25 fps, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libopenh264))
+Press [q] to stop, [?] for help
+[libopenh264 @ 000001ce9809c3c0] Slice count will be set automatically
+[libopenh264 @ 000001ce9809c3c0] [OpenH264] this = 0x000001CE992E95A0, Warning:bEnableFrameSkip = 0,bitrate can't be controlled for RC_QUALITY_MODE,RC_BITRATE_MODE and RC_TIMESTAMP_MODE without enabling skip frame.
+Output #0, mp4, to 'C:/Users/ponto/Documents/01.-ESTUDIO_sat/03.- Multimedia IV/02.- TP VIDEOJUEGO - DEJA DE FUMAR 2/DEJAR-DE-FUMAR-2/assets_making - pepo/NPCS - Proyectso/plaza/PLAZA.mp4':
+  Metadata:
+    encoder         : Lavf58.76.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1818x1594 [SAR 1817:1818 DAR 1817:1594], q=2-31, 5000 kb/s, 24 fps, 12288 tbn
+    Metadata:
+      encoder         : Lavc58.134.100 libopenh264
+    Side data:
+      cpb: bitrate max/min/avg: 5000000/0/5000000 buffer size: 0 vbv_delay: N/A
+frame=    1 fps=0.0 q=-0.0 size=       0kB time=00:00:00.00 bitrate=4740.7kbits/s speed=0.00262x    frame=   40 fps=0.0 q=-0.0 Lsize=     982kB time=00:00:01.62 bitrate=4952.4kbits/s speed=3.99x    
+video:981kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.100498%

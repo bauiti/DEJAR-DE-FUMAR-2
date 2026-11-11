@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ctxqyradopbnl"]
 
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_r6sq2"]
-[ext_resource type="Texture2D" uid="uid://rv5k1dgt67bp" path="res://inventario/png-transparent-smoking-cigarette-thumbnail.png" id="2_4lc2v"]
+[ext_resource type="Texture2D" uid="uid://dv5bltm036cd8" path="res://assets/puchoasset.png" id="2_r6sq2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khhxn"]
 size = Vector2(194, 145)
@@ -12,14 +12,15 @@ script = ExtResource("1_r6sq2")
 global_id = "cigarro2"
 esc_script = "res://inventario/cigarro2.esc"
 actions_requiring_target_object = PackedStringArray()
-inventory_texture = ExtResource("2_4lc2v")
-inventory_texture_hovered = ExtResource("2_4lc2v")
+inventory_texture = ExtResource("2_r6sq2")
+inventory_texture_hovered = ExtResource("2_r6sq2")
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=496367339]
-position = Vector2(993, 811)
-scale = Vector2(0.5388889, 0.40677965)
-texture = ExtResource("2_4lc2v")
+modulate = Color(1, 0.45882353, 1, 1)
+position = Vector2(996, 815)
+scale = Vector2(0.1652778, 0.12088983)
+texture = ExtResource("2_r6sq2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2079263836]
 position = Vector2(994, 811.5)

@@ -54,13 +54,13 @@ func hide_inventory():
 	_tween.stop()
 	_tween.reset()
 	var start_pos_y = inventory_scene.position.y
-	var end_pos_y = get_viewport_rect().size.y - _inventory_title_height
+	var end_pos_y = get_viewport_rect().size.y - _inventory_title_height - 280
 	_tween.interpolate_property(
 		inventory_scene,
 		"position:y",
 		start_pos_y,
 		end_pos_y,
-		0.4,
+		0.7,
 		Tween.TransitionType.TRANS_CUBIC
 	)
 	_tween.play()
