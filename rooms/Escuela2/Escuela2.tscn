@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dke4mjnss2pjt"]
+
+[ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_p748s"]
+[ext_resource type="PackedScene" uid="uid://bmnjah5pcyoba" path="res://personajes/mike/mike.scn" id="2_cannw"]
+[ext_resource type="Texture2D" uid="uid://c7t63vtt44st4" path="res://assets_making - pepo/escuela/escuela2/escuela2_fondo.png" id="3_iisyk"]
+[ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_hw7ky"]
+[ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_xj1gw"]
+[ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="6_hw7ky"]
+[ext_resource type="PackedScene" uid="uid://cf8udhkveqjxj" path="res://personajes/Profe/profe.scn" id="6_iisyk"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_s1fef"]
+vertices = PackedVector2Array(1520.8672, 817.96094, 1880.6719, 1064, 12, 1064, 12, 802.10156)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(2, 792, 1524, 808, 1913, 1074, 2, 1074)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
+size = Vector2(135, 264)
+
+[node name="Escuela2" type="Node2D" unique_id=109272777]
+script = ExtResource("1_p748s")
+global_id = "escuela2"
+player_scene = ExtResource("2_cannw")
+metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
+
+[node name="escbackground" type="TextureRect" parent="." unique_id=905642865]
+offset_right = 1922.0
+offset_bottom = 1078.0
+mouse_filter = 2
+texture = ExtResource("3_iisyk")
+expand_mode = 1
+script = ExtResource("4_hw7ky")
+metadata/_custom_type_script = "uid://fnwnfflaoeqp"
+
+[node name="ESCTerrain" type="Node2D" parent="escbackground" unique_id=1352427193]
+script = ExtResource("5_xj1gw")
+metadata/_custom_type_script = "uid://5pbcieq7gpdo"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="escbackground/ESCTerrain" unique_id=1061373463]
+navigation_polygon = SubResource("NavigationPolygon_s1fef")
+
+[node name="RoomObjects" type="Node2D" parent="." unique_id=1589688219]
+
+[node name="ESCExit" type="Area2D" parent="RoomObjects" unique_id=647124905]
+script = ExtResource("6_hw7ky")
+target_scene = "uid://dse4004ubtc2m"
+exit_direction = "Escuela1"
+global_id = "salida_escuela1"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/ESCExit" unique_id=414569552]
+position = Vector2(87.5, 927)
+shape = SubResource("RectangleShape2D_s1fef")
+
+[node name="profe" parent="." unique_id=1669476614 instance=ExtResource("6_iisyk")]
+position = Vector2(1204, 1093)

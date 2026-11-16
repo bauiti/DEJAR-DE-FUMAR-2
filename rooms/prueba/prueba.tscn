@@ -88,6 +88,7 @@ shape = SubResource("RectangleShape2D_s1fef")
 [node name="salida_plaza" type="Area2D" parent="RoomItems/salida_escuela" unique_id=158820121]
 position = Vector2(-210, -42)
 script = ExtResource("10_emi52")
+target_scene = "uid://bh31kd2a0uwao"
 exit_direction = "Plaza"
 global_id = "salida_plaza"
 metadata/_custom_type_script = "uid://btt4cprco53ec"
