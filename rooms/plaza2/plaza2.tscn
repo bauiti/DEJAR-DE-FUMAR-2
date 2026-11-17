@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://botwq5s3diomv"]
+
+[ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_hikss"]
+[ext_resource type="PackedScene" uid="uid://bmnjah5pcyoba" path="res://personajes/mike/mike.scn" id="2_o5y23"]
+[ext_resource type="Texture2D" uid="uid://bloxnbwojobc5" path="res://assets_making - pepo/plaza/plaza2/fondo_plaza2.png" id="3_2rhlq"]
+[ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_qhhn4"]
+[ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_8m10c"]
+[ext_resource type="Texture2D" uid="uid://bfubrlsvus7ys" path="res://rooms/prueba/degrade_blanco_negro_1920x1080.bmp" id="6_2rhlq"]
+[ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_pye1m"]
+[ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_o5y23"]
+[ext_resource type="PackedScene" uid="uid://cupoboykyyfh5" path="res://personajes/mike/pibes_plaza.scn" id="9_qhhn4"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_khhxn"]
+vertices = PackedVector2Array(1893.2188, 358.9375, 1909.7578, 1077.9688, 17.8125, 1073.0234, 4.1875, 348.04688)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1903, 349, -6, 338, 8, 1083, 1920, 1088)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
+size = Vector2(254, 618.5)
+
+[node name="plaza2" type="Node2D" unique_id=401490144]
+script = ExtResource("1_hikss")
+global_id = "plaza2"
+esc_script = "res://rooms/plaza2/scripts/plaza2.esc"
+player_scene = ExtResource("2_o5y23")
+
+[node name="escbackground" type="TextureRect" parent="." unique_id=961998837]
+offset_right = 1922.0
+offset_bottom = 1083.0
+mouse_filter = 2
+texture = ExtResource("3_2rhlq")
+expand_mode = 1
+script = ExtResource("4_qhhn4")
+
+[node name="WalkableArea" type="Node2D" parent="." unique_id=1997183361]
+script = ExtResource("5_8m10c")
+scales = ExtResource("6_2rhlq")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="WalkableArea" unique_id=627154055]
+navigation_polygon = SubResource("NavigationPolygon_khhxn")
+
+[node name="RoomObjects" type="Node2D" parent="." unique_id=1942330507]
+
+[node name="Polygon2D" type="Polygon2D" parent="RoomObjects" unique_id=1520871826]
+z_index = 1080
+polygon = PackedVector2Array(864, 360, 866, 404, 852, 417, 847, 520, 815, 539, 811, 636, 813, 652, 788, 658, 769, 706, 726, 713, 600, 776, 1403, 784, 1288, 711, 1258, 709, 1268, 613, 1252, 606, 1231, 569, 1194, 566, 1169, 596, 1157, 612, 1144, 624, 1128, 551, 1164, 380, 1141, 355)
+
+[node name="StartPos" type="Marker2D" parent="." unique_id=1168649436]
+position = Vector2(1807, 889)
+script = ExtResource("6_pye1m")
+global_id = "plaza2_start_pos"
+is_start_location = true
+
+[node name="salida_plaza" type="Area2D" parent="." unique_id=1664118051]
+script = ExtResource("7_o5y23")
+target_scene = "uid://bh31kd2a0uwao"
+exit_direction = "plaza"
+global_id = "salida_plaza"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="salida_plaza" unique_id=68678180]
+position = Vector2(1776, 727.25)
+shape = SubResource("RectangleShape2D_s1fef")
+
+[node name="pibes_plaza" parent="." unique_id=2105559160 instance=ExtResource("9_qhhn4")]
+position = Vector2(368, 918)

@@ -2,24 +2,25 @@
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_7hcpg"]
 [ext_resource type="PackedScene" uid="uid://bmnjah5pcyoba" path="res://personajes/mike/mike.scn" id="2_mr6rl"]
-[ext_resource type="Texture2D" uid="uid://c60gydavgqa1f" path="res://assets/entornos_demo/wallpaperflare.com_wallpaper.jpg" id="3_7hcpg"]
+[ext_resource type="Texture2D" uid="uid://b5iexbxbs4fl" path="res://assets_making - pepo/escuela/escuela1/escuela1_fondo.png" id="3_e52lf"]
 [ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_e52lf"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_sblb2"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_lhdw8"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="6_mr6rl"]
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="7_5e0ao"]
 [ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="8_e52lf"]
+[ext_resource type="PackedScene" uid="uid://bn6d6sa3ifo3d" path="res://personajes/kiosquera/koisquera.scn" id="10_sblb2"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_s1fef"]
-vertices = PackedVector2Array(871.27344, 583.09375, -1023.9375, 600.89844, -1022.03906, 216.60938, -860.46875, 202.97656, -394.4922, 181.99219, -111.09375, 251.90625, -154.28125, 168.46875, -145.27344, 218.95313, 17.382813, 223.92969, 109.50781, 217.47656, 133.57813, 275.64063, 784.6875, 316.92188, 874.1875, 331.9922, 880.28125, 344.84375, 883.4531, 369.39844, 877.1172, 375.7422, 491.0625, 292.96094, 715.9922, 309.95313, 246.88281, 265.04688)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(4, 6, 7), PackedInt32Array(8, 9, 10, 5), PackedInt32Array(11, 12, 13, 14, 15), PackedInt32Array(16, 17, 11, 15, 0, 10), PackedInt32Array(4, 7, 5), PackedInt32Array(0, 5, 10), PackedInt32Array(16, 10, 18)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-1032, 207, -1027, 207, -861, 193, -395, 172, -146, 158, -136, 214, -108, 241, 16, 214, 116, 207, 140, 265, 247, 255, 492, 283, 717, 300, 786, 307, 881, 323, 890, 342, 894, 373, 887, 380, 881, 593, -1034, 611)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_qsuaf"]
+vertices = PackedVector2Array(1620.0313, 709, 1908.2031, 707.0625, 1915.7813, 1063.0234, 24.390625, 1067.9766, 18.140625, 1047.5391, 127.3125, 999.02344, 213.82031, 946.7578, 576.25, 790.3828, 537.72656, 785.2969, 706.8672, 709)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(0, 5, 6, 7), PackedInt32Array(6, 8, 7), PackedInt32Array(0, 7, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(159, 974, 12, 1057, 281, 749, 501, 663, 574, 780, 704, 699, 1620, 699, 1918, 697, 1926, 1073, 17, 1078, 6, 1042)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
-size = Vector2(169, 467)
+[sub_resource type="CircleShape2D" id="CircleShape2D_c3h74"]
+radius = 92.43917
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_khhxn"]
-size = Vector2(147, 226.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsuaf"]
+size = Vector2(188, 352)
 
 [node name="Escuela" type="Node2D" unique_id=501197607]
 script = ExtResource("1_7hcpg")
@@ -30,18 +31,18 @@ player_scene = ExtResource("2_mr6rl")
 [node name="escbackground" type="TextureRect" parent="." unique_id=373755693]
 offset_left = 3.0
 offset_top = 8.0
-offset_right = 1922.0
+offset_right = 1925.0
 offset_bottom = 1080.0
 mouse_filter = 2
-texture = ExtResource("3_7hcpg")
+texture = ExtResource("3_e52lf")
+expand_mode = 1
 script = ExtResource("4_e52lf")
 
 [node name="WalkableArea" type="Node2D" parent="." unique_id=401991881]
 script = ExtResource("5_sblb2")
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="WalkableArea" unique_id=1141830170]
-position = Vector2(1033, 476)
-navigation_polygon = SubResource("NavigationPolygon_s1fef")
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="WalkableArea" unique_id=1083674440]
+navigation_polygon = SubResource("NavigationPolygon_qsuaf")
 
 [node name="RoomObjects" type="Node2D" parent="." unique_id=986914273]
 position = Vector2(-2, -10)
@@ -55,8 +56,8 @@ tooltip_name = "Lobby"
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/salida_lobby" unique_id=168967000]
-position = Vector2(97, 805)
-shape = SubResource("RectangleShape2D_s1fef")
+position = Vector2(411, 804)
+shape = SubResource("CircleShape2D_c3h74")
 
 [node name="buzon" type="Area2D" parent="RoomObjects" unique_id=239891416]
 process_mode = 1
@@ -68,17 +69,27 @@ tooltip_name = "buzon"
 actions_requiring_target_object = PackedStringArray()
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/buzon" unique_id=27286790]
-position = Vector2(41, -97)
-shape = SubResource("RectangleShape2D_khhxn")
-
 [node name="ESCInteractionLocation" type="Marker2D" parent="RoomObjects/buzon" unique_id=1199275990]
 position = Vector2(39, 8)
 script = ExtResource("8_e52lf")
 metadata/_custom_type_script = "uid://chu4bvqgwxuts"
 
+[node name="salida_escuela_2" type="Area2D" parent="RoomObjects" unique_id=1677825011]
+script = ExtResource("6_mr6rl")
+target_scene = "uid://dke4mjnss2pjt"
+exit_direction = "escuela_2"
+global_id = "salida_escuela2"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/salida_escuela_2" unique_id=456043802]
+position = Vector2(1819, 900)
+shape = SubResource("RectangleShape2D_qsuaf")
+
 [node name="StartPos" type="Marker2D" parent="." unique_id=1485101989]
-position = Vector2(37, 1023)
+position = Vector2(351, 886)
 script = ExtResource("6_lhdw8")
 global_id = "Escuela_start_pos"
 is_start_location = true
+
+[node name="koisquera" parent="." unique_id=1917197873 instance=ExtResource("10_sblb2")]
+position = Vector2(945, 548)

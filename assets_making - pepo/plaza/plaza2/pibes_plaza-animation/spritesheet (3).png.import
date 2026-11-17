@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://piiwuowkgfdb"
-path="res://.godot/imported/el profe_png+.png-d2c62d2b5dfb5494f7c3b033e423f393.ctex"
+uid="uid://b8lqj73mpokcl"
+path="res://.godot/imported/spritesheet (3).png-7fd614359ab874d9a391b332bd3cd147.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets_making - pepo/bocetos/el profe_png+.png"
-dest_files=["res://.godot/imported/el profe_png+.png-d2c62d2b5dfb5494f7c3b033e423f393.ctex"]
+source_file="res://assets_making - pepo/plaza/plaza2/pibes_plaza-animation/spritesheet (3).png"
+dest_files=["res://.godot/imported/spritesheet (3).png-7fd614359ab874d9a391b332bd3cd147.ctex"]
 
 [params]
 
