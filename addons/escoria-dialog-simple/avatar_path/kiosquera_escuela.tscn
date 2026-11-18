@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dfttmpcc76bgn"]
+
+[ext_resource type="Texture2D" uid="uid://e4wwuseslvn" path="res://personajes/kiosquera/kioskera_png.png" id="1_tmom6"]
+
+[node name="KiosqueraEscuela" type="Node2D" unique_id=202576648]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1975630517]
+position = Vector2(272, 141)
+scale = Vector2(0.328, 0.32464454)
+texture = ExtResource("1_tmom6")

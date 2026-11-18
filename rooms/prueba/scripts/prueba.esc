@@ -1,0 +1,2 @@
+:setup
+	play_snd("res://audio/CiggydaGame.wav", "_music")

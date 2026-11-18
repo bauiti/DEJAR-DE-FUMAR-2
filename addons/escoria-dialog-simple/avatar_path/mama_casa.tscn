@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://6y5jcybikt8g"]
+
+[ext_resource type="Texture2D" uid="uid://cw8xvu6bl7sig" path="res://assets/NPC_armado_Assets_Demo/frame0000.png" id="1_tcbm8"]
+
+[node name="MamaCasa" type="Node2D" unique_id=1953316013]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1343523921]
+position = Vector2(271.99997, 142)
+scale = Vector2(0.38182652, 0.3001377)
+texture = ExtResource("1_tcbm8")

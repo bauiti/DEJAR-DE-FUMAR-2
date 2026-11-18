@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://hqeh0amtaspw"]
+
+[ext_resource type="Texture2D" uid="uid://tvdvlf4rol1i" path="res://assets_making - pepo/bar/bartender_png.png" id="1_matev"]
+
+[node name="BartenderBar" type="Node2D" unique_id=988711173]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1072605600]
+position = Vector2(387, 189.00002)
+scale = Vector2(0.4784445, 0.43838862)
+texture = ExtResource("1_matev")

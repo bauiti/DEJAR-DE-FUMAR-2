@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_7na50"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_yc0wv"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_ql74f"]
-[ext_resource type="PackedScene" uid="uid://cpswaxnphw78a" path="res://personajes/mike/nene_chori.scn" id="8_qq3jr"]
+[ext_resource type="PackedScene" uid="uid://0rh2wlloki51" path="res://personajes/mike/nene_chori.scn" id="8_qq3jr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6eo5u"]
 load_path = "res://.godot/imported/degrade_blanco_negro_1920x1080.bmp-24a06bee28b2bf4306eabd49dd89a02e.ctex"
@@ -25,7 +25,7 @@ size = Vector2(168.75, 543)
 
 [node name="plaza" type="Node2D" unique_id=1951408795]
 script = ExtResource("1_6eo5u")
-global_id = "plaza"
+global_id = "plaza1"
 esc_script = "res://rooms/plaza/scripts/plaza.esc"
 player_scene = ExtResource("2_ql74f")
 
@@ -64,9 +64,6 @@ metadata/_custom_type_script = "uid://btt4cprco53ec"
 position = Vector2(127, 835)
 shape = SubResource("RectangleShape2D_s1fef")
 
-[node name="nene_chori" parent="." unique_id=462721667 instance=ExtResource("8_qq3jr")]
-position = Vector2(443, 1028)
-
 [node name="salida_lobby" type="Area2D" parent="." unique_id=553577932]
 script = ExtResource("7_ql74f")
 target_scene = "uid://cfidrmoy8r1ne"
@@ -77,3 +74,6 @@ metadata/_custom_type_script = "uid://btt4cprco53ec"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="salida_lobby" unique_id=113522450]
 position = Vector2(1831, 799)
 shape = SubResource("RectangleShape2D_khhxn")
+
+[node name="nene_chori" parent="." unique_id=462721667 instance=ExtResource("8_qq3jr")]
+position = Vector2(452, 999)
