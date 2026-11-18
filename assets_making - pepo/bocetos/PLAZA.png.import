@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets_making - pepo/bocetos/PLAZA.png.import
-uid="uid://cc2j2ixll3jxj"
+uid="uid://cwy4g8p7s4qgo"
 path="res://.godot/imported/PLAZA.png-407125437e995dee14ca69e3eb6c9d4f.ctex"
-========
-uid="uid://piiwuowkgfdb"
-path="res://.godot/imported/el profe_png+.png-d2c62d2b5dfb5494f7c3b033e423f393.ctex"
->>>>>>>> 3b025beb5c62e88afcf9848ef644c2666dc3d9f8:assets_making - pepo/bocetos/el profe_png+.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets_making - pepo/bocetos/PLAZA.png.import
 source_file="res://assets_making - pepo/bocetos/PLAZA.png"
 dest_files=["res://.godot/imported/PLAZA.png-407125437e995dee14ca69e3eb6c9d4f.ctex"]
-========
-source_file="res://assets_making - pepo/bocetos/el profe_png+.png"
-dest_files=["res://.godot/imported/el profe_png+.png-d2c62d2b5dfb5494f7c3b033e423f393.ctex"]
->>>>>>>> 3b025beb5c62e88afcf9848ef644c2666dc3d9f8:assets_making - pepo/bocetos/el profe_png+.png.import
 
 [params]
 

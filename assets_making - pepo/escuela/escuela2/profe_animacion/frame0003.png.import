@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cupod67bru1qm"
-path="res://.godot/imported/kioskera.png-de9dfe68e872657d737b15d84ce27db2.ctex"
+uid="uid://cnomech8237ib"
+path="res://.godot/imported/frame0003.png-c66e670917661b83fa9b90735031aa92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets_making - pepo/escuela/escuela1/kioskera.png"
-dest_files=["res://.godot/imported/kioskera.png-de9dfe68e872657d737b15d84ce27db2.ctex"]
+source_file="res://assets_making - pepo/escuela/escuela2/profe_animacion/frame0003.png"
+dest_files=["res://.godot/imported/frame0003.png-c66e670917661b83fa9b90735031aa92.ctex"]
 
 [params]
 
