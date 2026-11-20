@@ -13,13 +13,12 @@
 					say("mike", "¿Cómo es eso?", "avatar")
 					say("pibes_plaza", "Porque el mundo esta enfermo. Enfermo y desesperado. Intentan curarse. Lo intentan con fármacos, enviciandose aún más, queriendo detener solos a la muerte. Nosotros, en cambio, nos drogamos en serio, nos drogamos como locos. Por eso no nos podemos separar: No tendriamos lugar.")
 					
-					?! 
+					?!
 						- "Repregunta"
 							say("mike", "¿Que pasaria si se separasen?", "avatar")
 							say("pibes_plaza", "Hubo una vez una niña... Ella empezó a fumar. A fumar sola. Este pueblo inmundo la excluyó. Cuando empezó a circular la noticia de que la niña había desaparecido por Abstinencia crónica, la trataron de Loca... Cuando murió, nadie se hizo cargo de quién le había dado su primer cigarrillo. Pero aún así, fue más fácil culpar al tabaquismo, culpar a la enfermedad. Nosotros no somos menos culpables, pero tampoco jueces... Eso nos condena a unirnos.")
 							
 							?!
-							
 								- "Soguear un cigarro"
 									say("mike", "¿No tendrán un cigarro por ahí?", "avatar")
 									say("pibes_plaza", "Un cigarro... Claro que tenemos, tenemos para nosotros. Te lo podemos dar, pero de ser así, no lo vamos a poder fumar nosotros. Y nosotros necesitamos fumar... ¿Entendés? Si nosotros no fumamos nos ponemos sanos, y eso no puede pasar, amigo, nosotros somos LOCOS... ¿Entendés?")

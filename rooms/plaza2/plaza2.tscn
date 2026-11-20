@@ -17,7 +17,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(1903, 349, -6, 338, 8, 1083, 1920, 1088)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
-size = Vector2(254, 618.5)
+size = Vector2(120, 500)
 
 [node name="plaza2" type="Node2D" unique_id=401490144]
 script = ExtResource("1_hikss")
@@ -48,24 +48,26 @@ z_index = 1080
 polygon = PackedVector2Array(864, 360, 866, 404, 852, 417, 847, 520, 815, 539, 811, 636, 813, 652, 788, 658, 769, 706, 726, 713, 600, 776, 1403, 784, 1288, 711, 1258, 709, 1268, 613, 1252, 606, 1231, 569, 1194, 566, 1169, 596, 1157, 612, 1144, 624, 1128, 551, 1164, 380, 1141, 355)
 
 [node name="StartPos" type="Marker2D" parent="." unique_id=1168649436]
-position = Vector2(1807, 889)
+position = Vector2(1520, 890)
 script = ExtResource("6_pye1m")
 global_id = "plaza2_start_pos"
 is_start_location = true
 
-[node name="salida_plaza" type="Area2D" parent="." unique_id=1664118051]
+[node name="salida_plaza1" type="Area2D" parent="." unique_id=1664118051]
 script = ExtResource("7_o5y23")
-target_scene = "uid://bh31kd2a0uwao"
+target_scene = "res://rooms/plaza/plaza.tscn"
 exit_direction = "plaza"
-global_id = "salida_plaza"
+global_id = "salida_plaza1"
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="salida_plaza" unique_id=68678180]
-position = Vector2(1776, 727.25)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="salida_plaza1" unique_id=68678180]
+position = Vector2(1860, 800)
 shape = SubResource("RectangleShape2D_s1fef")
 
 [node name="pibes_plaza" parent="." unique_id=2105559160 instance=ExtResource("9_qhhn4")]
 position = Vector2(368, 918)
+esc_script = "res://personajes/pibes_plaza/pibes_plaza.esc"
 
 [node name="cigarro2" parent="." unique_id=1361711351 instance=ExtResource("10_8m10c")]
+visible = false
 position = Vector2(-1162, -724)

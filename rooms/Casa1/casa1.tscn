@@ -48,7 +48,7 @@ navigation_polygon = SubResource("NavigationPolygon_khhxn")
 
 [node name="salida_casa2" type="Area2D" parent="." unique_id=1101144885]
 script = ExtResource("7_d21xg")
-target_scene = "uid://hus56rfq0wme"
+target_scene = "uid://22gdexptidb5"
 exit_direction = "casa2"
 global_id = "salida_casa2"
 metadata/_custom_type_script = "uid://btt4cprco53ec"

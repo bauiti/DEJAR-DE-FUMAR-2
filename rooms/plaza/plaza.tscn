@@ -55,7 +55,7 @@ is_start_location = true
 
 [node name="salida_plaza_2" type="Area2D" parent="." unique_id=1856582900]
 script = ExtResource("7_ql74f")
-target_scene = "uid://botwq5s3diomv"
+target_scene = "res://rooms/plaza2/plaza2.tscn"
 exit_direction = "plaza2"
 global_id = "salida_plaza2"
 metadata/_custom_type_script = "uid://btt4cprco53ec"

@@ -173,14 +173,27 @@ func _compiler_shim(source: String, filename: String = "", associated_global_id:
 func load_esc_file(path: String, associated_global_id: String = "") -> ESCScript:
 	ESCSafeLogging.log_debug(self, "Loading file '%s' for parsing..." % path)
 
-	if not FileAccess.file_exists(path):
+	var resolved_path: String = _resolve_esc_file_path(path)
+	if resolved_path.is_empty() or not FileAccess.file_exists(resolved_path):
 		ESCSafeLogging.log_error(self, "Unable to find ESC file: '%s' could not be found." % path)
 
 		return null
 
-	var file = FileAccess.open(path, FileAccess.READ)
+	var file = FileAccess.open(resolved_path, FileAccess.READ)
 
-	return _compiler_shim(file.get_as_text(), path, associated_global_id)
+	return _compiler_shim(file.get_as_text(), resolved_path, associated_global_id)
+
+
+## Resolves Godot 4 `uid://` references to a `res://` path so FileAccess can open the script.
+func _resolve_esc_file_path(path: String) -> String:
+	if not path.begins_with("uid://"):
+		return path
+
+	var uid: int = ResourceUID.text_to_id(path)
+	if uid == ResourceUID.INVALID_ID:
+		return ""
+
+	return ResourceUID.get_id_path(uid)
 
 
 ## Compiles the passed-in script. TODO: `path` is extraneous and left in for legacy purposes; at some point, this will be removed which will require updating other methods that reference this one to ensure they don't pass in a second argument.[br]
