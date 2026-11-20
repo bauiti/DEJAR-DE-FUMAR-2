@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://encuqbaomc46"]
+
+[ext_resource type="Texture2D" uid="uid://gsk7qy56s24r" path="res://personajes/Profe/el profe_png+.png" id="1_jhccj"]
+
+[node name="ProfeEscuela" type="Node2D" unique_id=1896209774]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=569107096]
+position = Vector2(403, 157)
+scale = Vector2(0.5130774, 0.592294)
+texture = ExtResource("1_jhccj")
+flip_h = true

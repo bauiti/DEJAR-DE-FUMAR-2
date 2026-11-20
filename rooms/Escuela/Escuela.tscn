@@ -12,19 +12,19 @@
 [ext_resource type="PackedScene" uid="uid://bn6d6sa3ifo3d" path="res://personajes/kiosquera/koisquera.scn" id="10_sblb2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qsuaf"]
-vertices = PackedVector2Array(1620.0313, 709, 1908.2031, 707.0625, 1915.7813, 1063.0234, 24.390625, 1067.9766, 18.140625, 1047.5391, 127.3125, 999.02344, 213.82031, 946.7578, 576.25, 790.3828, 537.72656, 785.2969, 706.8672, 709)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(0, 5, 6, 7), PackedInt32Array(6, 8, 7), PackedInt32Array(0, 7, 9)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(159, 974, 12, 1057, 281, 749, 501, 663, 574, 780, 704, 699, 1620, 699, 1918, 697, 1926, 1073, 17, 1078, 6, 1042)])
+vertices = PackedVector2Array(126.71875, 555.15625, 526.6406, 385.8203, 544.7031, 792.0078, 24.796875, 1044.5781, 1908.0313, 698.71875, 1915.7813, 1063.0234, 24.390625, 1067.9766, 18.140625, 1047.5391, 1462.1172, 713.02344, 1626.4688, 499.3125, 1692.7266, 245.90625, 1855.1484, 244.10156, 1871.8281, 381.27344, 1840.5625, 496.28906, 1563.0078, 642.60156, 706.39844, 709.0078)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 3), PackedInt32Array(4, 3, 2, 8), PackedInt32Array(9, 10, 11, 12, 13), PackedInt32Array(9, 13, 4, 14), PackedInt32Array(8, 14, 4), PackedInt32Array(8, 2, 15)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(159, 974, 12, 1057, 118, 548, 536, 371, 554, 776, 704, 699, 1459, 703, 1555, 636, 1617, 496, 1685, 236, 1864, 234, 1882, 382, 1851, 496, 1918, 697, 1926, 1073, 17, 1078, 6, 1042)])
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c3h74"]
 radius = 92.43917
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsuaf"]
-size = Vector2(188, 352)
+size = Vector2(140, 218)
 
 [node name="Escuela" type="Node2D" unique_id=501197607]
 script = ExtResource("1_7hcpg")
-global_id = "Escuela"
+global_id = "escuela1"
 esc_script = "res://rooms/Escuela/scripts/Escuela.esc"
 player_scene = ExtResource("2_mr6rl")
 
@@ -56,7 +56,7 @@ tooltip_name = "Lobby"
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/salida_lobby" unique_id=168967000]
-position = Vector2(411, 804)
+position = Vector2(287, 775)
 shape = SubResource("CircleShape2D_c3h74")
 
 [node name="buzon" type="Area2D" parent="RoomObjects" unique_id=239891416]
@@ -82,7 +82,7 @@ global_id = "salida_escuela2"
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/salida_escuela_2" unique_id=456043802]
-position = Vector2(1819, 900)
+position = Vector2(1767, 381)
 shape = SubResource("RectangleShape2D_qsuaf")
 
 [node name="StartPos" type="Marker2D" parent="." unique_id=1485101989]
@@ -92,4 +92,4 @@ global_id = "Escuela_start_pos"
 is_start_location = true
 
 [node name="koisquera" parent="." unique_id=1917197873 instance=ExtResource("10_sblb2")]
-position = Vector2(945, 548)
+position = Vector2(942, 541)

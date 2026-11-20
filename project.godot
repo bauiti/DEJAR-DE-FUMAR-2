@@ -70,7 +70,7 @@ debug/enable_room_selector=false
 debug/room_selector_room_dir=""
 debug/enable_hover_stack_viewer=false
 debug/perform_script_analysis_at_runtime=true
-ui/default_dialog_type="floating"
+ui/default_dialog_type="avatar"
 ui/default_transition="curtain"
 ui/transition_paths=["res://addons/escoria-core/game/scenes/transitions/shaders/"]
 ui/inventory_item_size=Vector2(72, 72)
@@ -82,8 +82,7 @@ sound/sfx_volume=1
 sound/ambient_volume=1
 sound/speech_volume=1
 sound/speech_enabled=true
-sound/speech_folder="res://speech"
-sound/speech_extension="ogg"
+sound/speech_extension="wav"
 platform/skip_cache=false
 platform/skip_cache.mobile=true
 dialog_simple/avatars_path="res://game/dialog_avatars"
@@ -96,6 +95,7 @@ dialog_simple/stop_talking_animation_on="End of audio"
 internal/esc_change_verb_created_by_simplemouse_plugin=true
 wizard/path_to_rooms="res://rooms"
 ui/inventory_items_path=""
+sound/speech_folder="res://assets_making - pepo/plaza/dialogo - audios/"
 
 [input]
 

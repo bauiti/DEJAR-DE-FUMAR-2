@@ -2,6 +2,20 @@ extends Node
 ## This is Escoria's singleton script.
 ## It holds accessors to some utils, such as Escoria's logger.
 
+var avatares =  {
+	"pibesPlaza": "res://addons/escoria-dialog-simple/avatar_path/pibes_plaza.tscn",
+	"profeEscuela": "res://addons/escoria-dialog-simple/avatar_path/profe_escuela.tscn",
+	"nenechoriPlaza": "res://addons/escoria-dialog-simple/avatar_path/nenechori_plaza.tscn",
+	"chicaBar": "res://addons/escoria-dialog-simple/avatar_path/chica_bar.tscn",
+	"bartenderBar": "res://addons/escoria-dialog-simple/avatar_path/bartender_bar.tscn",
+	"kiosqueraEscuela": "res://addons/escoria-dialog-simple/avatar_path/kiosquera_escuela.tscn",
+	"mamaCasa": "res://addons/escoria-dialog-simple/avatar_path/mama_casa.tscn",
+	"papaCasa": "res://addons/escoria-dialog-simple/avatar_path/papa_casa.tscn"
+	
+	}
+	
+
+
 ## Signal sent when Escoria starts a new game[br]
 ## [br]
 ## #### Parameters[br]

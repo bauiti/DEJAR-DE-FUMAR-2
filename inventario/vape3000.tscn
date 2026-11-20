@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cnucdb0g7d38f"]
+
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_cofyk"]
+[ext_resource type="Texture2D" uid="uid://dlpdr6pltg03s" path="res://assets_making - pepo/objetos/vape3000_2.png" id="2_gnax7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
+size = Vector2(175, 178)
+
+[node name="Vape3000" type="Area2D" unique_id=365518308]
+process_mode = 1
+script = ExtResource("1_cofyk")
+global_id = "Vape3000"
+actions_requiring_target_object = PackedStringArray()
+inventory_texture = ExtResource("2_gnax7")
+inventory_texture_hovered = ExtResource("2_gnax7")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2073232815]
+position = Vector2(192.62497, 241.375)
+scale = Vector2(0.1655092, 0.11675824)
+texture = ExtResource("2_gnax7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=429520921]
+position = Vector2(199.5, 245)
+shape = SubResource("RectangleShape2D_s1fef")

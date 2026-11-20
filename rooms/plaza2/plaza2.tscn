@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bfubrlsvus7ys" path="res://rooms/prueba/degrade_blanco_negro_1920x1080.bmp" id="6_2rhlq"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_pye1m"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_o5y23"]
-[ext_resource type="PackedScene" uid="uid://cupoboykyyfh5" path="res://personajes/mike/pibes_plaza.scn" id="9_qhhn4"]
+[ext_resource type="PackedScene" uid="uid://cupoboykyyfh5" path="res://personajes/pibes_plaza/pibes_plaza.scn" id="9_qhhn4"]
+[ext_resource type="PackedScene" uid="uid://ctxqyradopbnl" path="res://inventario/cigarro_2.tscn" id="10_8m10c"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_khhxn"]
 vertices = PackedVector2Array(1893.2188, 358.9375, 1909.7578, 1077.9688, 17.8125, 1073.0234, 4.1875, 348.04688)
@@ -42,6 +43,7 @@ navigation_polygon = SubResource("NavigationPolygon_khhxn")
 [node name="RoomObjects" type="Node2D" parent="." unique_id=1942330507]
 
 [node name="Polygon2D" type="Polygon2D" parent="RoomObjects" unique_id=1520871826]
+visible = false
 z_index = 1080
 polygon = PackedVector2Array(864, 360, 866, 404, 852, 417, 847, 520, 815, 539, 811, 636, 813, 652, 788, 658, 769, 706, 726, 713, 600, 776, 1403, 784, 1288, 711, 1258, 709, 1268, 613, 1252, 606, 1231, 569, 1194, 566, 1169, 596, 1157, 612, 1144, 624, 1128, 551, 1164, 380, 1141, 355)
 
@@ -64,3 +66,6 @@ shape = SubResource("RectangleShape2D_s1fef")
 
 [node name="pibes_plaza" parent="." unique_id=2105559160 instance=ExtResource("9_qhhn4")]
 position = Vector2(368, 918)
+
+[node name="cigarro2" parent="." unique_id=1361711351 instance=ExtResource("10_8m10c")]
+position = Vector2(-1162, -724)

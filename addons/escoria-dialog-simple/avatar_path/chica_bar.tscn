@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cyt3u04pgchxk"]
+
+[ext_resource type="Texture2D" uid="uid://bp1q880kisih1" path="res://assets_making - pepo/bar/chica_bar_png.png" id="1_072cl"]
+
+[node name="ChicaBar" type="Node2D" unique_id=2006714265]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1661663913]
+position = Vector2(131.00002, 152.00002)
+scale = Vector2(0.44911113, 0.43276066)
+texture = ExtResource("1_072cl")
+flip_h = true

@@ -72,7 +72,7 @@ func hide_inventory():
 
 func detector_in():
 	if not inventory_visible:
-		inventory_scene.get_node("MarginContainer/ScrollContainer/container").item_focused = false
+		$panel/slot_manager.item_focused = false
 		show_inventory()
 	$panel/detector_out.show()
 
@@ -80,9 +80,16 @@ func detector_in():
 func detector_out():
 	if inventory_visible:
 		hide_inventory()
-	$panel/detector_out.hide()
+	$panel/slot_manager.hide()
 
 
 
 func _on_detector_out_gui_input(event):
 	detector_out()
+	
+func _buscar_slot_libre():
+	for hijo in $panel.get_children():
+		if hijo is MarginContainer:
+			if hijo.get_child_count() == 0:
+				return hijo
+	return null

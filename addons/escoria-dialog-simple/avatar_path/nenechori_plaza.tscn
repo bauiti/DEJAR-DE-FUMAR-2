@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c5vae4q6qi63p"]
+
+[ext_resource type="Texture2D" uid="uid://bcd8ykg8qf45e" path="res://assets_making - pepo/plaza/nene sanguche.png" id="1_qsnc7"]
+
+[node name="NenechoriPlaza" type="Node2D" unique_id=814558754]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=629887143]
+position = Vector2(260, 91)
+scale = Vector2(0.3583333, 0.36255923)
+texture = ExtResource("1_qsnc7")

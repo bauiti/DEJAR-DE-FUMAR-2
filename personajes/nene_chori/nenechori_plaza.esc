@@ -1,0 +1,12 @@
+:talk
+
+	say("mike", "Hello!", "avatar")
+	say("nene_chori", "How can I help you?", "avatar")
+
+	?!
+		- "me quiero cortar la garcha"
+			say("mike", "la puta que me pario", "avatar")
+
+		- "la puta que me pario"
+			say("mike", "la puta que me pario", "avatar")
+			done
