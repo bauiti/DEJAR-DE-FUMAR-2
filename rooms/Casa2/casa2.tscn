@@ -33,5 +33,6 @@ navigation_polygon = SubResource("NavigationPolygon_s1fef")
 [node name="RoomObjects" type="Node2D" parent="." unique_id=687087783]
 
 [node name="ESCExit" type="Area2D" parent="." unique_id=441886363]
+visible = false
 script = ExtResource("5_ggmn5")
 metadata/_custom_type_script = "uid://btt4cprco53ec"
