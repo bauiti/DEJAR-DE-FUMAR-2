@@ -127,6 +127,7 @@ metadata/_custom_type_script = "uid://chu4bvqgwxuts"
 
 [node name="salida_casa" type="Area2D" parent="RoomItems" unique_id=2101639216]
 script = ExtResource("10_emi52")
+target_scene = "uid://bssj3qp4qrlwy"
 exit_direction = "Casa"
 global_id = "salida_casa"
 metadata/_custom_type_script = "uid://btt4cprco53ec"
