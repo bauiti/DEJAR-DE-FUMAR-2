@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bssj3qp4qrlwy"]
+
+[ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_kakxm"]
+[ext_resource type="PackedScene" uid="uid://bmnjah5pcyoba" path="res://personajes/mike/mike.scn" id="2_tkapw"]
+[ext_resource type="Texture2D" uid="uid://bjsr7ui74eqd" path="res://rooms/Casa1/assets/921196951b362f8d1ac67b48204b415b.jpg" id="3_7016x"]
+[ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="3_tkapw"]
+[ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="4_7016x"]
+[ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_tkapw"]
+[ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_d21xg"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_khhxn"]
+vertices = PackedVector2Array(128.82813, 347.92188, 143.63281, 239.0625, 206.3125, 285.28125, 247.60938, 939, 45.9375, 671.5, 26.492188, 1071.0703, 1920.1094, 1084.9063, 530.1094, 939, 668.0625, 936, 865.0781, 939, 1178.9766, 929, 1535.5, 932.0625, 1779.0469, 821.8594, 1884.0234, 874.9531, 1566.5391, 824.8906, 1776.0313, 240.92188, 1870.3203, 189.63281)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 5, 3, 7), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(6, 9, 10, 11), PackedInt32Array(12, 13, 6, 11, 14), PackedInt32Array(15, 16, 13, 12)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(136, 221, 119, 346, 36, 670, 16, 1081, 1932, 1095, 1894, 874, 1880, 173, 1766, 235, 1769, 812, 1559, 815, 1528, 922, 1179, 919, 865, 929, 668, 926, 530, 929, 257, 929, 216, 280)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsuaf"]
+size = Vector2(89.3125, 540.46875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khhxn"]
+size = Vector2(80.5, 394.25)
+
+[node name="ESCRoom" type="Node2D" unique_id=1199692507]
+script = ExtResource("1_kakxm")
+global_id = "casa1"
+player_scene = ExtResource("2_tkapw")
+metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
+
+[node name="escbackground" type="TextureRect" parent="." unique_id=481740715]
+offset_left = -3.0
+offset_top = -17.0
+offset_right = 1920.0
+offset_bottom = 1075.0
+mouse_filter = 2
+texture = ExtResource("3_7016x")
+expand_mode = 1
+script = ExtResource("3_tkapw")
+metadata/_custom_type_script = "uid://fnwnfflaoeqp"
+
+[node name="ESCTerrain" type="Node2D" parent="." unique_id=1942322851]
+script = ExtResource("4_7016x")
+metadata/_custom_type_script = "uid://5pbcieq7gpdo"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="ESCTerrain" unique_id=1445114604]
+position = Vector2(-6, -11)
+navigation_polygon = SubResource("NavigationPolygon_khhxn")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1695832173]
+
+[node name="salida_casa2" type="Area2D" parent="." unique_id=1101144885]
+script = ExtResource("7_d21xg")
+target_scene = "uid://hus56rfq0wme"
+exit_direction = "casa2"
+global_id = "salida_casa2"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="salida_casa2" unique_id=1978885005]
+position = Vector2(160, 679)
+shape = SubResource("RectangleShape2D_qsuaf")
+
+[node name="salida_lobby" type="Area2D" parent="." unique_id=1549270743]
+script = ExtResource("7_d21xg")
+target_scene = "uid://cfidrmoy8r1ne"
+global_id = "salida_lobby"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="salida_lobby" unique_id=1819935532]
+position = Vector2(1829, 659)
+shape = SubResource("RectangleShape2D_khhxn")
+
+[node name="ESCLocation" type="Marker2D" parent="." unique_id=1164742544]
+position = Vector2(1666, 857)
+script = ExtResource("6_tkapw")
+global_id = "posicion_casa1"
+is_start_location = true
+metadata/_custom_type_script = "uid://beh3ds4eapldu"

@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://balrykitosemh" path="res://assets/backgrounds/menufondollargo_final.png" id="3_vwlt2"]
 [ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_5hkkq"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_emi52"]
-[ext_resource type="Texture2D" uid="uid://bfubrlsvus7ys" path="res://rooms/prueba/degrade_blanco_negro_1920x1080.bmp" id="6_h3bu6"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_tsac6"]
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="7_vgyeo"]
 [ext_resource type="Texture2D" uid="uid://rv5k1dgt67bp" path="res://inventario/png-transparent-smoking-cigarette-thumbnail.png" id="8_gwa41"]
@@ -57,7 +56,6 @@ script = ExtResource("4_5hkkq")
 
 [node name="WalkableArea" type="Node2D" parent="." unique_id=2147293467]
 script = ExtResource("5_emi52")
-scales = ExtResource("6_h3bu6")
 lightmap_modulate = Color(0.029506557, 0.029506557, 0.029506557, 1)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="WalkableArea" unique_id=739325929]

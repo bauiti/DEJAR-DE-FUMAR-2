@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://22gdexptidb5"]
+
+[ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_kakxm"]
+[ext_resource type="Texture2D" uid="uid://c0tnrqk3keo8l" path="res://rooms/Casa2/assets/97266333ecbfc758c77c34c840d1874e.jpg" id="2_87ra5"]
+[ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="3_tkapw"]
+[ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="4_7016x"]
+[ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="5_ggmn5"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_s1fef"]
+vertices = PackedVector2Array(847, 779.5, 847, 747.4297, 1207.0625, 795.8828, 1210.9375, 825.89844, 382.28125, 599.0078, 785.4375, 607.77344, 776.5078, 769.6328, 6.0625, 629.21875, 1916.1328, 1050.0391, 8.9296875, 1058.9531, 1773.3594, 611.75, 1921.8672, 626.0625, 1757.3594, 668.78906, 1289, 847.0703, 1289, 800.1406, 1691.1797, 662.15625)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 7, 6), PackedInt32Array(10, 11, 8, 12), PackedInt32Array(8, 13, 14, 15, 12), PackedInt32Array(13, 8, 6, 0), PackedInt32Array(13, 0, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(796, 598, 382, 589, -4, 620, -1, 1069, 1926, 1060, 1932, 617, 1766, 601, 1750, 658, 1690, 652, 1279, 793, 1279, 834, 1220, 818, 1216, 787, 837, 736, 837, 768, 787, 761)])
+
+[node name="ESCRoom" type="Node2D" unique_id=387713386]
+script = ExtResource("1_kakxm")
+metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
+
+[node name="escbackground" type="TextureRect" parent="." unique_id=977502810]
+offset_right = 1928.0
+offset_bottom = 1072.0
+mouse_filter = 2
+texture = ExtResource("2_87ra5")
+script = ExtResource("3_tkapw")
+metadata/_custom_type_script = "uid://fnwnfflaoeqp"
+
+[node name="ESCTerrain" type="Node2D" parent="." unique_id=33647245]
+script = ExtResource("4_7016x")
+metadata/_custom_type_script = "uid://5pbcieq7gpdo"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="ESCTerrain" unique_id=1208308437]
+navigation_polygon = SubResource("NavigationPolygon_s1fef")
+
+[node name="RoomObjects" type="Node2D" parent="." unique_id=687087783]
+
+[node name="ESCExit" type="Area2D" parent="." unique_id=441886363]
+script = ExtResource("5_ggmn5")
+metadata/_custom_type_script = "uid://btt4cprco53ec"

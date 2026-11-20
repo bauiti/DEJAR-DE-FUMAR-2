@@ -43,6 +43,7 @@ navigation_polygon = SubResource("NavigationPolygon_khhxn")
 [node name="RoomObjects" type="Node2D" parent="." unique_id=1942330507]
 
 [node name="Polygon2D" type="Polygon2D" parent="RoomObjects" unique_id=1520871826]
+visible = false
 z_index = 1080
 polygon = PackedVector2Array(864, 360, 866, 404, 852, 417, 847, 520, 815, 539, 811, 636, 813, 652, 788, 658, 769, 706, 726, 713, 600, 776, 1403, 784, 1288, 711, 1258, 709, 1268, 613, 1252, 606, 1231, 569, 1194, 566, 1169, 596, 1157, 612, 1144, 624, 1128, 551, 1164, 380, 1141, 355)
 
