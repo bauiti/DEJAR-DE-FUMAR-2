@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://51xtvlfif3bw"
+path="res://.godot/imported/respuesta_1.3.wav-a072b590f3eb418162b8245668626de1.sample"
+
+[deps]
+
+source_file="res://assets_making - pepo/plaza/dialogo - audios/respuesta_1.3.wav"
+dest_files=["res://.godot/imported/respuesta_1.3.wav-a072b590f3eb418162b8245668626de1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
