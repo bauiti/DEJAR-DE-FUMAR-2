@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dn5qimpaxxf6q"]
+
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_ailnw"]
+[ext_resource type="Texture2D" uid="uid://s2y2noi5i3ql" path="res://assets_making - pepo/pistola_item.png" id="2_0x603"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
+size = Vector2(642, 459)
+
+[node name="ESCItem" type="Area2D" unique_id=318587425]
+process_mode = 1
+script = ExtResource("1_ailnw")
+actions_requiring_target_object = PackedStringArray()
+inventory_texture = ExtResource("2_0x603")
+inventory_texture_hovered = ExtResource("2_0x603")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1269894804]
+scale = Vector2(0.155875, 0.13325001)
+texture = ExtResource("2_0x603")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1006401165]
+position = Vector2(15, 6.5)
+shape = SubResource("RectangleShape2D_s1fef")

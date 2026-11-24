@@ -11,6 +11,16 @@ extends Control
 ## [br]
 signal say_finished
 
+enum EstadoChooser { SOLO_SAY, CHOOSER, SAY_CHOOSER }
+
+const GRACIA_CIERRE := 0.2
+
+var _estado: EstadoChooser = EstadoChooser.SOLO_SAY
+var _chooser: Node = null
+var _token_cierre: int = 0
+
+
+
 ## Emitted when text has just become fully visible[br]
 ## [br]
 ## #### Parameters[br]

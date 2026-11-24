@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cp75ofyuetxux"]
 
 [ext_resource type="Script" uid="uid://cfkvypxfuu2mt" path="res://addons/escoria-dialog-simple/types/avatar.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://dmr807gaa6xka" path="res://assets_making - pepo/FUENTES/Tahoma-4styles-Font/TAHOMA_0.TTF" id="2_tg4yy"]
 
 [node name="dialog_box" type="Window" unique_id=948907669]
 oversampling_override = 1.0
@@ -17,14 +18,22 @@ script = ExtResource("1")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.0
 offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1338417292]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -18.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
@@ -36,11 +45,13 @@ theme_override_constants/separation = 35
 dragger_visibility = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HSplitContainer" unique_id=744994029]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.3
 
 [node name="avatar" type="TextureRect" parent="Panel/MarginContainer/HSplitContainer/VBoxContainer" unique_id=741632952]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -49,5 +60,7 @@ stretch_mode = 4
 [node name="text" type="RichTextLabel" parent="Panel/MarginContainer/HSplitContainer" unique_id=1516787362]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_tg4yy")
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "Here be some text"

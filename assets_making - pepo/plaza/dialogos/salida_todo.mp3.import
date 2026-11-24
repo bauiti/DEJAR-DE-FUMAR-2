@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4ttet33q6mm0"
+path="res://.godot/imported/salida_todo.mp3-438a8979ba44e934e6854245d40a400f.mp3str"
+
+[deps]
+
+source_file="res://assets_making - pepo/plaza/dialogos/salida_todo.mp3"
+dest_files=["res://.godot/imported/salida_todo.mp3-438a8979ba44e934e6854245d40a400f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

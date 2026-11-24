@@ -60,7 +60,8 @@ shape = SubResource("RectangleShape2D_qsuaf")
 [node name="salida_lobby" type="Area2D" parent="." unique_id=1549270743]
 script = ExtResource("7_d21xg")
 target_scene = "uid://cfidrmoy8r1ne"
-global_id = "salida_lobby"
+exit_direction = "lobby"
+global_id = "salida_lobby2"
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="salida_lobby" unique_id=1819935532]

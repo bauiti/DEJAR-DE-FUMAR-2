@@ -76,4 +76,6 @@ position = Vector2(1831, 799)
 shape = SubResource("RectangleShape2D_khhxn")
 
 [node name="nene_chori" parent="." unique_id=462721667 instance=ExtResource("8_qq3jr")]
+z_index = 950
+z_as_relative = false
 position = Vector2(452, 999)
