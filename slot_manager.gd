@@ -16,8 +16,8 @@ func add_item(inventory_item: ESCInventoryItem) -> ESCInventoryButton:
 	button.ignore_texture_size = true
 	button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 	button.custom_minimum_size = Vector2(64, 64) # ajustá al tamaño de tus slots
-	button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	button.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	button.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 
 	for slot in _get_slots():
 		if slot.get_child_count() == 0:

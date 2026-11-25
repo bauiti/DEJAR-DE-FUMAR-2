@@ -2,6 +2,7 @@
 extends Window
 
 
+
 # Signal emitted when text has been said
 signal say_finished
 
@@ -11,6 +12,8 @@ signal say_visible
 
 # The text speed per character for normal display
 var _text_time_per_character: float
+
+var dialog_active = false
 
 # The text speed per character if the dialog line is skipped
 var _fast_text_time_per_character: float
@@ -132,7 +135,7 @@ func set_current_character(name: String):
 # #### Parameters
 # - character: The global id of the character speaking
 # - line: Line to say
-func say(character: String, line: String):
+func say(character: String, line: String,):
 	_current_line = line
 
 	_is_speeding_up = false

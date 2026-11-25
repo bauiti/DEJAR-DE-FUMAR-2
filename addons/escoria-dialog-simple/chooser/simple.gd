@@ -2,6 +2,11 @@
 # Supports timeout and avatar display
 extends ESCDialogOptionsChooser
 
+@onready var _vbox: VBoxContainer = $MarginContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer
+@onready var _texto: RichTextLabel = $MarginContainer/MarginContainer/PanelContainer/MarginContainer/Texto
+
+var fuente: Font = load("res://assets_making - pepo/FUENTES/Tahoma-4styles-Font/Tahoma Regular font.ttf")
+var _audio_hover: AudioStream = preload()
 
 const ZONAS = {
 	"default": {"color": Color(0.1, 0.1, 0.1, 0.5), "avatar": ""},
@@ -21,19 +26,32 @@ var bar1 = Color(0.0, 0.0, 1.0, 0.8) # (Color, RGB)
 var casa = Color(1.0, 0.0, 1.0, 0.8) # (Color, RGB)
 
 
+var room_id = escoria.main.current_scene.global_id	
+var zona = ZONAS.get(room_id, ZONAS["default"])
+
 @export var color_normal = Color(1, 1, 1, 1)
 @export var color_hover = Color(1, 1, 0, 1)
 
+var _tween_panel: Tween
+
 var color_zona = [plaza1, escuela1, bar1, casa]
+
+var _terminado: bool = false
 
 var _no_more_options: bool = false
 
+var _ya_animado := false
+
 
 # Hide the chooser at the start just to be safe
-func _ready() -> void:
-	hide_chooser()
-	process_mode = PROCESS_MODE_PAUSABLE
-	
+signal say_finished
+signal say_visible
+
+
+
+var _tween: Tween
+
+var _tween_Verde = create_tween()
 
 
 # Process the timeout display
@@ -46,17 +64,27 @@ func _process(_delta: float) -> void:
 
 # Show the chooser
 func show_chooser():
+	if _tween:
+		_tween.kill()
+	_texto.hide()
+	_vbox.show()	
 	var vbox = $MarginContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer
 	var elContainer = $MarginContainer/PanelContainer
+	
+	if not _ya_animado:
+		_ya_animado = true
+		_animar_panel()
 
 	for option_node in vbox.get_children():
 		vbox.remove_child(option_node)
+		
+		
 
-	_remove_avatar()
+	
 
-	var room_id = escoria.main.current_scene.global_id
+	
 	print("ROOM ACTUAL: ", room_id)
-	var zona = ZONAS.get(room_id, ZONAS["default"])
+
 
 	var estilo_panel = StyleBoxFlat.new()
 	estilo_panel.bg_color = zona["color"]
@@ -70,10 +98,12 @@ func show_chooser():
 			var option_node = Button.new()
 			option_node.text = (option as ESCDialogOption).option
 			option_node.flat = false
-			option_node.alignment = HORIZONTAL_ALIGNMENT_LEFT
+			option_node.alignment = HORIZONTAL_ALIGNMENT_CENTER
 			option_node.size_flags_horizontal = Control.SIZE_FILL
 			option_node.add_theme_color_override("font_color", Color(1, 1, 1, 1))
 			option_node.add_theme_color_override("font_color_hover", Color(1, 1, 0, 1))
+			option_node.add_theme_font_override("font", fuente)
+			option_node.add_theme_font_size_override("font_size", 25)
 
 			var box = StyleBoxFlat.new()
 			box.bg_color = Color(0.1, 0.1, 0.1, 0.8)
@@ -98,13 +128,13 @@ func show_chooser():
 		return
 
 	var ruta = escoria.avatares.get(zona["avatar"], "")
-	print("AVATAR CLAVE: '", zona["avatar"], "'")
-	print("AVATAR RUTA: '", ruta, "'")
+	var rutaM = escoria.avatares.get("mikeD")
+	
 	if ruta != "":
 		var avatar_nodo = load(ruta).instantiate()
+		var avatar_nodo2 = load("res://addons/escoria-dialog-simple/avatar_path/mikeD.tscn").instantiate()
+		$AvatarContainer2.add_child(avatar_nodo2)
 		$AvatarContainer.add_child(avatar_nodo)
-		print("AVATAR HIJOS: ", $AvatarContainer.get_child_count())
-		print("AVATAR POS: ", $AvatarContainer.global_position, " VISIBLE: ", $AvatarContainer.visible)
 		$MarginContainer.show()
 
 	if self.dialog.timeout > 0 and self.dialog.get_timeout_option():
@@ -122,7 +152,6 @@ func hide_chooser():
 # #### Parameters
 # - option: Option that was chosen
 func _option_chosen(option: ESCDialogOption):
-	_remove_avatar()
 	$TimerProgress.value = 0
 	option_chosen.emit(option)
 
@@ -144,5 +173,86 @@ func _on_Timer_timeout() -> void:
 
 # Remove the avatar
 func _remove_avatar():
-	if $AvatarContainer.get_child_count() > 0:
-		$AvatarContainer.remove_child($AvatarContainer.get_child(0))
+	for contenedor in [$AvatarContainer, $AvatarContainer2]:
+		for hijo in contenedor.get_children():
+			contenedor.remove_child(hijo)
+			hijo.queue_free()
+			
+func say(_global_id: String, text: String) -> void:
+	_terminado = false
+	_vbox.hide()
+	_texto.show()
+	_texto.text = tr(text)
+	_texto.visible_ratio = 0.0
+	_color_texto(_global_id)
+
+
+	var ms_por_letra: float = ProjectSettings.get_setting(
+		SimpleDialogSettings.TEXT_TIME_PER_LETTER_MS
+	)
+	_animar_texto(ms_por_letra / 1000.0 * text.length())
+	
+
+
+
+func _on_texto_completo() -> void:
+	if _terminado:
+		return
+	_terminado = true
+	say_visible.emit()
+	var wpm: int = ProjectSettings.get_setting(SimpleDialogSettings.READING_SPEED_IN_WPM)
+	var palabras := _texto.get_parsed_text().split(" ", false).size()
+	await get_tree().create_timer(palabras / float(wpm) * 60.0).timeout
+	say_finished.emit()
+	
+func _animar_texto(duracion: float) -> void:
+	if _tween:
+		_tween.kill()
+	_tween = create_tween()
+	_tween.tween_property(_texto, "visible_ratio", 2.0, duracion)
+	_tween.finished.connect(_on_texto_completo)
+	
+func speedup() -> void:
+	if _terminado or _texto.visible_ratio >= 1.0:
+		return
+	var ms_rapido: float = ProjectSettings.get_setting(
+		SimpleDialogSettings.TEXT_TIME_PER_LETTER_MS_FAST
+	)
+	_animar_texto(ms_rapido / 1000.0 * _texto.get_total_character_count())
+	
+func finish() -> void:
+	if _terminado:
+		return
+	_animar_texto(0.0)
+	
+
+	
+
+
+func _animar_panel(duracion: float = 0.7) -> void:
+	var panel: Control = $MarginContainer
+	await get_tree().process_frame  # espera a que el layout calcule el size
+	panel.pivot_offset = panel.size / 2.0
+	panel.scale = Vector2(1, 1)
+	panel.modulate.a = 0.0
+
+	if _tween_panel:
+		_tween_panel.kill()
+	_tween_panel = create_tween().set_parallel(true)
+	_tween_panel.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	_tween_panel.tween_property(panel, "scale", Vector2.ONE, duracion)
+	_tween_panel.tween_property(panel, "modulate:a", 1.0, duracion)
+	
+func _color_texto(_global_id: String):
+	
+	var Texto_afuera = $MarginContainer/MarginContainer/PanelContainer/MarginContainer/Texto
+	if _global_id == "mike":
+		print("color: ", _global_id)
+		Texto_afuera.add_theme_color_override("default_color", Color (1,1,1))
+	else:
+		print("color: ", _global_id)
+		Texto_afuera.add_theme_color_override("default_color", zona["color"])
+	
+	
+		
+	

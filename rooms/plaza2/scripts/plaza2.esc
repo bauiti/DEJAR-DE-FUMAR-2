@@ -1,3 +1,7 @@
 :setup
 	play_snd("res://audio/sensei.wav", "_music")
+
+:ready
+	global tiene_vape = false
+
 	

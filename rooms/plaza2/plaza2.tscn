@@ -7,7 +7,9 @@
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_8m10c"]
 [ext_resource type="Texture2D" uid="uid://bfubrlsvus7ys" path="res://rooms/prueba/degrade_blanco_negro_1920x1080.bmp" id="6_2rhlq"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_pye1m"]
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="7_jer3c"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_o5y23"]
+[ext_resource type="Texture2D" uid="uid://c8x8jh2eac6iq" path="res://assets_making - pepo/plaza/plaza2/monumento_arbolito_png.png" id="8_825ar"]
 [ext_resource type="PackedScene" uid="uid://cupoboykyyfh5" path="res://personajes/pibes_plaza/pibes_plaza.scn" id="9_qhhn4"]
 [ext_resource type="PackedScene" uid="uid://ctxqyradopbnl" path="res://inventario/cigarro_2.tscn" id="10_8m10c"]
 
@@ -17,7 +19,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(1903, 349, -6, 338, 8, 1083, 1920, 1088)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
-size = Vector2(120, 500)
+size = Vector2(120, 308)
 
 [node name="plaza2" type="Node2D" unique_id=401490144]
 script = ExtResource("1_hikss")
@@ -42,10 +44,21 @@ navigation_polygon = SubResource("NavigationPolygon_khhxn")
 
 [node name="RoomObjects" type="Node2D" parent="." unique_id=1942330507]
 
-[node name="Polygon2D" type="Polygon2D" parent="RoomObjects" unique_id=1520871826]
-visible = false
-z_index = 1080
-polygon = PackedVector2Array(864, 360, 866, 404, 852, 417, 847, 520, 815, 539, 811, 636, 813, 652, 788, 658, 769, 706, 726, 713, 600, 776, 1403, 784, 1288, 711, 1258, 709, 1268, 613, 1252, 606, 1231, 569, 1194, 566, 1169, 596, 1157, 612, 1144, 624, 1128, 551, 1164, 380, 1141, 355)
+[node name="ESCItem" type="Area2D" parent="RoomObjects" unique_id=1645284898]
+process_mode = 1
+script = ExtResource("7_jer3c")
+global_id = "monumento_plaza"
+actions_requiring_target_object = PackedStringArray()
+inventory_texture = ExtResource("8_825ar")
+inventory_texture_hovered = ExtResource("8_825ar")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="RoomObjects/ESCItem" unique_id=344950844]
+z_index = 950
+z_as_relative = false
+position = Vector2(962.00006, 541.75)
+scale = Vector2(0.478, 0.48111108)
+texture = ExtResource("8_825ar")
 
 [node name="StartPos" type="Marker2D" parent="." unique_id=1168649436]
 position = Vector2(1520, 890)
@@ -61,7 +74,7 @@ global_id = "salida_plaza1"
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="salida_plaza1" unique_id=68678180]
-position = Vector2(1860, 800)
+position = Vector2(1833, 575)
 shape = SubResource("RectangleShape2D_s1fef")
 
 [node name="pibes_plaza" parent="." unique_id=2105559160 instance=ExtResource("9_qhhn4")]

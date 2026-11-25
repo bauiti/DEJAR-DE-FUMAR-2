@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bkygfxo5vhqsy"]
 
 [ext_resource type="Script" uid="uid://bfwgvr8mfsqvb" path="res://addons/escoria-dialog-simple/chooser/simple.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://x4qy30mrmlb5" path="res://assets_making - pepo/FUENTES/Tahoma-4styles-Font/TAHOMABD.TTF" id="2_dw73q"]
 
 [sub_resource type="Gradient" id="Gradient_wyffn"]
 
@@ -38,8 +39,10 @@ anchor_top = -0.3
 anchor_right = 0.99000007
 anchor_bottom = 0.95300007
 offset_top = -3.2019958
-offset_right = 0.579834
-offset_bottom = -0.34204102
+offset_right = 19.579834
+offset_bottom = -63.34204
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 0
@@ -56,7 +59,7 @@ layout_mode = 2
 theme_override_constants/margin_left = 70
 theme_override_constants/margin_top = 715
 theme_override_constants/margin_right = 70
-theme_override_constants/margin_bottom = 45
+theme_override_constants/margin_bottom = 204
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/MarginContainer" unique_id=1985210536]
 z_as_relative = false
@@ -66,11 +69,21 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_stretch_ratio = 4.27
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_right = 2
+theme_override_constants/margin_left = 324
+theme_override_constants/margin_right = -1430
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/PanelContainer/MarginContainer" unique_id=1857063613]
+custom_minimum_size = Vector2(603.245, 200)
 layout_mode = 2
+
+[node name="Texto" type="RichTextLabel" parent="MarginContainer/MarginContainer/PanelContainer/MarginContainer" unique_id=443101043]
+visible = false
+custom_minimum_size = Vector2(600, 200)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_dw73q")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+scroll_active = false
 
 [node name="TimerProgress" type="TextureProgressBar" parent="." unique_id=1290167067]
 custom_minimum_size = Vector2(0, 20)
@@ -85,5 +98,8 @@ texture_progress = SubResource("2")
 
 [node name="AvatarContainer" type="Node2D" parent="." unique_id=786727040]
 position = Vector2(136, 1.5258789e-05)
+
+[node name="AvatarContainer2" type="Node2D" parent="." unique_id=971537550]
+position = Vector2(1623, 0)
 
 [connection signal="timeout" from="MarginContainer/Timer" to="." method="_on_Timer_timeout"]

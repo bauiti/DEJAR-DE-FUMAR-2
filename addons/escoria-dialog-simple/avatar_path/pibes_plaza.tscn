@@ -5,6 +5,6 @@
 [node name="PibesPlaza" type="Node2D" unique_id=1050436226]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=563267575]
-position = Vector2(333.99997, -0.9999924)
-scale = Vector2(0.5637039, 0.6185697)
+position = Vector2(348.46875, 42.499996)
+scale = Vector2(0.494806, 0.5025094)
 texture = ExtResource("1_mef7t")

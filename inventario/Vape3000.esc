@@ -1,3 +1,4 @@
 :pickup
 	inventory_add("Vape3000")
 	set_active("Vape3000", false)
+	set_global("tiene_vape", true)

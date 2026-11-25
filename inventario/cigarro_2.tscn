@@ -17,11 +17,10 @@ inventory_texture_hovered = ExtResource("2_r6sq2")
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=496367339]
-modulate = Color(1, 0.45882353, 1, 1)
-position = Vector2(996, 815)
+position = Vector2(2.000061, -4)
 scale = Vector2(0.1652778, 0.12088983)
 texture = ExtResource("2_r6sq2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2079263836]
-position = Vector2(994, 811.5)
+position = Vector2(9, -5)
 shape = SubResource("RectangleShape2D_khhxn")

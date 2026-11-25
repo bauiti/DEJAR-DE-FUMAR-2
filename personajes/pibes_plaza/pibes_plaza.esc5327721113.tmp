@@ -1,0 +1,55 @@
+:talk
+	stop_snd()
+	say("mike", "¿Qué onda los pibes?", "pregunta_1.0")
+	say("pibes_plaza", "No podemos parar de Ranchar. Descubrimos que es el secreto de la vida eterna.", "respuesta_1.0")
+
+	?!
+		- "Pregunta"
+			say("mike", "¿Cómo es eso?", "pregunta_1.1")
+			say("pibes_plaza", "Así es. Con Los Pibes creemos que si no rancharamos, cada uno de nosotros moriria pronto.", "respuesta_1.1")
+			
+			?!
+				- "Intensificar"
+					say("mike", "Interesante. ¿Cómo llegaron a esa conclusión?", "pregunta_1.2")
+					say("pibes_plaza", "Porque el mundo esta enfermo. Enfermo y desesperado. Intentan curarse. Lo intentan con fármacos, enviciandose aún más, queriendo detener solos a la muerte. Nosotros, en cambio, nos drogamos en serio, nos drogamos como locos. Por eso no nos podemos separar: No tendriamos lugar.", "respuesta_1.2")
+					
+					?!
+						- "Repregunta"
+							say("mike", "¿Que pasaria si se separasen?", "pregunta_1.3")
+							say("pibes_plaza", "Hubo una vez una niña... Ella empezó a fumar. A fumar sola. Este pueblo inmundo la excluyó. Cuando empezó a circular la noticia de que la niña había desaparecido por Abstinencia crónica, la trataron de Loca... Cuando murió, nadie se hizo cargo de quién le había dado su primer cigarrillo. Pero aún así, fue más fácil culpar al tabaquismo, culpar a la enfermedad. Nosotros no somos menos culpables, pero tampoco jueces... Eso nos condena a unirnos.", "respuesta_1.3")
+							
+							?!
+								- "Soguear un cigarro"
+									say("mike", "¿No tendrán un cigarro por ahí?", "pregunta_2.0")
+									if $Vape3000 in inventory:
+										say("pibes_plaza", "Un cigarro... Claro que tenemos, tenemos para nosotros. Te lo podemos dar, pero de ser así, no lo vamos a poder fumar nosotros. Y nosotros necesitamos fumar... ¿Entendés? Si nosotros no fumamos nos ponemos sanos, y eso no puede pasar, amigo, nosotros somos LOCOS... ¿Entendés?")
+										inventory_add("cigarro2")
+										set_active("cigarro2", false)
+									else:
+										say("pibes_plaza", "no tenes nada pedazo de rasca, vola de aca")
+										done
+									
+									
+
+								- "irse"
+									say("mike", "Nos re vimo", "salida_todo")
+									done
+						- "irse"
+							say("mike", "Nos re vimo", "salida_todo")
+							done
+				- "irse"
+					say("mike", "Nos re vimo", "salida_todo")
+					done
+				
+
+		- "irse"
+			say("mike", "Nos re vimo", "salida_todo")
+			done
+			
+:look
+
+		if $tiene_vape:
+			say("pibes_plaza", "LO TENGO")
+		else:
+			say("pibes_plaza", "NO LO TENGO")
+			

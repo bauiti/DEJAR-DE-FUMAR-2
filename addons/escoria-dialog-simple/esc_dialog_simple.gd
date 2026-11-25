@@ -9,6 +9,11 @@ var state_machine = preload("res://addons/escoria-dialog-simple/esc_dialog_simpl
 var _type_player: Node = null
 
 
+
+
+
+
+
 var _preserved_type_player_type: String = ""
 
 # Reference to the dialog player
@@ -21,6 +26,36 @@ var _is_saying: bool = false
 # preserving a dialog box, whether to continue using that dialog box
 var _should_preserve_dialog_box: bool = false
 
+func _on_chooser_say_finished() -> void:
+	_programar_cierre()
+	_on_say_finished()
+
+
+func _programar_cierre() -> void:
+	var dp := _dialog_player
+	if not is_instance_valid(dp) or not dp.is_inside_tree():
+		return
+	var token := _leer_token()
+	await dp.get_tree().create_timer(GRACIA_CIERRE).timeout
+
+	if not is_instance_valid(dp):
+		return
+	if token != _leer_token():
+		return
+
+	_cerrar_chooser()
+
+
+func _cerrar_chooser() -> void:
+	print("CERRANDO chooser")
+	var nodo := _get_chooser_activo()
+	if is_instance_valid(_dialog_player) and _dialog_player.has_meta("chooser_activo"):
+		_dialog_player.remove_meta("chooser_activo")
+	if nodo:
+		if nodo.get_parent():
+			nodo.get_parent().remove_child(nodo)
+		nodo.queue_free()
+	_chooser = null
 
 func _ready() -> void:
 	add_child(state_machine)
@@ -104,8 +139,19 @@ func say(dialog_player: Node, global_id: String, text: String, type: String, key
 
 
 func do_say(global_id: String, text: String) -> void:
-	# Only add_child here in order to prevent _type_player from running its _process method
-	# before we're ready, and only if it's necessary
+	var chooser := _get_chooser_activo()
+
+	if chooser:
+		_invalidar_cierre()
+
+		if not chooser.say_finished.is_connected(_on_chooser_say_finished):
+			chooser.say_finished.connect(_on_chooser_say_finished)
+			chooser.say_visible.connect(_on_say_visible)
+
+		chooser.say(global_id, text)
+		return
+
+	# Comportamiento de siempre: la Window de avatar.gd
 	if not _dialog_player.get_children().has(_type_player):
 		_dialog_player.add_child(_type_player)
 
@@ -163,30 +209,46 @@ func choose(dialog_player: Node, dialog: ESCDialog, type: String):
 
 
 func do_choose(dialog_player: Node, dialog: ESCDialog, type: String = "simple"):
-	var chooser
+	_dialog_player = dialog_player
+	_invalidar_cierre()
 
-	if type == "simple" or type == "":
-		chooser = preload(\
+	_chooser = _get_chooser_activo()  # reutiliza el de la vuelta anterior
+	if not _chooser:
+		_chooser = preload(\
 			"res://addons/escoria-dialog-simple/chooser/simple.tscn"\
 		).instantiate()
+		dialog_player.add_child(_chooser)
+		dialog_player.set_meta("chooser_activo", _chooser)
 
-	dialog_player.add_child(chooser)
-	chooser.set_dialog(dialog)
-	chooser.show_chooser()
+	_chooser.set_dialog(dialog)
+	_chooser.show_chooser()
 
-	var option = await chooser.option_chosen
-	dialog_player.remove_child(chooser)
+	var option = await _chooser.option_chosen
+
+	_programar_cierre()
 	option_chosen.emit(option)
+
+
 
 
 # Trigger running the dialogue faster
 func speedup():
+	var chooser := _get_chooser_activo()
+	if chooser:
+		chooser.speedup()
+		return
 	if is_instance_valid(_type_player):
 		_type_player.speedup()
 
 
+
+
 # Trigger an instant finish of the current dialog
 func finish():
+	var chooser := _get_chooser_activo()
+	if chooser:
+		chooser.finish()
+		return
 	if is_instance_valid(_type_player):
 		_type_player.finish()
 
@@ -209,3 +271,22 @@ func interrupt():
 func voice_audio_finished():
 	if is_instance_valid(_type_player):
 		_type_player.voice_audio_finished()
+		
+func _leer_token() -> int:
+	if is_instance_valid(_dialog_player) and _dialog_player.has_meta("token_cierre"):
+		return _dialog_player.get_meta("token_cierre")
+	return 0
+		
+func _invalidar_cierre() -> void:
+	if is_instance_valid(_dialog_player):
+		_dialog_player.set_meta("token_cierre", _leer_token() + 1)
+		
+func _get_chooser_activo() -> Node:
+	if is_instance_valid(_dialog_player) and _dialog_player.has_meta("chooser_activo"):
+		var nodo = _dialog_player.get_meta("chooser_activo")
+		if is_instance_valid(nodo):
+			return nodo
+	return null
+
+
+	

@@ -33,6 +33,7 @@ Debugg="*uid://bwqjusxctqs2p"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -77,12 +78,12 @@ ui/inventory_item_size=Vector2(72, 72)
 ui/dialog_managers=["res://addons/escoria-dialog-simple/esc_dialog_simple.gd"]
 ui/game_scene="res://addons/escoria-ui-simplemouse/game.tscn"
 sound/master_volume=1
-sound/music_volume=1
+sound/music_volume=0
 sound/sfx_volume=1
 sound/ambient_volume=1
 sound/speech_volume=1
 sound/speech_enabled=true
-sound/speech_extension="wav"
+sound/speech_extension="mp3"
 platform/skip_cache=false
 platform/skip_cache.mobile=true
 dialog_simple/avatars_path="res://game/dialog_avatars"
@@ -95,7 +96,7 @@ dialog_simple/stop_talking_animation_on="End of audio"
 internal/esc_change_verb_created_by_simplemouse_plugin=true
 wizard/path_to_rooms="res://rooms"
 ui/inventory_items_path=""
-sound/speech_folder="res://assets_making - pepo/plaza/dialogo - audios/"
+sound/speech_folder="res://assets_making - pepo/plaza/dialogos/"
 
 [input]
 

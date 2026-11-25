@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bdpqaevg4fsvo"]
+
+[ext_resource type="Texture2D" uid="uid://dn86ukfpihs83" path="res://assets_making - pepo/NPCS - Proyectso/mike_joven4.png" id="1_pfbp0"]
+
+[node name="MikeD" type="Node2D" unique_id=2012877880]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1916054432]
+position = Vector2(0, 41)
+scale = Vector2(0.29269984, 0.294516)
+texture = ExtResource("1_pfbp0")
+flip_h = true
