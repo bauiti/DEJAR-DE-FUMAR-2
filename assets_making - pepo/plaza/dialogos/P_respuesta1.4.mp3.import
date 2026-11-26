@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://redatp6k71fv"
+path="res://.godot/imported/P_respuesta1.4.mp3-b4e9b7ad146d2f4287a01776d3c7b7a8.mp3str"
+
+[deps]
+
+source_file="res://assets_making - pepo/plaza/dialogos/P_respuesta1.4.mp3"
+dest_files=["res://.godot/imported/P_respuesta1.4.mp3-b4e9b7ad146d2f4287a01776d3c7b7a8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

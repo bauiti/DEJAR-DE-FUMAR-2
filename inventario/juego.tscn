@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://he173076tfv2"]
+
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_1vka1"]
+[ext_resource type="Texture2D" uid="uid://c6bd3qsvrvncj" path="res://assets_making - pepo/videojuego_item.png" id="2_40gdi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
+size = Vector2(376, 374)
+
+[node name="Juego" type="Area2D" unique_id=1286918126]
+process_mode = 1
+script = ExtResource("1_1vka1")
+global_id = "Juego"
+actions_requiring_target_object = PackedStringArray()
+inventory_texture = ExtResource("2_40gdi")
+inventory_texture_hovered = ExtResource("2_40gdi")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1919533918]
+position = Vector2(5, 3.0000153)
+scale = Vector2(0.09649999, 0.10137496)
+texture = ExtResource("2_40gdi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1620806985]
+position = Vector2(4, 2)
+shape = SubResource("RectangleShape2D_s1fef")

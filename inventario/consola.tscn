@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cxmvtq4s6l1yg"]
+
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_l0w0j"]
+[ext_resource type="Texture2D" uid="uid://4e6vcc8s3uno" path="res://assets_making - pepo/consola_item.png" id="2_b2m4t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
+size = Vector2(204.5, 179.75)
+
+[node name="Consola" type="Area2D" unique_id=1627094567]
+process_mode = 1
+script = ExtResource("1_l0w0j")
+global_id = "consola"
+actions_requiring_target_object = PackedStringArray()
+inventory_texture = ExtResource("2_b2m4t")
+inventory_texture_hovered = ExtResource("2_b2m4t")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=586098044]
+position = Vector2(2.0000153, -79.99997)
+scale = Vector2(0.0410625, 0.036875013)
+texture = ExtResource("2_b2m4t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=358063554]
+position = Vector2(4, -84)
+shape = SubResource("RectangleShape2D_s1fef")

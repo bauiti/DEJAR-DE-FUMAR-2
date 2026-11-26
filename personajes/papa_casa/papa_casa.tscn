@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://bebhlqpbeh7ky"]
+
+[ext_resource type="Script" uid="uid://btrr8e33hu0i4" path="res://addons/escoria-core/game/core-scripts/esc_player.gd" id="1_3yuh4"]
+[ext_resource type="Texture2D" uid="uid://iydj7ji61dwd" path="res://assets_making - pepo/casa/padre/padre-animacion/frame0000.png" id="2_j3451"]
+[ext_resource type="Texture2D" uid="uid://wgo1j4x6lde" path="res://assets_making - pepo/casa/padre/padre-animacion/frame0001.png" id="3_h4iyh"]
+[ext_resource type="Texture2D" uid="uid://dpcagjxrae0v2" path="res://assets_making - pepo/casa/padre/padre-animacion/frame0002.png" id="4_whxyu"]
+[ext_resource type="Texture2D" uid="uid://0dqtcuqbq6ft" path="res://assets_making - pepo/casa/padre/padre-animacion/frame0003.png" id="5_j8pek"]
+[ext_resource type="Texture2D" uid="uid://dx3q37510bfno" path="res://assets_making - pepo/casa/padre/padre-animacion/frame0004.png" id="6_4d7v0"]
+[ext_resource type="Texture2D" uid="uid://cbypddp8vwpcc" path="res://assets_making - pepo/casa/padre/padre-animacion/frame0005.png" id="7_paipq"]
+[ext_resource type="Texture2D" uid="uid://d2gvk4nx2hruo" path="res://assets_making - pepo/casa/padre/padre-animacion/frame0006.png" id="8_ufa6j"]
+[ext_resource type="Texture2D" uid="uid://cj00uj3rcvq8w" path="res://assets_making - pepo/casa/padre/padre-animacion/frame0007.png" id="9_mxs1y"]
+[ext_resource type="Texture2D" uid="uid://d1yys2663jw75" path="res://assets_making - pepo/casa/padre/padre-animacion/frame0008.png" id="10_1uhmf"]
+[ext_resource type="Texture2D" uid="uid://vj4rnw7njotg" path="res://assets_making - pepo/casa/padre/padre-animacion/frame0009.png" id="11_7imln"]
+[ext_resource type="Texture2D" uid="uid://djm6tw57v2447" path="res://assets_making - pepo/casa/padre/padre-animacion/frame0010.png" id="12_xuoa7"]
+[ext_resource type="Texture2D" uid="uid://bp4qhs8bw3kqn" path="res://assets_making - pepo/casa/padre/padre-animacion/frame0011.png" id="13_p6pe5"]
+[ext_resource type="Texture2D" uid="uid://vxkkg83g2wst" path="res://assets_making - pepo/casa/padre/padre-animacion/frame0012.png" id="14_6j8is"]
+[ext_resource type="Texture2D" uid="uid://batyfujbyxtu0" path="res://assets_making - pepo/casa/padre/padre-animacion/frame0013.png" id="15_0o7co"]
+[ext_resource type="Texture2D" uid="uid://chvsoegw8gpdn" path="res://assets_making - pepo/casa/padre/padre-animacion/frame0014.png" id="16_7igyp"]
+[ext_resource type="Script" uid="uid://85bledusisk1" path="res://addons/escoria-core/game/core-scripts/esc_dialog_location.gd" id="17_ip8wi"]
+[ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="18_snlsw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1fef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j3451")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h4iyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_whxyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j8pek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4d7v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_paipq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ufa6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mxs1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1uhmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7imln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xuoa7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_p6pe5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6j8is")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0o7co")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7igyp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
+size = Vector2(569.5, 755)
+
+[node name="ESCPlayer" type="Area2D" unique_id=1236993412]
+process_mode = 1
+script = ExtResource("1_3yuh4")
+global_id = "papa_casa"
+is_movable = true
+actions_requiring_target_object = PackedStringArray()
+metadata/_custom_type_script = "uid://btrr8e33hu0i4"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1870629915]
+position = Vector2(20, 50)
+scale = Vector2(0.7378609, 0.58566433)
+sprite_frames = SubResource("SpriteFrames_s1fef")
+frame_progress = 0.32160467
+speed_scale = 2.505
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=654724471]
+position = Vector2(-9, -29)
+shape = SubResource("RectangleShape2D_s1fef")
+
+[node name="ESCDialogLocation" type="Marker2D" parent="." unique_id=1657685643]
+position = Vector2(631, 6)
+script = ExtResource("17_ip8wi")
+metadata/_custom_type_script = "uid://85bledusisk1"
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="." unique_id=2143887021]
+position = Vector2(498, 550)
+script = ExtResource("18_snlsw")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"

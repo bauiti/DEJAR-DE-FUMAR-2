@@ -1,12 +1,35 @@
 :talk
-
-	say("mike", "Hello!", "avatar")
-	say("profe_escuela", "How can I help you?", "avatar")
+	stop_snd()
 
 	?!
-		- "me quiero cortar la garcha"
-			say("mike", "la puta que me pario", "avatar")
+		- "> Sos bastante lenteja para estar todo el dia tiki tiki con la compu."
+			say("mike", "Sos bastante lenteja para estar todo el dia tiki tiki con la compu.", "avatar")
+			say("profe_escuela", "¿Quien te dejo pasar a la sala de profesores?, esto de la arquitectura lisergica no es de las cosas mas seguras.....", "P_respuesta1.0")
 
-		- "la puta que me pario"
-			say("mike", "la puta que me pario", "avatar")
+			?!
+				- "> Yo creo que tenes algo para darme en esta habitacion"
+					say("mike", "Yo creo que tenes algo para darme en esta habitacion", "avatar")
+					say("profe_escuela", "Los nenes cada vez más atrevidos. Todo lo que les saco me lo quedo como premio. ¿Te pensas que sos tan vivo para que te devuelva algo?", "P_respuesta1.1")
+					say("profe_escuela", "Igual de curioso nomas, que articulo te interesaria.....", "P_respuesta1.2")
+					say("mike", "Por algún motivo, me interesa esa maquina de tumores que tenes atras tuyo.", "avatar")
+					say("profe_escuela", "Ah, Estas hablando del nuevo y lujoso Vape3000, traido desde la imponente Wuhan en china. Con la ultima tecnologia de vaporizacion de metales pesados, es el favorito de los niños. Por dia me llevo 2 o 3 y se los vendo a los pibes atras de la escuela. Es la unica manera en la que puedo llegar a fin de mes.", "P_respuesta1.3")
+
+				- "> ¿Qué esta haciendo fuera del horario escolar aca escondido?"
+					say("mike", "¿Qué esta haciendo fuera del horario escolar aca escondido?", "avatar")
+					say("profe_escuela", "Esta es la guarida más preciada. Con los potentes 512 kb de la escuela, puedo enfrascarme en aventuras epicas en el Argentum online. Puedo pasar horas pegado a la silla. Pero lo malo que en mi casa no tengo nada de estos lujosos aparatos asi que me tengo que conformar con el valero en mi mesa de luz.", "P_respuesta1.4")
+					say("mike", "*(era mucho mas gordo de lo que me acordaba)*, Tremendo como el cole banca estas cosas.", "avatar")
+					
+					
+
+				- "> irse"
+					say("mike", "Se me cuidan", "avatar")
+					done
+
+		- "> ¿Tenés un pucho?"
+			say("mike", "¿Tenés un pucho?", "avatar")
+			say("profe_escuela", "Yo no fumo, pibe. Lo mío es otra cosa...", "respuesta_3.0")
+			done
+
+		- "> irse"
+			say("mike", "Se me cuidan", "avatar")
 			done

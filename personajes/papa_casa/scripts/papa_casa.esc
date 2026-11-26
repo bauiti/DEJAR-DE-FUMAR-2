@@ -1,0 +1,44 @@
+:setup
+	global prote_entregada = false
+
+
+:talk
+	stop_snd()
+	global tacho_off = false
+
+	?!
+		- "> ¿Que haces viejito? Desde cuando te importan los fierros?."
+			say("mike", "¿Que haces viejito? Desde cuando te importan los fierros?", "avatar")
+			say("papa_casa", "Pendejo más respeto porfavor... 501, 502... no viste que ahora si no haces fierros sos un POBRE y que no vas hacer nada de tu vida, entonces ahora me levanto todas TODAS las mañanas para poder hacer 600 dominadas... 310, 311.", "PA_respuesta1.0")
+
+			?!
+				- "> Pero .... desde que tengo memoria, siempre fuiste EL VERDE del pueblo."
+					say("mike", "Pero .... desde que tengo memoria, siempre fuiste EL VERDE del pueblo.", "avatar")
+					say("papa_casa", "BUENO, eso cambio pibe, no entendes que la gente cambia. Vos siempre estas juzgando y eso es mentalidad de POBRE y nunca vas a ser millonario si haces, digo... no haces lo que YO hago", "PA_respuesta1.1")
+					say("mike", "..... ¿Quedo algo de lo que eras o solo sos esta abominacion?", "avatar")
+					say("papa_casa", "Hoy a la las 3 de la madrugada estuve tirando todas esas cosas de POBRE que coleccionabamos juntos, me lo aconsejo mi guru. ¿Sabias que el a los 3 años con el trading ese se compro su primer corsa? Volviendo, todavia tengo cosas encima. Las voy a tirar cuando termine esta serie.... 405... 302... ", "PA_respuesta1.2")
+					done
+
+				- "> Viejo, ¿Que son todos estos tachos?"
+					say("mike", "Viejo, ¿Que son todos estos tachos?", "avatar")
+					say("papa_casa", "Son todos los suplementos que tengo que tomar para haga efecto mi entrenamiento. De hecho son para toda la familia. Mi guru me dijo que la comida que compramos en la coperativa no nos iba a poner como unos malditos toros, entonces decidi que era lo mejor para todos.", "PA_respuesta_1.3")
+					say("mike", "Por lo que ví, la mayoría se toma con prescripción medica, es una locura que tengas todo esto aca. Cada vez que mamá se tomaba una 'Papa' para dormir porque estaba estresada hacias un escandalo", "avatar")
+					say("papa_casa", "Tu mamá solo toma farmacos porque es debil de mente. Esas cosas no te ponen como un maldito toro... 399...381", "PA_respuesta1.4")
+					done
+
+				- "> irse"
+					say("mike", "Se me cuidan", "avatar")
+					done
+					
+
+		- "> Viejo, ¿Que son todos estos tachos?"
+			say("mike", "Viejo, ¿Que son todos estos tachos?", "avatar")
+			say("papa_casa", "Son todos los suplementos que tengo que tomar para haga efecto mi entrenamiento. De hecho son para toda la familia. Mi guru me dijo que la comida que compramos en la coperativa no nos iba a poner como unos malditos toros, entonces decidi que era lo mejor para todos.", "PA_respuesta1.3")
+			say("mike", "Por lo que ví, la mayoría se toma con prescripción medica, es una locura que tengas todo esto aca. Cada vez que mamá se tomaba una 'Papa' para dormir porque estaba estresada hacias un escandalo", "avatar")
+			say("papa_casa", "Tu mamá solo toma farmacos porque es debil de mente. Esas cosas no te ponen como un maldito toro... 399...381", "PA_respuesta1.4")
+			tacho_off = true
+			done
+
+		- "> irse"
+			say("mike", "Se me cuidan", "avatar")
+			done

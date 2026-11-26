@@ -1,13 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://gfjgmbcafyyt"]
+[gd_scene format=3 uid="uid://gfjgmbcafyyt"]
 
 [ext_resource type="Script" uid="uid://dvx5soxivafmw" path="res://addons/escoria-core/ui_library/menus/pause_menu/pause_menu.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bhcfnds3yy2yv" path="res://addons/escoria-core/ui_library/menus/options/options.tscn" id="2"]
-[ext_resource type="Texture2D" uid="uid://bwplh73qf2twk" path="res://addons/escoria-core/design/escoria-logo-small.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://cj440t8pub603" path="res://addons/escoria-core/ui_library/menus/load_save/save/save_game.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://j3wkbyhedkpr" path="res://addons/escoria-core/ui_library/menus/load_save/load/load_game.tscn" id="5"]
 [ext_resource type="Theme" uid="uid://b081yyinnj03t" path="res://addons/escoria-core/ui_library/theme.tres" id="6"]
+[ext_resource type="Texture2D" uid="uid://dwf6oi6lixwwd" path="res://assets/screen_menu.png" id="6_tawkw"]
 
-[node name="pause_menu" type="Control"]
+[node name="pause_menu" type="Control" unique_id=2072156821]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,72 +16,80 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
 
-[node name="Panel" type="ColorRect" parent="."]
+[node name="Panel" type="ColorRect" parent="." unique_id=1664515644]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.270588, 0.270588, 0.270588, 1)
 
-[node name="save_game" parent="." instance=ExtResource("4")]
+[node name="save_game" parent="." unique_id=1994138535 instance=ExtResource("4")]
 visible = false
 layout_mode = 1
 theme = ExtResource("6")
 
-[node name="load_game" parent="." instance=ExtResource("5")]
+[node name="load_game" parent="." unique_id=1730506731 instance=ExtResource("5")]
 visible = false
 layout_mode = 1
 
-[node name="options" parent="." instance=ExtResource("2")]
+[node name="options" parent="." unique_id=727591136 instance=ExtResource("2")]
 visible = false
 layout_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1463723678]
 layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("6_tawkw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=786863765]
+layout_mode = 1
+anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -308.0
+offset_top = 414.0
 offset_right = 308.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 100
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("3")
-
-[node name="menuitems" type="VBoxContainer" parent="VBoxContainer"]
+[node name="menuitems" type="VBoxContainer" parent="VBoxContainer" unique_id=1512411397]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="continue" type="Button" parent="VBoxContainer/menuitems"]
+[node name="continue" type="Button" parent="VBoxContainer/menuitems" unique_id=1077685907]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 3
-text = "CONTINUE_GAME"
+text = "Continuar"
 
-[node name="new_game" type="Button" parent="VBoxContainer/menuitems"]
+[node name="new_game" type="Button" parent="VBoxContainer/menuitems" unique_id=256924727]
 layout_mode = 2
 size_flags_vertical = 3
-text = "NEW_GAME"
+text = "Nuevo juego
+"
 
-[node name="save_game" type="Button" parent="VBoxContainer/menuitems"]
+[node name="save_game" type="Button" parent="VBoxContainer/menuitems" unique_id=417377713]
 layout_mode = 2
 size_flags_vertical = 3
 text = "SAVE_GAME"
 
-[node name="load_game" type="Button" parent="VBoxContainer/menuitems"]
+[node name="load_game" type="Button" parent="VBoxContainer/menuitems" unique_id=920420249]
 layout_mode = 2
 size_flags_vertical = 3
-text = "LOAD_GAME"
+text = "Cargar juego
+"
 
-[node name="options" type="Button" parent="VBoxContainer/menuitems"]
+[node name="options" type="Button" parent="VBoxContainer/menuitems" unique_id=1289987168]
 layout_mode = 2
-text = "OPTIONS"
+text = "Opciones"
 
-[node name="quit" type="Button" parent="VBoxContainer/menuitems"]
+[node name="quit" type="Button" parent="VBoxContainer/menuitems" unique_id=240343241]
 layout_mode = 2
 size_flags_vertical = 3
-text = "QUIT"
+text = "Salir"
 
 [connection signal="back_button_pressed" from="save_game" to="." method="_on_save_game_back_button_pressed"]
 [connection signal="back_button_pressed" from="load_game" to="." method="_on_load_game_back_button_pressed"]

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://imajd7nkl8h4"]
+
+[ext_resource type="Texture2D" uid="uid://ddrr2n7m5fb5l" path="res://assets_making - pepo/bar/document_0.png" id="1_a3xi5"]
+
+[node name="ViejoBar" type="Node2D" unique_id=1212717135]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1005991740]
+position = Vector2(306, 106)
+scale = Vector2(0.1754587, 0.1754587)
+texture = ExtResource("1_a3xi5")

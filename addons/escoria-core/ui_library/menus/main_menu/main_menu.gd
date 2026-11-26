@@ -2,6 +2,18 @@
 extends Control
 
 
+
+
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D  # ajustá la ruta
+
+func _ready() -> void:
+	sprite.process_mode = Node.PROCESS_MODE_ALWAYS
+	sprite.sprite_frames.set_animation_loop(&"default", true)
+	sprite.play(&"default")
+
+
+
+
 # Start the game
 func _on_new_game_pressed():
 	escoria.new_game()

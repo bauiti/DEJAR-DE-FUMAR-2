@@ -54,7 +54,7 @@ inventory_texture_hovered = ExtResource("8_825ar")
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 
 [node name="Sprite2D" type="Sprite2D" parent="RoomObjects/ESCItem" unique_id=344950844]
-z_index = 950
+z_index = 700
 z_as_relative = false
 position = Vector2(962.00006, 541.75)
 scale = Vector2(0.478, 0.48111108)

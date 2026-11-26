@@ -1,0 +1,39 @@
+:talk
+	stop_snd()
+
+	?!
+		- "> Viejo, quiero hablarle a la chica está allá. Me darías un consejo?"
+			say("mike", "Viejo, quiero hablarle a la chica está allá. Me darías un consejo?", "avatar")
+			say("viejo_bar", "Joven, si eso es lo que quieres, sigue tu deseo. Solo te advierto que tendrás que enfrentarte a los peores monstruos si quieres llamar su atención: El tabaquismo. Ella es adicta a los cigarrillos, por lo que hasta que no consigas un pucho y un encendedor, no creo que te de bolilla.", "respuesta_1.1")
+			
+			?!
+				- "> ¿Quién sos? Nunca te había visto en este bar."
+					say("mike", "¿Quién sos? Nunca te había visto en este bar.", "pregunta_1.2")
+					say("viejo_bar", "Pibe... Vengo de muy lejos. Especialmente a buscarte a vos. Soy tu Gordon Freeman. Viaje por miles de dimensiones, por miles de videojuegos para encontrarte. En 30 años, morirás en tu batalla contra el cigarrillo electrónico, pero los desarrolladores te dieron otra oportunidad. Déjame tu arma y te explicaré que es lo que tienes que hacer.", "respuesta_1.2")
+					
+					?!
+						- "> ¿Acaso lo poseo?"
+							say("mike", "¿Acaso lo poseo?", "pregunta_1.3")
+							if tiene_vape == true:
+								inventory_add("juego")
+								say("pibes_plaza", "Perfecto. Toma este videojuego. Es el juego más esperado en años. Quizás a ti no te interese, pero cualquier Nerd daría lo que fuera por jugarlo.", "respuesta_1.3")
+							else:
+								say("viejo_bar", "Ya lo vas a entender pibe.")	
+								done
+							
+						
+									
+									
+
+								
+						- "> irse"
+							say("mike", "Nos re vimo", "salida_todo")
+							done
+				- "> irse"
+					say("mike", "Nos re vimo", "salida_todo")
+					done
+				
+
+		- "> irse"
+			say("mike", "Nos re vimo", "salida_todo")
+			done

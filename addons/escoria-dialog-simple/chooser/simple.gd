@@ -2,11 +2,16 @@
 # Supports timeout and avatar display
 extends ESCDialogOptionsChooser
 
+
+
 @onready var _vbox: VBoxContainer = $MarginContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer
 @onready var _texto: RichTextLabel = $MarginContainer/MarginContainer/PanelContainer/MarginContainer/Texto
 
+var _tween_avatar: Tween
+
 var fuente: Font = load("res://assets_making - pepo/FUENTES/Tahoma-4styles-Font/Tahoma Regular font.ttf")
-var _audio_hover: AudioStream = preload()
+var _audio_hover: AudioStream = preload("res://audio/ui_chooser.mp3")
+@onready var OnHoverAudio: AudioStreamPlayer = $on_hover_audio
 
 const ZONAS = {
 	"default": {"color": Color(0.1, 0.1, 0.1, 0.5), "avatar": ""},
@@ -14,7 +19,7 @@ const ZONAS = {
 	"plaza2": {"color": Color(0.0, 0.809, 0.0, 0.8), "avatar": "pibesPlaza"},
 	"escuela1": {"color": Color(0.959, 0.317, 0.0, 0.8), "avatar": "kiosqueraEscuela"},
 	"escuela2": {"color": Color(0.959, 0.317, 0.0, 0.8), "avatar": "profeEscuela"},
-	"bar1": {"color":Color(0.0, 0.0, 1.0, 0.8), "avatar": "bartenderBar"},
+	"bar": {"color":Color(0.0, 0.0, 1.0, 0.8), "avatar": "viejoBar"},
 	"bar2": {"color":Color(0.0, 0.0, 1.0, 0.8), "avatar": "chicaBar"},
 	"casa1": {"color": Color(1.0, 0.0, 1.0, 0.8), "avatar": "papaCasa"},
 	"casa2": {"color":Color(1.0, 0.0, 1.0, 0.8), "avatar": "mamaCasa"},
@@ -67,28 +72,41 @@ func show_chooser():
 	if _tween:
 		_tween.kill()
 	_texto.hide()
-	_vbox.show()	
+	_vbox.show()
+
+	
+	room_id = escoria.main.current_scene.global_id
+	zona = ZONAS.get(room_id, ZONAS["default"])
+	print("ROOM ACTUAL: ", room_id)
+
 	var vbox = $MarginContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer
 	var elContainer = $MarginContainer/PanelContainer
-	
+
 	if not _ya_animado:
 		_ya_animado = true
 		_animar_panel()
 
 	for option_node in vbox.get_children():
 		vbox.remove_child(option_node)
-		
-		
-
-	
-
-	
-	print("ROOM ACTUAL: ", room_id)
+		option_node.queue_free()
 
 
-	var estilo_panel = StyleBoxFlat.new()
-	estilo_panel.bg_color = zona["color"]
-	elContainer.add_theme_stylebox_override("panel", estilo_panel)
+	var sb := elContainer.get_theme_stylebox("panel") as StyleBoxTexture
+	if sb == null:
+		push_warning("elContainer no tiene un StyleBoxTexture en 'panel'")
+	else:
+		sb = sb.duplicate() as StyleBoxTexture
+		var tex := sb.texture as GradientTexture1D
+		if tex == null:
+			push_warning("La textura del stylebox no es un GradientTexture1D")
+		else:
+			tex = tex.duplicate() as GradientTexture1D
+			tex.gradient = tex.gradient.duplicate()
+			tex.gradient.set_color(0, Color.BLACK)
+			tex.gradient.set_color(1, zona["color"])
+			sb.texture = tex
+			elContainer.add_theme_stylebox_override("panel", sb)
+
 
 	for option in self.dialog.options:
 		print("CHOOSER EJECUTADO")
@@ -96,19 +114,21 @@ func show_chooser():
 		print("DIALOG AVATAR: '", self.dialog.avatar, "'")
 		if option.is_valid():
 			var option_node = Button.new()
+			OnHoverAudio.stream = _audio_hover
 			option_node.text = (option as ESCDialogOption).option
 			option_node.flat = false
-			option_node.alignment = HORIZONTAL_ALIGNMENT_CENTER
+			option_node.alignment = HORIZONTAL_ALIGNMENT_LEFT
 			option_node.size_flags_horizontal = Control.SIZE_FILL
 			option_node.add_theme_color_override("font_color", Color(1, 1, 1, 1))
 			option_node.add_theme_color_override("font_color_hover", Color(1, 1, 0, 1))
 			option_node.add_theme_font_override("font", fuente)
 			option_node.add_theme_font_size_override("font_size", 25)
+			option_node.mouse_entered.connect(hover_on)
+			
+		
 
 			var box = StyleBoxFlat.new()
-			box.bg_color = Color(0.1, 0.1, 0.1, 0.8)
-			box.set_border_width_all(2)
-			box.border_color = Color(1, 1, 1, 1)
+			box.bg_color = Color(0.223, 0.223, 0.223, 0.5)
 			box.set_corner_radius_all(6)
 			box.set_content_margin_all(8)
 
@@ -121,6 +141,11 @@ func show_chooser():
 
 			vbox.add_child(option_node)
 			option_node.pressed.connect(_on_answer_selected.bind(option))
+			
+			
+			
+			
+			
 
 	if vbox.get_child_count() == 0:
 		_no_more_options = true
@@ -141,6 +166,9 @@ func show_chooser():
 		$Timer.start(self.dialog.timeout)
 	else:
 		$TimerProgress.value = 0
+		
+	if _tween_avatar != null:
+		_tween_avatar.stop()
 
 # Hide the chooser
 func hide_chooser():
@@ -184,13 +212,16 @@ func say(_global_id: String, text: String) -> void:
 	_texto.show()
 	_texto.text = tr(text)
 	_texto.visible_ratio = 0.0
-	_color_texto(_global_id)
+	_color_texto(_global_id, 0)
 
 
 	var ms_por_letra: float = ProjectSettings.get_setting(
 		SimpleDialogSettings.TEXT_TIME_PER_LETTER_MS
 	)
 	_animar_texto(ms_por_letra / 1000.0 * text.length())
+	var duracion_texto: float = ms_por_letra / 1000.0 * text.length()
+	var loops: int = max(1, int(round(duracion_texto / 1.0)))
+	
 	
 
 
@@ -198,11 +229,13 @@ func say(_global_id: String, text: String) -> void:
 func _on_texto_completo() -> void:
 	if _terminado:
 		return
+	var texto_corto
+	var texto_largo 
 	_terminado = true
 	say_visible.emit()
 	var wpm: int = ProjectSettings.get_setting(SimpleDialogSettings.READING_SPEED_IN_WPM)
 	var palabras := _texto.get_parsed_text().split(" ", false).size()
-	await get_tree().create_timer(palabras / float(wpm) * 60.0).timeout
+	await get_tree().create_timer(palabras / float(wpm) * 30.0).timeout
 	say_finished.emit()
 	
 func _animar_texto(duracion: float) -> void:
@@ -243,16 +276,31 @@ func _animar_panel(duracion: float = 0.7) -> void:
 	_tween_panel.tween_property(panel, "scale", Vector2.ONE, duracion)
 	_tween_panel.tween_property(panel, "modulate:a", 1.0, duracion)
 	
-func _color_texto(_global_id: String):
+func _color_texto(_global_id: String, loops: int):
+	
+
+	
+	if _tween_avatar:
+		_tween_avatar.kill()
+	_tween_avatar = create_tween()
+	_tween_panel.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	_tween_panel.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
 	
 	var Texto_afuera = $MarginContainer/MarginContainer/PanelContainer/MarginContainer/Texto
 	if _global_id == "mike":
 		print("color: ", _global_id)
+		_tween_avatar.set_loops(loops)
+		_tween_avatar.tween_property($AvatarContainer2, "position", Vector2(1623,0),0.2)
+		_tween_avatar.tween_property($AvatarContainer2, "position", Vector2(1623,10),0.2)
 		Texto_afuera.add_theme_color_override("default_color", Color (1,1,1))
 	else:
 		print("color: ", _global_id)
+		_tween_avatar.set_loops(loops)
+		_tween_avatar.tween_property($AvatarContainer, "position", Vector2(136,0),0.2)
+		_tween_avatar.tween_property($AvatarContainer, "position", Vector2(136,10),0.2, )
 		Texto_afuera.add_theme_color_override("default_color", zona["color"])
 	
-	
+func hover_on():
+	OnHoverAudio.play()
 		
 	
