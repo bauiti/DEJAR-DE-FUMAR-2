@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://c4i2bbkdkpi83"]
+
+[ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_2im05"]
+[ext_resource type="Texture2D" uid="uid://44bxdtsjf645" path="res://assets_making - pepo/bar/bar_fondo.png" id="2_gkaow"]
+[ext_resource type="PackedScene" uid="uid://bmnjah5pcyoba" path="res://personajes/mike/mike.scn" id="2_kswm0"]
+[ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="3_kswm0"]
+[ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="4_tig2n"]
+[ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="5_xd8ja"]
+[ext_resource type="PackedScene" uid="uid://gymyvedljhwp" path="res://personajes/papa_casa/bartender_bar.scn" id="7_kswm0"]
+[ext_resource type="PackedScene" uid="uid://bohyegd2s1u2v" path="res://personajes/chica_bar/chica_bar.scn" id="8_tig2n"]
+[ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="9_xd8ja"]
+[ext_resource type="PackedScene" uid="uid://he173076tfv2" path="res://inventario/juego.tscn" id="10_nqgdv"]
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="11_00xga"]
+[ext_resource type="Texture2D" uid="uid://p7ae1tbx77gv" path="res://assets_making - pepo/bar/bar_capa2.png" id="12_mp54v"]
+[ext_resource type="PackedScene" uid="uid://l4jsplei86yv" path="res://personajes/chica_bar/viejo_bar.scn" id="13_00xga"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_2im05"]
+vertices = PackedVector2Array(1844.1328, 1003.21094, 1909.3828, 1070.9063, 17.671875, 1064.0313, 932.5625, 645.21875, 1721.3125, 774.8594, 1778.1484, 786.5781, 844.6797, 669.6406, 234.60938, 870.0625, 421.28125, 800.4375, 844.6719, 669.6328, 3, 961.2969, 3.96875, 621, 156.64844, 621)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 0, 2, 6), PackedInt32Array(7, 8, 9, 6, 2, 10), PackedInt32Array(7, 10, 11, 12)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-7, 962, -6, 611, 164, 611, 241, 857, 418, 791, 842, 660, 932, 635, 1723, 765, 1786, 778, 1853, 998, 1933, 1081, 9, 1074)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
+size = Vector2(197, 322)
+
+[node name="ESCRoom" type="Node2D" unique_id=1521638816]
+script = ExtResource("1_2im05")
+global_id = "bar"
+player_scene = ExtResource("2_kswm0")
+metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
+
+[node name="escbackground" type="TextureRect" parent="." unique_id=113654665]
+offset_right = 1920.0
+offset_bottom = 1076.0
+mouse_filter = 2
+texture = ExtResource("2_gkaow")
+expand_mode = 1
+script = ExtResource("3_kswm0")
+metadata/_custom_type_script = "uid://fnwnfflaoeqp"
+
+[node name="ESCTerrain" type="Node2D" parent="." unique_id=310921446]
+script = ExtResource("4_tig2n")
+metadata/_custom_type_script = "uid://5pbcieq7gpdo"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="ESCTerrain" unique_id=821159742]
+navigation_polygon = SubResource("NavigationPolygon_2im05")
+
+[node name="ESCLocation" type="Marker2D" parent="." unique_id=1406396975]
+position = Vector2(172, 1023)
+script = ExtResource("5_xd8ja")
+global_id = "inicio_bar"
+is_start_location = true
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="bartender_bar" parent="." unique_id=1869040890 instance=ExtResource("7_kswm0")]
+position = Vector2(1275, 610)
+
+[node name="chica_bar" parent="." unique_id=734822713 instance=ExtResource("8_tig2n")]
+position = Vector2(1694, 827)
+
+[node name="ESCExit" type="Area2D" parent="." unique_id=1704601471]
+script = ExtResource("9_xd8ja")
+target_scene = "uid://cfidrmoy8r1ne"
+exit_direction = "lobby"
+global_id = "salida_lobbyB"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ESCExit" unique_id=571939555]
+position = Vector2(88.5, 854)
+shape = SubResource("RectangleShape2D_s1fef")
+
+[node name="ESCLocation" type="Marker2D" parent="ESCExit" unique_id=1024515927]
+position = Vector2(46, 1034)
+script = ExtResource("5_xd8ja")
+global_id = "lugar_bar"
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="Juego" parent="." unique_id=1286918126 instance=ExtResource("10_nqgdv")]
+position = Vector2(-440, 423)
+global_id = "juego"
+
+[node name="ESCItem" type="Area2D" parent="." unique_id=1711023180]
+process_mode = 1
+script = ExtResource("11_00xga")
+global_id = "tuberias"
+actions_requiring_target_object = PackedStringArray()
+inventory_texture = ExtResource("12_mp54v")
+inventory_texture_hovered = ExtResource("12_mp54v")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="ESCItem" unique_id=1210063163]
+z_index = 500
+z_as_relative = false
+position = Vector2(957, 538)
+scale = Vector2(0.48150003, 0.47644445)
+texture = ExtResource("12_mp54v")
+
+[node name="viejo_bar" parent="." unique_id=1241285045 instance=ExtResource("13_00xga")]
+position = Vector2(454, 846)

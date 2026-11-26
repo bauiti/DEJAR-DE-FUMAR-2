@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://duu0wb687y5hp"]
+
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_nwbb8"]
+[ext_resource type="Texture2D" uid="uid://bjbwbyghobowm" path="res://assets_making - pepo/proteina_mike_item.png" id="2_wi5si"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
+size = Vector2(270, 354)
+
+[node name="ESCItem" type="Area2D" unique_id=671119065]
+process_mode = 1
+script = ExtResource("1_nwbb8")
+actions_requiring_target_object = PackedStringArray()
+inventory_texture = ExtResource("2_wi5si")
+inventory_texture_hovered = ExtResource("2_wi5si")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2015634026]
+position = Vector2(-3, -12.000004)
+scale = Vector2(0.09781249, 0.088750005)
+texture = ExtResource("2_wi5si")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=279263235]
+position = Vector2(-7, -19)
+shape = SubResource("RectangleShape2D_s1fef")

@@ -1,0 +1,17 @@
+:setup
+	global tiene_prote = false
+	global tiene_blister = false
+	global prote_armado = false
+
+:ready
+	
+	if prote_armado:
+		
+		set_active("prote", false)
+		set_active("blister", false)
+	else:
+		
+		if tiene_prote:
+			set_active("prote", false)
+		if tiene_blister:
+			set_active("blister", false)

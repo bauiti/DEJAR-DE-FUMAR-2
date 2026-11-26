@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dt0se5a51c2h0"]
+
+[ext_resource type="Script" uid="uid://by1nhhcmn5jcx" path="res://assets/IntroCutscene/cutscene.gd" id="1_o4bdv"]
+
+[sub_resource type="Gradient" id="Gradient_gvxk1"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s1fef"]
+gradient = SubResource("Gradient_gvxk1")
+width = 1
+
+[sub_resource type="GIFTexture" id="GIFTexture_khhxn"]
+
+[node name="Cutscene" type="Node2D" unique_id=415651816]
+script = ExtResource("1_o4bdv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1038068172]
+
+[node name="TextureRect" type="TextureRect" parent="AnimationPlayer" unique_id=934726914]
+offset_right = 1927.0
+offset_bottom = 1069.0
+texture = SubResource("GradientTexture1D_s1fef")
+
+[node name="GIFPlayer" type="GIFPlayer" parent="AnimationPlayer/TextureRect" unique_id=673349511]
+gif = SubResource("GIFTexture_khhxn")
+playing = false
+layout_mode = 0
+offset_left = 873.0
+offset_top = 243.0
+offset_right = 1286.0
+offset_bottom = 533.0
+
+[node name="GIFPlayer2" type="GIFPlayer" parent="AnimationPlayer/TextureRect" unique_id=1811732452]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

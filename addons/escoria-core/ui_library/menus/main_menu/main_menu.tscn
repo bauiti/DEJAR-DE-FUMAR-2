@@ -4,7 +4,113 @@
 [ext_resource type="Theme" uid="uid://b081yyinnj03t" path="res://addons/escoria-core/ui_library/theme.tres" id="2"]
 [ext_resource type="PackedScene" uid="uid://bhcfnds3yy2yv" path="res://addons/escoria-core/ui_library/menus/options/options.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://j3wkbyhedkpr" path="res://addons/escoria-core/ui_library/menus/load_save/load/load_game.tscn" id="5"]
-[ext_resource type="Texture2D" uid="uid://dwf6oi6lixwwd" path="res://assets/screen_menu.png" id="5_8m27v"]
+[ext_resource type="Texture2D" uid="uid://bc1otrg21yws2" path="res://assets_making - pepo/MENU/menu_inicio_fondo.png" id="5_t8r27"]
+[ext_resource type="FontFile" uid="uid://caq5u54nwc05o" path="res://assets_making - pepo/FUENTES/Tahoma-4styles-Font/Tahoma Regular font.ttf" id="6_5jeio"]
+[ext_resource type="FontFile" uid="uid://dmr807gaa6xka" path="res://assets_making - pepo/FUENTES/Tahoma-4styles-Font/TAHOMA_0.TTF" id="7_t8r27"]
+[ext_resource type="Texture2D" uid="uid://c2ii6880ka3i5" path="res://assets_making - pepo/MENU/frame0000.png" id="8_1pxl0"]
+[ext_resource type="Texture2D" uid="uid://cyy1jslinjowe" path="res://assets_making - pepo/MENU/frame0001.png" id="9_1pv1w"]
+[ext_resource type="Texture2D" uid="uid://cmfi71rn3fntc" path="res://assets_making - pepo/MENU/frame0002.png" id="10_6a2g8"]
+[ext_resource type="Texture2D" uid="uid://d3ds63rywda52" path="res://assets_making - pepo/MENU/frame0003.png" id="11_fissy"]
+[ext_resource type="Texture2D" uid="uid://bscnheng66cug" path="res://assets_making - pepo/MENU/frame0004.png" id="12_oones"]
+[ext_resource type="Texture2D" uid="uid://n0v4gfri4nn8" path="res://assets_making - pepo/MENU/frame0005.png" id="13_35vvh"]
+[ext_resource type="Texture2D" uid="uid://dvfge885wa6w2" path="res://assets_making - pepo/MENU/frame0006.png" id="14_heqnx"]
+[ext_resource type="Texture2D" uid="uid://dk7ca1v6sd155" path="res://assets_making - pepo/MENU/frame0007.png" id="15_eqy7x"]
+[ext_resource type="Texture2D" uid="uid://bo36u5c37koxe" path="res://assets_making - pepo/MENU/frame0008.png" id="16_x34vy"]
+[ext_resource type="Texture2D" uid="uid://djy4i3myf7aa7" path="res://assets_making - pepo/MENU/frame0009.png" id="17_fbjeg"]
+[ext_resource type="Texture2D" uid="uid://b44fbxs5kchqs" path="res://assets_making - pepo/MENU/frame0010.png" id="18_qtakq"]
+[ext_resource type="Texture2D" uid="uid://lknog6wofsma" path="res://assets_making - pepo/MENU/frame0011.png" id="19_1f77o"]
+[ext_resource type="Texture2D" uid="uid://bb445igxucfst" path="res://assets_making - pepo/MENU/frame0012.png" id="20_wp1n8"]
+[ext_resource type="Texture2D" uid="uid://dxawvqj6wks6y" path="res://assets_making - pepo/MENU/frame0013.png" id="21_stylm"]
+[ext_resource type="Texture2D" uid="uid://cdtnwfkd6v0tj" path="res://assets_making - pepo/MENU/frame0014.png" id="22_fmdaf"]
+[ext_resource type="Texture2D" uid="uid://7if8j15q777v" path="res://assets_making - pepo/MENU/frame0015.png" id="23_q0fws"]
+[ext_resource type="Texture2D" uid="uid://cl5sw5km5ex2q" path="res://assets_making - pepo/MENU/frame0016.png" id="24_uoyeh"]
+[ext_resource type="Texture2D" uid="uid://ckm6pvuqegwu4" path="res://assets_making - pepo/MENU/frame0017.png" id="25_rc0ek"]
+[ext_resource type="Texture2D" uid="uid://3amsq335hr2n" path="res://assets_making - pepo/MENU/frame0018.png" id="26_5hqyj"]
+[ext_resource type="Texture2D" uid="uid://djc8f4v0kaxnf" path="res://assets_making - pepo/MENU/frame0019.png" id="27_d5nno"]
+[ext_resource type="Texture2D" uid="uid://bogps7lvguomq" path="res://assets_making - pepo/MENU/frame0020.png" id="28_6vf76"]
+[ext_resource type="Texture2D" uid="uid://o1elnfsrm64n" path="res://assets_making - pepo/MENU/frame0021.png" id="29_dcxnl"]
+[ext_resource type="Texture2D" uid="uid://bcotuebvdifxi" path="res://assets_making - pepo/MENU/frame0022.png" id="30_45dfd"]
+[ext_resource type="Texture2D" uid="uid://bhh1rtgu0vqed" path="res://assets_making - pepo/MENU/frame0023.png" id="31_7ayl1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1fef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1pxl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1pv1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6a2g8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fissy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_oones")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_35vvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_heqnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_eqy7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_x34vy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fbjeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qtakq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_1f77o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_wp1n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_stylm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_fmdaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_q0fws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_uoyeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rc0ek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_5hqyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_d5nno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6vf76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_dcxnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_45dfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_7ayl1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="main_menu" type="Control" unique_id=931588273]
 layout_mode = 3
@@ -47,7 +153,8 @@ offset_left = -4.0
 offset_top = 8.0
 offset_right = 1916.0
 offset_bottom = 1088.0
-texture = ExtResource("5_8m27v")
+texture = ExtResource("5_t8r27")
+expand_mode = 1
 
 [node name="main" type="VBoxContainer" parent="main" unique_id=1251146426]
 layout_mode = 1
@@ -55,9 +162,10 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -308.0
-offset_top = 425.0
-offset_right = 308.0
+offset_left = 200.0
+offset_top = 453.0
+offset_right = 825.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 100
@@ -67,29 +175,70 @@ alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="new_game" type="Button" parent="main/main/buttons" unique_id=1319260215]
+[node name="new_game" type="Button" parent="main" unique_id=1319260215]
 custom_minimum_size = Vector2(0, 150)
-layout_mode = 2
+layout_mode = 0
+offset_left = 1158.0
+offset_top = 651.99994
+offset_right = 2312.1284
+offset_bottom = 883.1927
+scale = Vector2(0.545, 0.545)
 size_flags_vertical = 3
+size_flags_stretch_ratio = 1.75
+theme_override_constants/outline_size = 20
+theme_override_constants/h_separation = 6
+theme_override_constants/icon_max_width = 0
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_fonts/font = ExtResource("6_5jeio")
+theme_override_font_sizes/font_size = 63
 text = "Nueva partida"
+autowrap_trim_flags = 0
 
-[node name="load_game" type="Button" parent="main/main/buttons" unique_id=35199551]
-layout_mode = 2
-text = "Cargar Partida
-"
-
-[node name="options" type="Button" parent="main/main/buttons" unique_id=933592867]
-layout_mode = 2
-text = "Opciones"
-
-[node name="quit" type="Button" parent="main/main/buttons" unique_id=509046581]
-layout_mode = 2
+[node name="quit" type="Button" parent="main" unique_id=509046581]
+layout_mode = 0
+offset_left = 1160.0
+offset_top = 928.0
+offset_right = 1784.0
+offset_bottom = 984.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("7_t8r27")
+theme_override_font_sizes/font_size = 20
 text = "Salir
 "
 
+[node name="options" type="Button" parent="main" unique_id=933592867]
+layout_mode = 0
+offset_left = 1160.0
+offset_top = 863.0
+offset_right = 1785.0
+offset_bottom = 917.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_5jeio")
+theme_override_font_sizes/font_size = 20
+text = "Opciones"
+
+[node name="load_game" type="Button" parent="main" unique_id=35199551]
+layout_mode = 0
+offset_left = 1159.0
+offset_top = 795.0
+offset_right = 1785.0
+offset_bottom = 850.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("7_t8r27")
+theme_override_font_sizes/font_size = 20
+text = "Cargar Partida
+"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1760666464]
+position = Vector2(491.99994, 835)
+scale = Vector2(0.8293656, 0.8266052)
+sprite_frames = SubResource("SpriteFrames_s1fef")
+frame_progress = 0.64182717
+speed_scale = 1.845
+
 [connection signal="back_button_pressed" from="load_game" to="." method="_on_load_game_back_button_pressed"]
 [connection signal="back_button_pressed" from="options" to="." method="_on_options_back_button_pressed"]
-[connection signal="pressed" from="main/main/buttons/new_game" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="main/main/buttons/load_game" to="." method="_on_load_game_pressed"]
-[connection signal="pressed" from="main/main/buttons/options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="main/main/buttons/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="main/new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="main/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="main/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="main/load_game" to="." method="_on_load_game_pressed"]

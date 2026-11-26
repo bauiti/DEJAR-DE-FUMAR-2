@@ -1,0 +1,2 @@
+:look
+	custom("bartender_bar", "LookFX", "play_look")

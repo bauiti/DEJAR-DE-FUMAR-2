@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_cofyk"]
 [ext_resource type="Texture2D" uid="uid://dlpdr6pltg03s" path="res://assets_making - pepo/objetos/vape3000_2.png" id="2_gnax7"]
+[ext_resource type="Texture2D" uid="uid://bi2w3sqfjq33w" path="res://assets_making - pepo/vape3000_item.png" id="3_gnax7"]
+[ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="4_3ksov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
 size = Vector2(175, 178)
@@ -16,10 +18,15 @@ inventory_texture_hovered = ExtResource("2_gnax7")
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2073232815]
-position = Vector2(192.62497, 241.375)
-scale = Vector2(0.1655092, 0.11675824)
-texture = ExtResource("2_gnax7")
+position = Vector2(201, 246)
+scale = Vector2(0.054160837, 0.041972872)
+texture = ExtResource("3_gnax7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=429520921]
 position = Vector2(199.5, 245)
 shape = SubResource("RectangleShape2D_s1fef")
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="." unique_id=1994302571]
+position = Vector2(554, 797)
+script = ExtResource("4_3ksov")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"

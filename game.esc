@@ -4,7 +4,7 @@
 
 :newgame 
 
-	change_scene("res://rooms/casa2/casa2.tscn")
+	change_scene("res://rooms/prueba/prueba.tscn")
 	
 
 	

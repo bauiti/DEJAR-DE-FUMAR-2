@@ -5,7 +5,7 @@
 [node name="ProfeEscuela" type="Node2D" unique_id=1896209774]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=569107096]
-position = Vector2(403, 157)
+position = Vector2(463, 76)
 scale = Vector2(0.5130774, 0.592294)
 texture = ExtResource("1_jhccj")
 flip_h = true

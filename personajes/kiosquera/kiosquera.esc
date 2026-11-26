@@ -10,3 +10,6 @@
 		- "la puta que me pario"
 			say("mike", "la puta que me pario", "avatar")
 			done
+
+:look
+	custom("kiosquera_escuela", "LookFX", "play_look")

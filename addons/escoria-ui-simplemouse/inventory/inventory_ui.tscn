@@ -94,10 +94,8 @@ mouse_filter = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="panel" unique_id=1121320426]
 layout_mode = 0
-offset_left = 379.0
-offset_top = 444.185
-offset_right = 568.0
-offset_bottom = 597.185
+offset_right = 189.0
+offset_bottom = 153.0
 
 [node name="MarginContainer3" type="MarginContainer" parent="panel" unique_id=1163656978]
 layout_mode = 0

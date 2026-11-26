@@ -1,2 +1,10 @@
 :setup
 	play_snd("res://audio/CiggydaGame.wav", "_music")
+  	if ESC_LAST_SCENE == "plaza1":
+		teleport($mike,  $salida_lobbyP)
+	if ESC_LAST_SCENE == "bar":
+		teleport($mike,  $salida_barP)
+	if ESC_LAST_SCENE == "casa1":
+		teleport($mike,  $salida_casaP)
+	if ESC_LAST_SCENE == "escuela1":
+		teleport($mike,  $salida_escuelaP)

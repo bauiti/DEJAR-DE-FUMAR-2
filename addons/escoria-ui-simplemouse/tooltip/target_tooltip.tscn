@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3hru28v8y36i"]
+[gd_scene format=3 uid="uid://b3hru28v8y36i"]
 
+[ext_resource type="FontFile" uid="uid://caq5u54nwc05o" path="res://assets_making - pepo/FUENTES/Tahoma-4styles-Font/Tahoma Regular font.ttf" id="1_p2eb8"]
 [ext_resource type="Script" uid="uid://cytpwmod6bdw6" path="res://addons/escoria-ui-simplemouse/tooltip/tooltip_target.gd" id="2"]
 
-[node name="tooltip" type="RichTextLabel"]
+[node name="tooltip" type="RichTextLabel" unique_id=2024212007]
+theme_override_fonts/normal_font = ExtResource("1_p2eb8")
 bbcode_enabled = true
 text = "[center][color=#ffffff][/color][/center]"
 scroll_active = false

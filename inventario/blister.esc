@@ -1,0 +1,10 @@
+:pickup
+	inventory_add("blister")
+	set_active("blister", false)
+	tiene_blister = true
+
+	if tiene_prote and not prote_armado:
+		inventory_remove("prote")
+		inventory_remove("blister")
+		inventory_add("prote_podri")
+		prote_armado = true

@@ -1,0 +1,4 @@
+:setup
+	play_snd("res://audio/escuela.wav", "_music")
+	play_snd("res://audio/profe_teclado.mp3", "_ambient")
+	

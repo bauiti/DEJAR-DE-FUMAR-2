@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://01rfgkyiu6fd"]
+
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_a5oup"]
+[ext_resource type="Texture2D" uid="uid://ydkpw010cagi" path="res://assets_making - pepo/blister_item.png" id="2_wnhr1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
+size = Vector2(110.75, 130)
+
+[node name="ESCItem" type="Area2D" unique_id=365054733]
+process_mode = 1
+script = ExtResource("1_a5oup")
+actions_requiring_target_object = PackedStringArray()
+inventory_texture = ExtResource("2_wnhr1")
+inventory_texture_hovered = ExtResource("2_wnhr1")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1013062404]
+position = Vector2(-7.6293945e-06, -4)
+scale = Vector2(0.02975002, 0.03324997)
+texture = ExtResource("2_wnhr1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1721726111]
+position = Vector2(-5.375, -7)
+shape = SubResource("RectangleShape2D_s1fef")

@@ -11,7 +11,8 @@ var avatares =  {
 	"kiosqueraEscuela": "res://addons/escoria-dialog-simple/avatar_path/kiosquera_escuela.tscn",
 	"mamaCasa": "res://addons/escoria-dialog-simple/avatar_path/mama_casa.tscn",
 	"papaCasa": "res://addons/escoria-dialog-simple/avatar_path/papa_casa.tscn",
-	"mikeD": "res://addons/escoria-dialog-simple/avatar_path/mikeD.tscn"
+	"mikeD": "res://addons/escoria-dialog-simple/avatar_path/mikeD.tscn",
+	"viejoBar": "res://addons/escoria-dialog-simple/avatar_path/viejo_bar.tscn"
 	
 	}
 	

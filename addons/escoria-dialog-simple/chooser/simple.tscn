@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://bfwgvr8mfsqvb" path="res://addons/escoria-dialog-simple/chooser/simple.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://x4qy30mrmlb5" path="res://assets_making - pepo/FUENTES/Tahoma-4styles-Font/TAHOMABD.TTF" id="2_dw73q"]
 
-[sub_resource type="Gradient" id="Gradient_wyffn"]
+[sub_resource type="Gradient" id="Gradient_dw73q"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_dw73q"]
-gradient = SubResource("Gradient_wyffn")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dw73q"]
+gradient = SubResource("Gradient_dw73q")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wyffn"]
-texture = SubResource("GradientTexture2D_dw73q")
+texture = SubResource("GradientTexture1D_dw73q")
 
 [sub_resource type="Gradient" id="1"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
@@ -101,5 +101,8 @@ position = Vector2(136, 1.5258789e-05)
 
 [node name="AvatarContainer2" type="Node2D" parent="." unique_id=971537550]
 position = Vector2(1623, 0)
+
+[node name="on_hover_audio" type="AudioStreamPlayer" parent="." unique_id=990349701]
+bus = &"SFX"
 
 [connection signal="timeout" from="MarginContainer/Timer" to="." method="_on_Timer_timeout"]

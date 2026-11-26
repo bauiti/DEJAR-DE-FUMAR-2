@@ -48,7 +48,7 @@ navigation_polygon = SubResource("NavigationPolygon_qsuaf")
 [node name="RoomObjects" type="Node2D" parent="." unique_id=9809420]
 
 [node name="StartPos" type="Marker2D" parent="." unique_id=1368898230]
-position = Vector2(1693, 912)
+position = Vector2(1771, 884)
 script = ExtResource("6_yc0wv")
 global_id = "plaza_start_pos"
 is_start_location = true
@@ -74,6 +74,12 @@ metadata/_custom_type_script = "uid://btt4cprco53ec"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="salida_lobby" unique_id=113522450]
 position = Vector2(1831, 799)
 shape = SubResource("RectangleShape2D_khhxn")
+
+[node name="ESCLocation" type="Marker2D" parent="salida_lobby" unique_id=2037700368]
+position = Vector2(1842, 979)
+script = ExtResource("6_yc0wv")
+global_id = "salida_lobbyL"
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
 
 [node name="nene_chori" parent="." unique_id=462721667 instance=ExtResource("8_qq3jr")]
 z_index = 950
