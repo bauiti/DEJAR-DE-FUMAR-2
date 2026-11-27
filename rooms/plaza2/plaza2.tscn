@@ -11,7 +11,8 @@
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_o5y23"]
 [ext_resource type="Texture2D" uid="uid://c8x8jh2eac6iq" path="res://assets_making - pepo/plaza/plaza2/monumento_arbolito_png.png" id="8_825ar"]
 [ext_resource type="PackedScene" uid="uid://cupoboykyyfh5" path="res://personajes/pibes_plaza/pibes_plaza.scn" id="9_qhhn4"]
-[ext_resource type="PackedScene" uid="uid://ctxqyradopbnl" path="res://inventario/cigarro_2.tscn" id="10_8m10c"]
+[ext_resource type="PackedScene" uid="uid://ctxqyradopbnl" path="res://inventario/cigarro.tscn" id="10_8m10c"]
+[ext_resource type="Script" path="res://drop_fx.gd" id="11_drop"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_khhxn"]
 vertices = PackedVector2Array(1893.2188, 358.9375, 1909.7578, 1077.9688, 17.8125, 1073.0234, 4.1875, 348.04688)
@@ -80,7 +81,12 @@ shape = SubResource("RectangleShape2D_s1fef")
 [node name="pibes_plaza" parent="." unique_id=2105559160 instance=ExtResource("9_qhhn4")]
 position = Vector2(368, 918)
 esc_script = "res://personajes/pibes_plaza/pibes_plaza.esc"
+default_action = "talk"
+tooltip_name = "Los pibes"
 
-[node name="cigarro2" parent="." unique_id=1361711351 instance=ExtResource("10_8m10c")]
-visible = false
-position = Vector2(-1162, -724)
+[node name="cigarro" parent="." unique_id=1361711351 instance=ExtResource("10_8m10c")]
+position = Vector2(660, 975)
+
+[node name="DropFX" type="Node" parent="cigarro"]
+script = ExtResource("11_drop")
+origen = Vector2(-370, -322)

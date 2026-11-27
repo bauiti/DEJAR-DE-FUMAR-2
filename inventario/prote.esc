@@ -1,10 +1,21 @@
 :pickup
+	global prote_agarrada = false
 	inventory_add("prote")
 	set_active("prote", false)
-	tiene_prote = true
+	prote_agarrada = true
 
-	if tiene_blister and not prote_armado:
-		inventory_remove("prote")
-		inventory_remove("blister")
-		inventory_add("prote_podri")
-		prote_armado = true
+# Proteína + blíster = proteína de Mike (arrastrando uno sobre el otro, en cualquier orden)
+:use blister
+	if "prote" in inventory:
+		if "blister" in inventory:
+			inventory_remove("prote")
+			inventory_remove("blister")
+			inventory_add("proteina_mike")
+			say("mike", "Proteína con pastillas molidas: un batido para dormir a un toro.")
+		else:
+			say("mike", "Primero tengo que agarrar el blíster.")
+	else:
+		say("mike", "Primero tengo que agarrar la proteína.")
+
+:look
+	say("mike", "Uno de los tachos de suplementos de mi viejo.")

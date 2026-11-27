@@ -1,7 +1,13 @@
+# Room script: plaza2
+# El cigarrillo aparece en el piso recién cuando los pibes lo sueltan
+# (a cambio del Vape 3000).
+
 :setup
 	play_snd("res://audio/sensei.wav", "_music")
 
-:ready
-	global tiene_vape = false
-
-	
+	global cigarro_dropeado = false
+	global cigarro_agarrado = false
+	if cigarro_dropeado and not cigarro_agarrado:
+		custom("cigarro", "DropFX", "en_destino")
+	else:
+		set_active("cigarro", false)

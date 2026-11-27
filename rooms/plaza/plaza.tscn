@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="5_7na50"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="6_yc0wv"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="7_ql74f"]
-[ext_resource type="PackedScene" uid="uid://0rh2wlloki51" path="res://personajes/mike/nene_chori.scn" id="8_qq3jr"]
+[ext_resource type="PackedScene" path="res://personajes/nene_chori/nene_chori.scn" id="8_qq3jr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6eo5u"]
 load_path = "res://.godot/imported/degrade_blanco_negro_1920x1080.bmp-24a06bee28b2bf4306eabd49dd89a02e.ctex"
@@ -85,3 +85,5 @@ metadata/_custom_type_script = "uid://beh3ds4eapldu"
 z_index = 950
 z_as_relative = false
 position = Vector2(452, 999)
+default_action = "talk"
+tooltip_name = "Nene"

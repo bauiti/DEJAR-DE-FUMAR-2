@@ -1,0 +1,22 @@
+:pickup
+	global papa_dormido = false
+	global consola_agarrada = false
+	if papa_dormido:
+		inventory_add("consola")
+		set_active("consola", false)
+		consola_agarrada = true
+	else:
+		say("mike", "No puedo llevarme la consola mientras mi padre esté mirando...")
+
+# Consola + videojuego = gaming (funciona arrastrando uno sobre el otro, en cualquier orden)
+:use juego
+	if "consola" in inventory:
+		inventory_remove("consola")
+		inventory_remove("juego")
+		inventory_add("gaming")
+		say("mike", "Consola y videojuego, todo en uno. Esto es oro para un gamer.")
+	else:
+		say("mike", "Primero tendría que llevarme la consola.")
+
+:look
+	say("mike", "La consola de la familia. Mi viejo la tiene confiscada desde que se hizo fierrero.")

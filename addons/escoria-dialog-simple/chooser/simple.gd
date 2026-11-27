@@ -56,8 +56,6 @@ signal say_visible
 
 var _tween: Tween
 
-var _tween_Verde = create_tween()
-
 
 # Process the timeout display
 func _process(_delta: float) -> void:
@@ -77,7 +75,6 @@ func show_chooser():
 	
 	room_id = escoria.main.current_scene.global_id
 	zona = ZONAS.get(room_id, ZONAS["default"])
-	print("ROOM ACTUAL: ", room_id)
 
 	var vbox = $MarginContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer
 	var elContainer = $MarginContainer/PanelContainer
@@ -109,9 +106,6 @@ func show_chooser():
 
 
 	for option in self.dialog.options:
-		print("CHOOSER EJECUTADO")
-		print("ROOM ACTUAL: '", room_id, "'")
-		print("DIALOG AVATAR: '", self.dialog.avatar, "'")
 		if option.is_valid():
 			var option_node = Button.new()
 			OnHoverAudio.stream = _audio_hover
@@ -153,11 +147,12 @@ func show_chooser():
 		return
 
 	var ruta = escoria.avatares.get(zona["avatar"], "")
-	var rutaM = escoria.avatares.get("mikeD")
-	
+
 	if ruta != "":
+		# Evita que los avatares se apilen en diálogos anidados
+		_remove_avatar()
 		var avatar_nodo = load(ruta).instantiate()
-		var avatar_nodo2 = load("res://addons/escoria-dialog-simple/avatar_path/mikeD.tscn").instantiate()
+		var avatar_nodo2 = load(escoria.avatares.get("mikeD")).instantiate()
 		$AvatarContainer2.add_child(avatar_nodo2)
 		$AvatarContainer.add_child(avatar_nodo)
 		$MarginContainer.show()
@@ -242,7 +237,9 @@ func _animar_texto(duracion: float) -> void:
 	if _tween:
 		_tween.kill()
 	_tween = create_tween()
-	_tween.tween_property(_texto, "visible_ratio", 2.0, duracion)
+	# Antes iba a 2.0: el texto se veía completo a la mitad y después quedaba
+	# un tiempo muerto igual de largo. Misma velocidad visible, sin la espera.
+	_tween.tween_property(_texto, "visible_ratio", 1.0, duracion * 0.5)
 	_tween.finished.connect(_on_texto_completo)
 	
 func speedup() -> void:
@@ -283,18 +280,15 @@ func _color_texto(_global_id: String, loops: int):
 	if _tween_avatar:
 		_tween_avatar.kill()
 	_tween_avatar = create_tween()
-	_tween_panel.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
-	_tween_panel.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
-	
+	_tween_avatar.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
 	var Texto_afuera = $MarginContainer/MarginContainer/PanelContainer/MarginContainer/Texto
 	if _global_id == "mike":
-		print("color: ", _global_id)
 		_tween_avatar.set_loops(loops)
 		_tween_avatar.tween_property($AvatarContainer2, "position", Vector2(1623,0),0.2)
 		_tween_avatar.tween_property($AvatarContainer2, "position", Vector2(1623,10),0.2)
 		Texto_afuera.add_theme_color_override("default_color", Color (1,1,1))
 	else:
-		print("color: ", _global_id)
 		_tween_avatar.set_loops(loops)
 		_tween_avatar.tween_property($AvatarContainer, "position", Vector2(136,0),0.2)
 		_tween_avatar.tween_property($AvatarContainer, "position", Vector2(136,10),0.2, )

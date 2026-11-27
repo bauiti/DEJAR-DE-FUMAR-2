@@ -1,0 +1,8 @@
+:pickup
+	global cigarro_agarrado = false
+	inventory_add("cigarro")
+	set_active("cigarro", false)
+	cigarro_agarrado = true
+
+:look
+	say("mike", "Un pucho. Uno de los dos que necesito para hablarle a la chica del bar.")

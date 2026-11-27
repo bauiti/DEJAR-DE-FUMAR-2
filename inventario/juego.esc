@@ -1,0 +1,8 @@
+:pickup
+	global juego_agarrado = false
+	inventory_add("juego")
+	set_active("juego", false)
+	juego_agarrado = true
+
+:look
+	say("mike", "El videojuego más esperado en años. Solo, no me sirve de mucho...")

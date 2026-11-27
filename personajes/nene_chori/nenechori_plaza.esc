@@ -1,15 +1,7 @@
+# Nene chori (plaza1): por ahora muestra el banner de "Esto es una demo".
+
 :talk
-
-	say("mike", "Hello!", "avatar")
-	say("nene_chori", "How can I help you?", "avatar")
-
-	?!
-		- "me quiero cortar la garcha"
-			say("mike", "la puta que me pario", "avatar")
-
-		- "la puta que me pario"
-			say("mike", "la puta que me pario", "avatar")
-			done
+	custom("nene_chori", "LookFX", "play_look")
 
 :look
 	custom("nene_chori", "LookFX", "play_look")

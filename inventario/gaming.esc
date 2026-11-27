@@ -1,0 +1,2 @@
+:look
+	say("mike", "Consola con videojuego. Si esto no convence a un vicioso del gaming, nada lo hace.")

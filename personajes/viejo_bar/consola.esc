@@ -1,4 +1,0 @@
-:pick_up
-
-	inventory_add("consola")
-	set_active("consola", false)

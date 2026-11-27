@@ -1,17 +1,25 @@
-:setup
-	global tiene_prote = false
-	global tiene_blister = false
-	global prote_armado = false
+# Room script: casa1 (living)
+# Restaura el estado de la sala cada vez que se entra (Escoria rearma la sala
+# desde cero al volver, así que todo se guarda en globals).
 
-:ready
-	
-	if prote_armado:
-		
-		set_active("prote", false)
-		set_active("blister", false)
+:setup
+	global papa_hablado = false
+	global prote_agarrada = false
+	global blister_agarrado = false
+	global papa_dormido = false
+	global consola_agarrada = false
+
+	# La proteína recién aparece en el piso después de hablar con el papá
+	if papa_hablado and not prote_agarrada:
+		custom("prote", "DropFX", "en_destino")
 	else:
-		
-		if tiene_prote:
-			set_active("prote", false)
-		if tiene_blister:
-			set_active("blister", false)
+		set_active("prote", false)
+
+	if blister_agarrado:
+		set_active("blister", false)
+
+	if consola_agarrada:
+		set_active("consola", false)
+
+	if papa_dormido:
+		custom("papa_casa", "Dormido", "dormir_instantaneo")

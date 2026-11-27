@@ -1,10 +1,8 @@
 :pickup
+	global blister_agarrado = false
 	inventory_add("blister")
 	set_active("blister", false)
-	tiene_blister = true
+	blister_agarrado = true
 
-	if tiene_prote and not prote_armado:
-		inventory_remove("prote")
-		inventory_remove("blister")
-		inventory_add("prote_podri")
-		prote_armado = true
+:look
+	say("mike", "Las pastillas para dormir de mamá.")

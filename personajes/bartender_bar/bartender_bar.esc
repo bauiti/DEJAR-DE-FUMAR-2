@@ -1,2 +1,5 @@
+:talk
+	custom("bartender_bar", "LookFX", "play_look")
+
 :look
 	custom("bartender_bar", "LookFX", "play_look")

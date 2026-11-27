@@ -255,7 +255,9 @@ func finish():
 
 # The say command has been interrupted, cancel the dialog display
 func interrupt():
-	if _dialog_player.get_children().has(_type_player):
+	# _type_player puede estar liberado (después de un diálogo) al cambiar de sala.
+	if is_instance_valid(_dialog_player) and is_instance_valid(_type_player) \
+			and _dialog_player.get_children().has(_type_player):
 		(
 			escoria.object_manager.get_object(escoria.object_manager.SPEECH).node\
 			 as ESCSpeechPlayer

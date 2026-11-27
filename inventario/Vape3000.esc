@@ -1,4 +1,12 @@
 :pickup
-	inventory_add("Vape3000")
-	set_active("Vape3000", false)
-	set_global("tiene_vape", true)
+	global vape_liberado = false
+	global vape_agarrado = false
+	if vape_liberado:
+		inventory_add("vape3000")
+		set_active("vape3000", false)
+		vape_agarrado = true
+	else:
+		say("mike", "Está encerrado en esa esfera. El profe no lo va a soltar así nomás.")
+
+:look
+	say("mike", "El Vape 3000. Vaporización de metales pesados, el favorito de los pibes.")

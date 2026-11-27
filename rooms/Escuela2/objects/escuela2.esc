@@ -1,4 +1,16 @@
+# Room script: escuela2 (sala de profesores)
+# El Vape 3000 flota dentro de la esfera hasta que el profe recibe la consola
+# con el videojuego ("gaming"); ahí cae al piso y se puede agarrar.
+
 :setup
 	play_snd("res://audio/escuela.wav", "_music")
 	play_snd("res://audio/profe_teclado.mp3", "_ambient")
-	
+
+	global vape_liberado = false
+	global vape_agarrado = false
+	if vape_agarrado:
+		set_active("vape3000", false)
+	elif vape_liberado:
+		custom("vape3000", "DropFX", "en_destino")
+	else:
+		custom("vape3000", "DropFX", "en_origen")

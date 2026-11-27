@@ -1,0 +1,14 @@
+# Respuestas por defecto cuando un objeto no tiene el evento pedido.
+# (configurado en Project Settings > escoria/main/action_default_script)
+
+:use
+	say("mike", "No creo que eso sirva acá.")
+
+:pickup
+	say("mike", "No puedo llevarme eso.")
+
+:talk
+	say("mike", "No creo que me conteste.")
+
+:look
+	say("mike", "Nada fuera de lo común.")

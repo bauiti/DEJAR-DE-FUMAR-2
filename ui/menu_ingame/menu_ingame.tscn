@@ -1,0 +1,102 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/menu_ingame/menu_ingame.gd" id="1_script"]
+[ext_resource type="Theme" uid="uid://b081yyinnj03t" path="res://addons/escoria-core/ui_library/theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" uid="uid://lkvh84182ior" path="res://assets_making - pepo/MENU/menu_inGame_fondo.png" id="3_fondo"]
+[ext_resource type="FontFile" uid="uid://caq5u54nwc05o" path="res://assets_making - pepo/FUENTES/Tahoma-4styles-Font/Tahoma Regular font.ttf" id="4_tahoma"]
+[ext_resource type="FontFile" uid="uid://dmr807gaa6xka" path="res://assets_making - pepo/FUENTES/Tahoma-4styles-Font/TAHOMA_0.TTF" id="5_tahoma0"]
+[ext_resource type="PackedScene" uid="uid://cj440t8pub603" path="res://addons/escoria-core/ui_library/menus/load_save/save/save_game.tscn" id="6_save"]
+[ext_resource type="PackedScene" uid="uid://bhcfnds3yy2yv" path="res://addons/escoria-core/ui_library/menus/options/options.tscn" id="7_options"]
+
+[node name="menu_ingame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="oscuro" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="panel" type="Control" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+
+[node name="fondo" type="TextureRect" parent="panel"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource("3_fondo")
+expand_mode = 1
+
+[node name="continuar" type="Button" parent="panel"]
+layout_mode = 0
+offset_left = 1164.0
+offset_top = 644.0
+offset_right = 1788.0
+offset_bottom = 768.0
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("4_tahoma")
+theme_override_font_sizes/font_size = 34
+text = "Continuar"
+
+[node name="guardar" type="Button" parent="panel"]
+layout_mode = 0
+offset_left = 1164.0
+offset_top = 787.0
+offset_right = 1788.0
+offset_bottom = 841.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_tahoma0")
+theme_override_font_sizes/font_size = 20
+text = "Guardar partida"
+
+[node name="opciones" type="Button" parent="panel"]
+layout_mode = 0
+offset_left = 1164.0
+offset_top = 855.0
+offset_right = 1788.0
+offset_bottom = 908.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_tahoma")
+theme_override_font_sizes/font_size = 20
+text = "Opciones"
+
+[node name="salir" type="Button" parent="panel"]
+layout_mode = 0
+offset_left = 1164.0
+offset_top = 923.0
+offset_right = 1788.0
+offset_bottom = 976.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_tahoma0")
+theme_override_font_sizes/font_size = 20
+text = "Salir del juego"
+
+[node name="save_game" parent="." instance=ExtResource("6_save")]
+visible = false
+layout_mode = 1
+
+[node name="options" parent="." instance=ExtResource("7_options")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="panel/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="panel/guardar" to="." method="_on_guardar_pressed"]
+[connection signal="pressed" from="panel/opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="panel/salir" to="." method="_on_salir_pressed"]
+[connection signal="back_button_pressed" from="save_game" to="." method="_on_submenu_back_pressed"]
+[connection signal="back_button_pressed" from="options" to="." method="_on_submenu_back_pressed"]

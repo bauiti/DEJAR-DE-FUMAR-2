@@ -1,10 +1,19 @@
+# Room script: lobby (la calle)
+
 :setup
+	# Al empezar la partida, Mike arranca en el medio del lobby (StartPos)
+	# con la pistola como único ítem.
+	global juego_iniciado = false
+	if not juego_iniciado:
+		juego_iniciado = true
+		inventory_add("pistola")
+
 	play_snd("res://audio/CiggydaGame.wav", "_music")
-  	if ESC_LAST_SCENE == "plaza1":
-		teleport($mike,  $salida_lobbyP)
+	if ESC_LAST_SCENE == "plaza1":
+		teleport($mike, $salida_lobbyP)
 	if ESC_LAST_SCENE == "bar":
-		teleport($mike,  $salida_barP)
+		teleport($mike, $salida_barP)
 	if ESC_LAST_SCENE == "casa1":
-		teleport($mike,  $salida_casaP)
+		teleport($mike, $salida_casaP)
 	if ESC_LAST_SCENE == "escuela1":
-		teleport($mike,  $salida_escuelaP)
+		teleport($mike, $salida_escuelaP)

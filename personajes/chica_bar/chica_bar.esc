@@ -1,2 +1,5 @@
+:talk
+	say("chica_bar", "Si no tienes un encendedor y un cigarrillo en tu bolsillo, ni te gastes...")
+
 :look
 	custom("chica_bar", "LookFX", "play_look")

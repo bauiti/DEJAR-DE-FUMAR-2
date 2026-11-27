@@ -1,15 +1,8 @@
+# Kioskera (escuela1): por ahora muestra el banner de "Esto es una demo",
+# ajustado a la pantalla.
+
 :talk
-
-	say("mike", "Hello!", "avatar")
-	say("kiosquera_escuela", "How can I help you?", "avatar")
-
-	?!
-		- "me quiero cortar la garcha"
-			say("mike", "la puta que me pario", "avatar")
-
-		- "la puta que me pario"
-			say("mike", "la puta que me pario", "avatar")
-			done
+	custom("kiosquera_escuela", "LookFX", "play_look")
 
 :look
 	custom("kiosquera_escuela", "LookFX", "play_look")

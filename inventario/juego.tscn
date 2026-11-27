@@ -1,25 +1,36 @@
 [gd_scene format=3 uid="uid://he173076tfv2"]
 
-[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_1vka1"]
-[ext_resource type="Texture2D" uid="uid://c6bd3qsvrvncj" path="res://assets_making - pepo/videojuego_item.png" id="2_40gdi"]
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_item"]
+[ext_resource type="Texture2D" uid="uid://c6bd3qsvrvncj" path="res://assets_making - pepo/videojuego_item.png" id="2_tex"]
+[ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="3_inter"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1fef"]
-size = Vector2(376, 374)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_col"]
+size = Vector2(175, 175)
 
-[node name="Juego" type="Area2D" unique_id=1286918126]
+[node name="juego" type="Area2D" unique_id=1286918126]
 process_mode = 1
-script = ExtResource("1_1vka1")
-global_id = "Juego"
-actions_requiring_target_object = PackedStringArray()
-inventory_texture = ExtResource("2_40gdi")
-inventory_texture_hovered = ExtResource("2_40gdi")
+script = ExtResource("1_item")
+global_id = "juego"
+esc_script = "res://inventario/juego.esc"
+tooltip_name = "Videojuego"
+default_action = "pickup"
+actions_requiring_target_object = PackedStringArray("use")
+default_action_inventory = "use"
+use_from_inventory_only = true
+inventory_texture = ExtResource("2_tex")
+inventory_texture_hovered = ExtResource("2_tex")
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1919533918]
-position = Vector2(5, 3.0000153)
-scale = Vector2(0.09649999, 0.10137496)
-texture = ExtResource("2_40gdi")
+position = Vector2(0, -80)
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("2_tex")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1620806985]
-position = Vector2(4, 2)
-shape = SubResource("RectangleShape2D_s1fef")
+position = Vector2(0, -80)
+shape = SubResource("RectangleShape2D_col")
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="."]
+position = Vector2(0, 10)
+script = ExtResource("3_inter")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"

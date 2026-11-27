@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="7_wro4p"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="8_xj1gw"]
 [ext_resource type="PackedScene" uid="uid://cnucdb0g7d38f" path="res://inventario/vape3000.tscn" id="9_6r0iw"]
+[ext_resource type="Script" path="res://drop_fx.gd" id="10_drop"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_s1fef"]
 vertices = PackedVector2Array(1520.8672, 817.96094, 1880.6719, 1064, 12, 1064, 381.10156, 805.9922, 12, 801.71094, 112.78125, 798.71094, 375.1797, 500.71875, 119.75781, 493.28906)
@@ -64,6 +65,8 @@ metadata/_custom_type_script = "uid://chu4bvqgwxuts"
 [node name="profe" parent="." unique_id=1669476614 instance=ExtResource("6_iisyk")]
 z_index = 1000
 position = Vector2(886, 1011)
+default_action = "talk"
+tooltip_name = "Profe"
 
 [node name="ESCLocation" type="Marker2D" parent="." unique_id=553972002]
 position = Vector2(217, 800)
@@ -72,6 +75,11 @@ global_id = "escuela2_starpos"
 is_start_location = true
 metadata/_custom_type_script = "uid://beh3ds4eapldu"
 
-[node name="Vape3000" parent="." unique_id=365518308 instance=ExtResource("9_6r0iw")]
-position = Vector2(1249, 220)
-esc_script = "res://inventario/Vape3000.esc"
+[node name="vape3000" parent="." unique_id=365518308 instance=ExtResource("9_6r0iw")]
+position = Vector2(1420, 990)
+
+[node name="DropFX" type="Node" parent="vape3000"]
+script = ExtResource("10_drop")
+origen = Vector2(30, -464)
+duracion = 1.1
+flotar_en_origen = true

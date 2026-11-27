@@ -429,7 +429,8 @@ func pause_game():
 		get_node(pause_menu).show()
 		escoria.object_manager.get_object(ESCObjectManager.SPEECH).node.pause()
 		escoria.main.current_scene.game.hide_ui()
-		escoria.main.current_scene.hide()
+		# La sala queda visible (congelada) detrás del menú in-game, que entra
+		# deslizándose desde la derecha.
 		escoria.set_game_paused(true)
 
 
@@ -487,6 +488,9 @@ func _on_event_done(_return_code: int, _event_name: String):
 
 
 func _on_room_ready():
+	# Sin esto Escoria nunca marcaba la sala como lista para input
+	# (y el tooltip no seguía al mouse).
+	super._on_room_ready()
 	$mouse_layer/verbs_menu.set_by_name(VERB_WALK)
 	$mouse_layer/verbs_menu.action_manually_changed = false
 

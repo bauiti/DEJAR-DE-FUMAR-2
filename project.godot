@@ -18,7 +18,6 @@ config/name="DEJAR_DE_FUMAR2"
 run/main_scene="res://addons/escoria-core/game/main_scene.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
-<<<<<<<HEADrun/main_scene="res://addons/escoria-core/game/main_scene.tscn"
 
 [audio]
 
@@ -27,7 +26,6 @@ buses/default_bus_layout="res://addons/escoria-core/buses/default_bus_layout.tre
 [autoload]
 
 escoria="*uid://dcskv8vx80gov"
-Debugg="*uid://bwqjusxctqs2p"
 
 [display]
 
@@ -51,7 +49,7 @@ enabled=PackedStringArray("res://addons/escoria-core/plugin.cfg", "res://addons/
 main/command_directories=["res://addons/escoria-core/game/core-scripts/esc/commands"]
 main/game_version=""
 main/game_start_script="res://game.esc"
-main/action_default_script=""
+main/action_default_script="res://acciones_default.esc"
 main/force_quit=true
 main/text_lang="en"
 main/voice_lang="en"
@@ -60,7 +58,7 @@ main/settings_path="user://"
 main/game_migration_path=""
 main/save_sounds_playback_position=true
 debug/terminate_on_warnings=false
-debug/terminate_on_errors=true
+debug/terminate_on_errors=false
 debug/development_lang="en"
 debug/log_level="DEBUG"
 debug/log_file_path="user://"
@@ -74,11 +72,11 @@ debug/perform_script_analysis_at_runtime=true
 ui/default_dialog_type="avatar"
 ui/default_transition="curtain"
 ui/transition_paths=["res://addons/escoria-core/game/scenes/transitions/shaders/"]
-ui/inventory_item_size=Vector2(72, 72)
+ui/inventory_item_size=Vector2(230, 230)
 ui/dialog_managers=["res://addons/escoria-dialog-simple/esc_dialog_simple.gd"]
 ui/game_scene="res://addons/escoria-ui-simplemouse/game.tscn"
 sound/master_volume=1
-sound/music_volume=0
+sound/music_volume=1
 sound/sfx_volume=1
 sound/ambient_volume=1
 sound/speech_volume=1
@@ -95,7 +93,7 @@ dialog_simple/left_click_action="Speed up"
 dialog_simple/stop_talking_animation_on="End of audio"
 internal/esc_change_verb_created_by_simplemouse_plugin=true
 wizard/path_to_rooms="res://rooms"
-ui/inventory_items_path=""
+ui/inventory_items_path="res://inventario"
 sound/speech_folder="res://assets_making - pepo/plaza/dialogos/"
 
 [input]

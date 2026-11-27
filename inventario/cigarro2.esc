@@ -1,3 +1,0 @@
-:pickup
-	inventory_add("cigarro2")
-	set_active("cigarro2", false)

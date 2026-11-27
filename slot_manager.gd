@@ -1,68 +1,86 @@
 extends ESCInventoryContainer
+# Reparte los ítems del inventario en los lugares (slots) de INVENTARIO_Nuevo.
+# Los slots son los Container hijos de este nodo (slot1..slot4), ubicados sobre
+# los 4 huecos grises de la imagen. El tamaño de cada ítem lo fija Escoria con
+# Project Settings > escoria/ui/inventory_item_size (230x230).
+# Si hubiera más ítems que lugares, el sobrante queda guardado (oculto) y entra
+# apenas se libera un lugar.
+
+signal item_presionado(global_id: String)
+
+@onready var _desborde: Control = $desborde
+
 
 func _get_slots() -> Array:
-	var slots = []
-	for hijo in get_parent().get_children():
-		if hijo is MarginContainer:
+	var slots := []
+	for hijo in get_children():
+		if hijo is Container:
 			slots.append(hijo)
 	return slots
-	
-	
-
-# 1.0 = tamaño del slot, 1.15 = 15% más grande, 1.3 = 30% más grande
 
 
-# 1.0 = tamaño del slot, 2.0 = el doble, 3.0 = el triple
-const ESCALA_ITEM := 3.0
+func _boton_en(slot: Node) -> ESCInventoryButton:
+	for c in slot.get_children():
+		if c is ESCInventoryButton and not c.is_queued_for_deletion():
+			return c
+	return null
 
+
+func get_buttons() -> Array:
+	var botones := []
+	for slot in _get_slots():
+		var b := _boton_en(slot)
+		if b:
+			botones.append(b)
+	return botones
 
 
 func add_item(inventory_item: ESCInventoryItem) -> ESCInventoryButton:
-	var button = ESCInventoryButton.new(inventory_item)
+	var button := ESCInventoryButton.new(inventory_item)
 	button.inventory_item_focused.connect(_on_inventory_item_focused)
 	button.inventory_item_unfocused.connect(_on_inventory_item_unfocused)
-
 	button.ignore_texture_size = true
 	button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
-	button.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-	button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	button.focus_mode = Control.FOCUS_NONE
+	button.button_down.connect(func(): item_presionado.emit(button.global_id))
 
 	for slot in _get_slots():
-		if slot.get_child_count() == 0:
-			# Base: tamaño del slot (o su mínimo si el layout aún no se calculó)
-			var tam_slot: Vector2 = slot.size
-			if tam_slot == Vector2.ZERO:
-				tam_slot = slot.custom_minimum_size
-			if tam_slot == Vector2.ZERO:
-				tam_slot = Vector2(240, 240)  # valor de respaldo, ajustalo
-
-			button.custom_minimum_size = tam_slot
-
-			# Agrando visualmente desde el centro, sin deformar el layout del slot
-			button.resized.connect(func(): button.pivot_offset = button.size / 2.0)
-			button.scale = Vector2.ONE * ESCALA_ITEM
-
-			slot.clip_contents = false  # que el excedente no se corte
+		if _boton_en(slot) == null:
 			slot.add_child(button)
-
-			# Aseguro el pivot centrado una vez que el botón ya tiene su tamaño
-			button.pivot_offset = tam_slot / 2.0
 			return button
 
-	escoria.logger.error(self, "Inventario lleno")
-	return null
+	escoria.logger.warn(self, "Inventario lleno: '%s' queda guardado hasta que haya lugar." % button.global_id)
+	_desborde.add_child(button)
+	return button
 
 
-func remove_item(inventory_item: ESCInventoryItem):
-	var button = get_inventory_button(inventory_item)
+func remove_item(inventory_item: ESCInventoryItem) -> void:
+	var button := get_inventory_button(inventory_item)
 	if button:
 		button.get_parent().remove_child(button)
 		button.queue_free()
+	_reacomodar()
 
 
 func get_inventory_button(inventory_item: ESCInventoryItem) -> ESCInventoryButton:
-	for slot in _get_slots():
-		for c in slot.get_children():
+	for contenedor in _get_slots() + [_desborde]:
+		for c in contenedor.get_children():
 			if c is ESCInventoryButton and c.global_id == inventory_item.global_id:
 				return c
 	return null
+
+
+# Corre los ítems hacia la izquierda para que no queden huecos y mete los que
+# estaban esperando en el desborde.
+func _reacomodar() -> void:
+	var botones := get_buttons()
+	for c in _desborde.get_children():
+		if c is ESCInventoryButton:
+			botones.append(c)
+	var slots := _get_slots()
+	for i in botones.size():
+		var b: ESCInventoryButton = botones[i]
+		var destino: Node = slots[i] if i < slots.size() else _desborde
+		if b.get_parent() != destino:
+			b.get_parent().remove_child(b)
+			destino.add_child(b)

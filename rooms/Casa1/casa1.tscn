@@ -12,15 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://bhwq2t5jtscjh" path="res://personajes/papa_casa/papa_casa.scn" id="8_d21xg"]
 [ext_resource type="PackedScene" uid="uid://cxmvtq4s6l1yg" path="res://inventario/consola.tscn" id="10_mnafp"]
 [ext_resource type="PackedScene" uid="uid://01rfgkyiu6fd" path="res://inventario/blister.tscn" id="12_v23lt"]
-[ext_resource type="PackedScene" uid="uid://duu0wb687y5hp" path="res://inventario/prote_podri.tscn" id="13_v23lt"]
+[ext_resource type="Script" path="res://drop_fx.gd" id="13_drop"]
+[ext_resource type="Script" path="res://papa_dormir.gd" id="14_dormir"]
+[ext_resource type="Texture2D" uid="uid://bmfxlhtd5d863" path="res://assets_making - pepo/casa/padre/padre dormido.png" id="15_dormido"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_khhxn"]
 vertices = PackedVector2Array(1039.7031, 1069, 48.023438, 1070.9297, 105.78125, 1030.8438, 195.70313, 993.8828, 395.92188, 861.72656, 453.1172, 835.03906, 713, 892, 1732, 439.78906, 1896.0469, 374.70313, 1898, 884.2031, 1732, 938.1797, 1903.6484, 1043.2891, 1531.2266, 936.4297, 713, 839.8125, 779.8594, 892, 1130.1719, 897, 1570.2188, 868.7031, 1242.75, 891.59375, 1374.1328, 827.1797, 1250.7578, 834.4922)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(10, 9, 11), PackedInt32Array(10, 11, 0, 12), PackedInt32Array(5, 13, 6), PackedInt32Array(0, 6, 14, 15, 12), PackedInt32Array(12, 16, 10), PackedInt32Array(12, 15, 17), PackedInt32Array(18, 12, 17, 19)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(391, 853, 191, 985, 101, 1022, 16, 1081, 1040, 1079, 1914, 1053, 1908, 884, 1906, 360, 1722, 433, 1722, 923, 1566, 856, 1528, 922, 1377, 817, 1251, 832, 1234, 882, 1130, 887, 780, 882, 723, 882, 723, 830, 451, 825)])
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsuaf"]
-size = Vector2(89.3125, 540.46875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khhxn"]
 size = Vector2(137.25, 529.125)
@@ -53,17 +52,6 @@ navigation_polygon = SubResource("NavigationPolygon_khhxn")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1695832173]
 
-[node name="salida_casa2" type="Area2D" parent="." unique_id=1101144885]
-script = ExtResource("7_d21xg")
-target_scene = "uid://22gdexptidb5"
-exit_direction = "casa2"
-global_id = "salida_casa2"
-metadata/_custom_type_script = "uid://btt4cprco53ec"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="salida_casa2" unique_id=1978885005]
-position = Vector2(342, -376)
-shape = SubResource("RectangleShape2D_qsuaf")
-
 [node name="salida_lobby" type="Area2D" parent="." unique_id=1549270743]
 script = ExtResource("7_d21xg")
 target_scene = "uid://cfidrmoy8r1ne"
@@ -88,11 +76,18 @@ is_start_location = true
 metadata/_custom_type_script = "uid://beh3ds4eapldu"
 
 [node name="papa_casa" parent="." unique_id=1684531789 instance=ExtResource("8_d21xg")]
-position = Vector2(270, 467)
+position = Vector2(255, 480)
+scale = Vector2(1.0025761, 1.0025761)
+default_action = "talk"
+tooltip_name = "Papá"
+
+[node name="Dormido" type="Sprite2D" parent="papa_casa"]
+visible = false
+texture = ExtResource("15_dormido")
+script = ExtResource("14_dormir")
 
 [node name="Consola" parent="." unique_id=1627094567 instance=ExtResource("10_mnafp")]
 position = Vector2(973, 832)
-esc_script = "res://personajes/viejo_bar/consola.esc"
 
 [node name="blister" parent="." unique_id=365054733 instance=ExtResource("12_v23lt")]
 position = Vector2(1336, 890)
@@ -100,9 +95,9 @@ global_id = "blister"
 esc_script = "res://inventario/blister.esc"
 
 [node name="prote" parent="." unique_id=982611635 instance=ExtResource("5_adfjn")]
-position = Vector2(267, 976)
+position = Vector2(330, 960)
 esc_script = "res://inventario/prote.esc"
 
-[node name="ESCItem" parent="." unique_id=671119065 instance=ExtResource("13_v23lt")]
-position = Vector2(-432, 57)
-global_id = "prote_podri"
+[node name="DropFX" type="Node" parent="prote"]
+script = ExtResource("13_drop")
+origen = Vector2(-60, -470)

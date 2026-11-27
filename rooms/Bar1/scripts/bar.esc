@@ -1,0 +1,10 @@
+# Room script: bar
+# El videojuego aparece en el piso recién cuando el viejo recibe la pistola.
+
+:setup
+	global pistola_entregada = false
+	global juego_agarrado = false
+	if pistola_entregada and not juego_agarrado:
+		custom("juego", "DropFX", "en_destino")
+	else:
+		set_active("juego", false)

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ctxqyradopbnl"]
+
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_item"]
+[ext_resource type="Texture2D" uid="uid://dv5bltm036cd8" path="res://assets/puchoasset.png" id="2_tex"]
+[ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="3_inter"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_col"]
+size = Vector2(194, 145)
+
+[node name="cigarro" type="Area2D" unique_id=1361711351]
+process_mode = 1
+script = ExtResource("1_item")
+global_id = "cigarro"
+esc_script = "res://inventario/cigarro.esc"
+tooltip_name = "Cigarrillo"
+default_action = "pickup"
+actions_requiring_target_object = PackedStringArray("use")
+default_action_inventory = "use"
+use_from_inventory_only = true
+inventory_texture = ExtResource("2_tex")
+inventory_texture_hovered = ExtResource("2_tex")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=496367339]
+position = Vector2(2, -40)
+scale = Vector2(0.1652778, 0.12088983)
+texture = ExtResource("2_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2079263836]
+position = Vector2(9, -41)
+shape = SubResource("RectangleShape2D_col")
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="."]
+position = Vector2(0, 10)
+script = ExtResource("3_inter")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"

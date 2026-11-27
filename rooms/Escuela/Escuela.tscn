@@ -93,3 +93,5 @@ is_start_location = true
 
 [node name="koisquera" parent="." unique_id=1917197873 instance=ExtResource("10_sblb2")]
 position = Vector2(942, 541)
+tooltip_name = "Kioskera"
+default_action = "talk"

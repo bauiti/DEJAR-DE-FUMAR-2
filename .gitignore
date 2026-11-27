@@ -1,3 +1,8 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Temporales de editores y del plugin de git (no versionar)
+*.tmp
+*.TMP
+~*.dll

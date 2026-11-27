@@ -1,160 +1,84 @@
 [gd_scene format=3 uid="uid://ciy2hn83a3rim"]
 
 [ext_resource type="Script" uid="uid://cmyyk7qinkift" path="res://addons/escoria-ui-simplemouse/inventory/inventory_ui.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://cv8mkocs0nlsl" path="res://addons/escoria-ui-simplemouse/images/originals/mike-inventario.png" id="2_pgnbd"]
-[ext_resource type="Script" uid="uid://cw6snlq1e6sbs" path="res://slot_manager.gd" id="3_pgnbd"]
+[ext_resource type="Texture2D" path="res://assets_making - pepo/UI/INVENTARIO_Nuevo.png" id="2_inv"]
+[ext_resource type="Script" uid="uid://cw6snlq1e6sbs" path="res://slot_manager.gd" id="3_slots"]
 
-[node name="inventory_ui" type="Control" unique_id=2064101336]
-custom_minimum_size = Vector2(90, 90)
+[node name="inventory_ui" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 3
 mouse_filter = 2
 script = ExtResource("1")
 inventory_ui_container = NodePath("panel/slot_manager")
 
-[node name="panel" type="TextureRect" parent="." unique_id=1085464008]
-custom_minimum_size = Vector2(0, 160)
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = -2.0
-offset_top = 700.815
-offset_right = 3.4000244
-offset_bottom = 1595.8141
-grow_horizontal = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("2_pgnbd")
+[node name="panel" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 735.0
+offset_right = 1920.0
+offset_bottom = 1815.0
+mouse_filter = 2
+texture = ExtResource("2_inv")
 expand_mode = 1
 
-[node name="slot_manager" type="Control" parent="panel" unique_id=638104460]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("3_pgnbd")
-
-[node name="Label" type="Label" parent="panel" unique_id=1777898693]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.162
-anchor_bottom = 0.162
-offset_left = 23.0
-offset_top = -28.990005
-offset_right = 315.0
-offset_bottom = 0.009994507
-text = "Inventario"
-horizontal_alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="panel" unique_id=296332366]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.48900002
-anchor_bottom = 0.48900002
-offset_left = 178.0
-offset_top = 6.5303955
-offset_right = 372.0
-offset_bottom = 162.53036
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="bloqueo" type="Control" parent="panel"]
+layout_mode = 0
+offset_top = 333.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 mouse_filter = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
 
-[node name="detector_in" type="Control" parent="panel" unique_id=880855458]
-layout_mode = 1
-anchor_left = -0.001
-anchor_top = 0.101
-anchor_bottom = 0.21300001
-offset_left = -0.07459986
-offset_top = -0.20993042
-offset_right = 328.0
-offset_bottom = 102.550186
+[node name="pestana" type="Control" parent="panel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 165.0
+offset_right = 340.0
+offset_bottom = 350.0
 mouse_filter = 1
 
-[node name="detector_out" type="Control" parent="panel" unique_id=1857111551]
-layout_mode = 1
-anchor_top = 0.18300001
-anchor_right = 0.11800001
-anchor_bottom = 0.224
-offset_left = 86.0
-offset_top = -64.59984
-offset_right = 34.80278
-offset_bottom = 91.89038
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-
-[node name="MarginContainer2" type="MarginContainer" parent="panel" unique_id=1121320426]
+[node name="slot_manager" type="Control" parent="panel"]
 layout_mode = 0
-offset_right = 189.0
-offset_bottom = 153.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+script = ExtResource("3_slots")
 
-[node name="MarginContainer3" type="MarginContainer" parent="panel" unique_id=1163656978]
+[node name="slot1" type="CenterContainer" parent="panel/slot_manager"]
 layout_mode = 0
-offset_left = 578.0
-offset_top = 442.185
-offset_right = 777.0
-offset_bottom = 596.185
+offset_left = 212.6
+offset_top = 600.5
+offset_right = 471.8
+offset_bottom = 861.6
+mouse_filter = 2
 
-[node name="MarginContainer4" type="MarginContainer" parent="panel" unique_id=1014015062]
+[node name="slot2" type="CenterContainer" parent="panel/slot_manager"]
 layout_mode = 0
-offset_left = 780.0
-offset_top = 442.185
-offset_right = 977.0
-offset_bottom = 599.37
+offset_left = 508.8
+offset_top = 600.5
+offset_right = 768.0
+offset_bottom = 861.6
+mouse_filter = 2
 
-[node name="MarginContainer5" type="MarginContainer" parent="panel" unique_id=349281413]
+[node name="slot3" type="CenterContainer" parent="panel/slot_manager"]
 layout_mode = 0
-offset_left = 982.0
-offset_top = 441.185
-offset_right = 1176.0
-offset_bottom = 597.185
+offset_left = 805.0
+offset_top = 600.5
+offset_right = 1064.2
+offset_bottom = 861.6
+mouse_filter = 2
 
-[node name="MarginContainer6" type="MarginContainer" parent="panel" unique_id=556325444]
+[node name="slot4" type="CenterContainer" parent="panel/slot_manager"]
 layout_mode = 0
-offset_left = 186.0
-offset_top = 610.185
-offset_right = 370.0
-offset_bottom = 761.37
+offset_left = 1101.1
+offset_top = 600.5
+offset_right = 1360.3
+offset_bottom = 861.6
+mouse_filter = 2
 
-[node name="MarginContainer7" type="MarginContainer" parent="panel" unique_id=1556543475]
+[node name="desborde" type="Control" parent="panel/slot_manager"]
+visible = false
 layout_mode = 0
-offset_left = 384.0
-offset_top = 610.185
-offset_right = 569.0
-offset_bottom = 759.185
-
-[node name="MarginContainer8" type="MarginContainer" parent="panel" unique_id=447144903]
-layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 0.045
-offset_left = 585.0
-offset_top = 608.185
-offset_right = 770.0
-offset_bottom = 723.91003
-
-[node name="MarginContainer9" type="MarginContainer" parent="panel" unique_id=1404674085]
-layout_mode = 0
-offset_left = 775.0
-offset_top = 614.185
-offset_right = 973.0
-offset_bottom = 755.185
-
-[node name="MarginContainer10" type="MarginContainer" parent="panel" unique_id=1827937826]
-layout_mode = 0
-offset_left = 980.0
-offset_top = 607.185
-offset_right = 1169.0
-offset_bottom = 766.185
-
-[connection signal="mouse_entered" from="panel/detector_in" to="." method="detector_in"]
-[connection signal="gui_input" from="panel/detector_out" to="." method="_on_detector_out_gui_input"]
-[connection signal="mouse_entered" from="panel/detector_out" to="." method="detector_out"]
+mouse_filter = 2
